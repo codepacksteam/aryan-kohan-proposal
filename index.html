@@ -26,16 +26,10 @@
 
     --brand: #1F8A94;
     --brand-dark: #166670;
-    --brand-darker: #0F4F57;
-    --brand-light: #E6F4F5;
     --brand-soft: rgba(31, 138, 148, 0.08);
 
     --success: #2E7D5B;
     --success-soft: #EBF5F0;
-    --warning: #A66B1F;
-    --warning-soft: #FAF3E6;
-    --danger: #B23A48;
-    --danger-soft: #FBEEF0;
 
     --shadow-xs: 0 1px 2px rgba(31, 41, 51, 0.04);
     --shadow-sm: 0 2px 8px rgba(31, 41, 51, 0.05);
@@ -70,16 +64,10 @@
 
     --brand: #4DB8C2;
     --brand-dark: #7ACDD5;
-    --brand-darker: #A8DEE4;
-    --brand-light: rgba(77, 184, 194, 0.12);
     --brand-soft: rgba(77, 184, 194, 0.10);
 
     --success: #5DC49A;
     --success-soft: rgba(93, 196, 154, 0.10);
-    --warning: #E0AA5C;
-    --warning-soft: rgba(224, 170, 92, 0.10);
-    --danger: #E8818D;
-    --danger-soft: rgba(232, 129, 141, 0.10);
 
     --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.35);
     --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.4);
@@ -103,7 +91,6 @@ body {
     letter-spacing: -0.003em;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    text-rendering: optimizeLegibility;
     overflow-x: hidden;
     min-height: 100vh;
     transition: background-color 0.4s var(--ease), color 0.4s var(--ease);
@@ -552,7 +539,6 @@ ul { list-style: none; }
 .toc-links a.active {
     color: var(--brand);
     background: var(--brand-soft);
-    border-color: transparent;
 }
 .toc-num {
     width: 24px; height: 24px;
@@ -703,8 +689,6 @@ ul { list-style: none; }
 }
 .info-box strong { color: var(--text); font-weight: 700; }
 .info-box.info-green { border-right-color: var(--success); }
-.info-box.info-blue { border-right-color: var(--brand); }
-.info-box.info-gold { border-right-color: var(--warning); }
 
 /* CARDS */
 .cards {
@@ -742,145 +726,14 @@ ul { list-style: none; }
     color: var(--text-2);
 }
 
-/* AI SHOWCASE */
-.ai-showcase {
-    position: relative;
-    margin-top: 22px;
-    border-radius: var(--r-lg);
-    background: var(--surface-2);
-    border: 1px solid var(--border);
-    overflow: hidden;
-}
-.ai-showcase-inner {
-    display: grid;
-    grid-template-columns: 1.15fr 0.85fr;
-    gap: 28px;
-    padding: 32px;
-}
-.eyebrow {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    padding: 5px 12px;
-    border-radius: var(--r-pill);
-    background: var(--brand-soft);
-    border: 1px solid transparent;
-    color: var(--brand);
-    font-size: 0.62rem;
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    margin-bottom: 14px;
-}
-.ai-showcase h3 {
-    color: var(--text);
-    margin: 0 0 14px;
-    font-size: 1.15rem;
-    font-weight: 800;
-    letter-spacing: -0.012em;
-}
-.ai-showcase p { color: var(--text-2); font-size: 0.86rem; }
-
-.ai-features {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 8px;
-    margin-top: 20px;
-}
-.ai-feature {
-    padding: 13px 14px;
-    border-radius: var(--r-sm);
-    background: var(--surface);
-    border: 1px solid var(--border);
-    color: var(--text-2);
-    font-size: 0.74rem;
-    line-height: 1.75;
-    transition: all 0.25s var(--ease);
-}
-.ai-feature strong { color: var(--text); font-weight: 700; }
-.ai-feature:hover {
-    border-color: var(--brand);
-    background: var(--brand-soft);
-}
-
-.chat-window {
-    align-self: center;
-    padding: 16px;
-    border-radius: var(--r-md);
-    background: var(--surface);
-    border: 1px solid var(--border);
-    box-shadow: var(--shadow-sm);
-}
-.chat-head {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    padding: 4px 4px 14px;
-    border-bottom: 1px solid var(--divider);
-    margin-bottom: 4px;
-}
-.chat-avatar {
-    width: 38px; height: 38px;
-    display: grid;
-    place-items: center;
-    border-radius: 50%;
-    color: #fff;
-    font-size: 0.72rem;
-    font-weight: 800;
-    background: var(--brand);
-    flex-shrink: 0;
-}
-.chat-head strong { display: block; font-size: 0.78rem; color: var(--text); font-weight: 700; }
-.chat-head small { color: var(--success); font-size: 0.62rem; font-weight: 600; }
-
-.bubble {
-    width: fit-content;
-    max-width: 88%;
-    padding: 11px 14px;
-    margin-top: 10px;
-    border-radius: 12px;
-    font-size: 0.72rem;
-    line-height: 1.75;
-}
-.bubble.ai {
-    background: var(--surface-3);
-    color: var(--text-2);
-    border-bottom-right-radius: 4px;
-}
-.bubble.user {
-    margin-right: auto;
-    background: var(--brand);
-    color: #fff;
-    border-bottom-left-radius: 4px;
-}
-.typing {
-    display: flex;
-    gap: 4px;
-    margin-top: 14px;
-    padding-right: 12px;
-}
-.typing span {
-    width: 5px; height: 5px;
-    border-radius: 50%;
-    background: var(--text-4);
-    animation: typing 0.9s infinite alternate;
-}
-.typing span:nth-child(2) { animation-delay: 0.2s; }
-.typing span:nth-child(3) { animation-delay: 0.4s; }
-@keyframes typing {
-    from { opacity: 0.3; transform: translateY(0); }
-    to { opacity: 1; transform: translateY(-3px); }
-}
-
 /* BOT SERVICE */
 .bot-service {
     position: relative;
-    padding: 34px;
+    padding: 32px;
     border-radius: var(--r-lg);
     background: var(--surface-2);
     border: 1px solid var(--border);
     border-right: 3px solid var(--brand);
-    overflow: hidden;
 }
 .bot-service-top {
     display: flex;
@@ -939,12 +792,11 @@ ul { list-style: none; }
     line-height: 1.9;
 }
 .bot-service > p strong { color: var(--text); font-weight: 700; }
-
 .bot-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 10px;
-    margin-top: 24px;
+    margin-top: 22px;
 }
 .bot-item {
     padding: 16px 18px;
@@ -971,7 +823,7 @@ ul { list-style: none; }
     margin: 0;
 }
 .bot-goal {
-    margin-top: 20px;
+    margin-top: 18px;
     padding: 15px 20px;
     border-radius: var(--r-sm);
     background: var(--surface);
@@ -1171,7 +1023,6 @@ ul { list-style: none; }
     font-size: 0.95rem;
     font-weight: 800;
     letter-spacing: -0.02em;
-    border: 1px solid transparent;
     transition: all 0.3s var(--ease);
 }
 .team-card:hover .team-avatar {
@@ -1207,275 +1058,6 @@ ul { list-style: none; }
     color: var(--text-3);
     direction: ltr;
 }
-
-/* AGENT GRID */
-.agent-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 14px;
-    margin: 22px 0;
-}
-.agent-card {
-    position: relative;
-    padding: 26px 22px;
-    border-radius: var(--r-md);
-    background: var(--surface-2);
-    border: 1px solid var(--border);
-    transition: all 0.3s var(--ease);
-}
-.agent-card:hover {
-    border-color: var(--brand);
-    background: var(--surface);
-    transform: translateY(-4px);
-}
-.agent-num {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 36px; height: 36px;
-    border-radius: var(--r-sm);
-    background: var(--brand-soft);
-    color: var(--brand);
-    font-size: 0.82rem;
-    font-weight: 800;
-    margin-bottom: 14px;
-    transition: all 0.3s var(--ease);
-}
-.agent-card:hover .agent-num {
-    background: var(--brand);
-    color: #fff;
-}
-.agent-card h4 {
-    color: var(--text);
-    font-size: 0.98rem;
-    font-weight: 800;
-    margin-bottom: 6px;
-    letter-spacing: -0.008em;
-}
-.agent-card .agent-role {
-    color: var(--brand);
-    font-size: 0.68rem;
-    font-weight: 700;
-    margin-bottom: 12px;
-    letter-spacing: 0.02em;
-}
-.agent-card p {
-    color: var(--text-2);
-    font-size: 0.76rem;
-    line-height: 1.85;
-    margin: 0 0 14px;
-}
-.agent-caps {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 5px;
-}
-.agent-caps span {
-    padding: 3px 9px;
-    border-radius: var(--r-xs);
-    font-size: 0.56rem;
-    font-weight: 600;
-    background: var(--surface-3);
-    color: var(--text-3);
-}
-
-/* AI EXPANSION */
-.ai-expansion {
-    position: relative;
-    margin-top: 24px;
-    padding: 30px 28px;
-    border-radius: var(--r-lg);
-    background: var(--surface-2);
-    border: 1px solid var(--border);
-    border-right: 3px solid var(--brand);
-}
-.ai-expansion h4 {
-    color: var(--text);
-    font-size: 1.05rem;
-    font-weight: 800;
-    margin: 0 0 12px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    flex-wrap: wrap;
-}
-.ai-expansion h4 span {
-    display: inline-flex;
-    padding: 3px 10px;
-    border-radius: var(--r-xs);
-    background: var(--brand-soft);
-    color: var(--brand);
-    font-size: 0.58rem;
-    font-weight: 700;
-    letter-spacing: 0.05em;
-}
-.ai-expansion > p {
-    color: var(--text-2);
-    font-size: 0.85rem;
-    line-height: 1.95;
-    margin-bottom: 20px;
-}
-.ai-expansion-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
-}
-.ai-expansion-item {
-    padding: 15px 17px;
-    border-radius: var(--r-sm);
-    background: var(--surface);
-    border: 1px solid var(--border);
-    transition: all 0.3s var(--ease);
-}
-.ai-expansion-item:hover {
-    border-color: var(--brand);
-    transform: translateY(-3px);
-}
-.ai-expansion-item strong {
-    display: block;
-    color: var(--text);
-    font-size: 0.76rem;
-    font-weight: 700;
-    margin-bottom: 6px;
-}
-.ai-expansion-item p {
-    color: var(--text-3);
-    font-size: 0.69rem;
-    line-height: 1.75;
-    margin: 0;
-}
-
-/* COST COMPARISON */
-.cost-comparison {
-    position: relative;
-    margin: 24px 0 20px;
-    padding: 28px 26px;
-    border-radius: var(--r-lg);
-    background: var(--surface-2);
-    border: 1px solid var(--border);
-    border-right: 3px solid var(--brand);
-}
-.cost-comparison h4 {
-    color: var(--text);
-    font-size: 1.08rem;
-    font-weight: 800;
-    margin: 0 0 14px;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    flex-wrap: wrap;
-}
-.cost-comparison h4 span {
-    display: inline-flex;
-    padding: 3px 11px;
-    border-radius: var(--r-xs);
-    background: var(--surface-3);
-    color: var(--text-3);
-    font-size: 0.6rem;
-    font-weight: 700;
-    letter-spacing: 0.06em;
-}
-.cost-comparison > p {
-    color: var(--text-2);
-    font-size: 0.85rem;
-    line-height: 1.9;
-    margin-bottom: 18px;
-}
-.cost-comparison > p strong { color: var(--text); }
-.comparison-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 12px;
-}
-.comparison-card {
-    padding: 20px 22px;
-    border-radius: var(--r-md);
-    background: var(--surface);
-    border: 1px solid var(--border);
-    transition: all 0.3s var(--ease);
-}
-.comparison-card:hover { transform: translateY(-3px); }
-.comparison-card.codepacks {
-    border: 1.5px solid var(--brand);
-}
-.comparison-card.others {
-    border: 1.5px solid var(--border-strong);
-}
-.comparison-card h5 {
-    font-size: 0.85rem;
-    font-weight: 800;
-    margin-bottom: 12px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    letter-spacing: -0.005em;
-}
-.comparison-card.codepacks h5 { color: var(--brand); }
-.comparison-card.others h5 { color: var(--text-3); }
-.comparison-card ul { padding: 0; }
-.comparison-card li {
-    padding: 5px 0;
-    font-size: 0.75rem;
-    color: var(--text-2);
-    line-height: 1.75;
-    display: flex;
-    align-items: flex-start;
-    gap: 10px;
-}
-.comparison-card.codepacks li::before {
-    content: "";
-    flex-shrink: 0;
-    width: 5px; height: 5px;
-    border-radius: 50%;
-    background: var(--brand);
-    margin-top: 9px;
-}
-.comparison-card.others li::before {
-    content: "";
-    flex-shrink: 0;
-    width: 5px; height: 5px;
-    border-radius: 50%;
-    background: var(--text-4);
-    margin-top: 9px;
-}
-
-/* SUPPORT NOTE */
-.support-note {
-    position: relative;
-    margin: 22px 0;
-    padding: 26px 28px;
-    border-radius: var(--r-lg);
-    background: var(--surface-2);
-    border: 1px solid var(--border);
-    border-right: 3px solid var(--brand);
-}
-.support-note h4 {
-    color: var(--text);
-    font-size: 1rem;
-    font-weight: 800;
-    margin: 0 0 12px;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    flex-wrap: wrap;
-}
-.support-note h4 span {
-    display: inline-flex;
-    padding: 3px 11px;
-    border-radius: var(--r-xs);
-    background: var(--brand-soft);
-    color: var(--brand);
-    font-size: 0.58rem;
-    font-weight: 700;
-    letter-spacing: 0.06em;
-}
-.support-note p {
-    color: var(--text-2);
-    font-size: 0.85rem;
-    line-height: 1.95;
-    margin: 0;
-}
-.support-note p strong { color: var(--brand); font-weight: 700; }
 
 /* FINAL CTA */
 .final-cta {
@@ -1513,9 +1095,7 @@ ul { list-style: none; }
     line-height: 1.3;
     color: var(--text);
 }
-.final-cta h2 .accent {
-    color: var(--brand);
-}
+.final-cta h2 .accent { color: var(--brand); }
 .final-cta p {
     color: var(--text-2);
     font-size: 0.9rem;
@@ -1550,7 +1130,6 @@ ul { list-style: none; }
     transition: transform 0.3s var(--ease);
 }
 .cta-button:hover svg { transform: translate(3px, -3px); }
-
 .cta-tags {
     display: flex;
     justify-content: center;
@@ -1588,7 +1167,6 @@ footer strong {
     display: block;
     margin-bottom: 6px;
     font-size: 0.84rem;
-    letter-spacing: -0.008em;
 }
 footer p { margin: 3px 0; }
 .footer-slogan {
@@ -1634,7 +1212,6 @@ footer p { margin: 3px 0; }
 .back-top:hover {
     background: var(--brand-dark);
     transform: translateY(-4px);
-    box-shadow: 0 16px 38px rgba(31, 138, 148, 0.4);
 }
 
 /* CONTACT MODAL */
@@ -1692,8 +1269,8 @@ footer p { margin: 3px 0; }
     transition: all 0.25s var(--ease);
 }
 .modal-close:hover {
-    background: var(--danger-soft);
-    color: var(--danger);
+    background: var(--surface-2);
+    color: var(--brand);
     transform: rotate(90deg);
 }
 .contact-modal-box h3 {
@@ -1701,7 +1278,6 @@ footer p { margin: 3px 0; }
     font-size: 1.2rem;
     margin-bottom: 6px;
     font-weight: 800;
-    letter-spacing: -0.015em;
 }
 .contact-modal-box > p {
     color: var(--text-3);
@@ -1754,21 +1330,13 @@ footer p { margin: 3px 0; }
 }
 
 /* RESPONSIVE */
-@media (max-width: 1024px) {
-    .agent-grid { grid-template-columns: 1fr 1fr; }
-    .ai-expansion-grid { grid-template-columns: 1fr 1fr; }
-}
-
 @media (max-width: 920px) {
     .portfolio-grid { grid-template-columns: 1fr 1fr; }
-    .ai-showcase-inner { grid-template-columns: 1fr; }
-    .chat-window { max-width: 540px; width: 100%; margin: 20px auto 0; }
     .bot-grid { grid-template-columns: 1fr 1fr; }
     .crm-flow { grid-template-columns: 1fr 1fr; gap: 10px; }
     .crm-step:not(:last-child)::after,
     .crm-step:not(:last-child)::before { display: none; }
     .team-grid { grid-template-columns: 1fr 1fr; }
-    .comparison-grid { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 768px) {
@@ -1789,7 +1357,6 @@ footer p { margin: 3px 0; }
     .hero-stats { grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 30px; }
     .hero-stat { padding: 16px 10px; }
     .hero-stat strong { font-size: 0.9rem; }
-    .hero-stat span { font-size: 0.62rem; }
 
     .toc { padding: 20px 18px; }
     .toc-links { grid-template-columns: 1fr 1fr; }
@@ -1809,9 +1376,6 @@ footer p { margin: 3px 0; }
     .cards { grid-template-columns: 1fr; }
     .card { padding: 20px 18px; }
 
-    .ai-showcase-inner { padding: 24px 20px; gap: 22px; }
-    .ai-features { grid-template-columns: 1fr; }
-
     .bot-service { padding: 26px 22px; }
     .bot-service-top { flex-direction: column; align-items: stretch; }
     .bot-service-price { align-items: flex-start; }
@@ -1823,13 +1387,6 @@ footer p { margin: 3px 0; }
 
     .team-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
     .team-card { padding: 22px 14px 18px; }
-
-    .agent-grid { grid-template-columns: 1fr; }
-    .ai-expansion { padding: 24px 20px; }
-    .ai-expansion-grid { grid-template-columns: 1fr; }
-    .cost-comparison { padding: 24px 22px; }
-    .comparison-card { padding: 18px 18px; }
-    .support-note { padding: 24px 22px; }
 
     .final-cta { padding: 52px 24px; border-radius: var(--r-xl); }
     .cta-button { width: 100%; padding: 15px 28px; }
@@ -1864,11 +1421,6 @@ footer p { margin: 3px 0; }
     .team-grid { grid-template-columns: 1fr; }
     .portfolio-grid { grid-template-columns: 1fr; }
 
-    .agent-card { padding: 22px 18px; }
-    .ai-expansion { padding: 20px 16px; }
-    .cost-comparison { padding: 20px 16px; }
-    .support-note { padding: 20px 18px; }
-
     .final-cta { padding: 42px 18px; }
     .final-cta h2 { font-size: 1.3rem; }
     .cta-button { font-size: 0.85rem; padding: 14px 24px; }
@@ -1888,7 +1440,7 @@ footer p { margin: 3px 0; }
         display: none !important;
     }
     body { background: #fff; color: #000; font-size: 11px; }
-    .hero, .section, .bot-service, .final-cta, .ai-showcase, .cost-comparison, .support-note {
+    .hero, .section, .bot-service, .final-cta {
         break-inside: avoid;
         -webkit-print-color-adjust: exact;
         print-color-adjust: exact;
@@ -2127,161 +1679,31 @@ footer p { margin: 3px 0; }
         <div class="card"><h4>پایش لحظه‌ای سهم بازار</h4><p>رصد فروش، سهم بازار و عملکرد کانال‌ها به‌صورت لحظه‌ای در داشبورد مدیریتی — برای هر محصول و هر منطقه.</p></div>
     </div>
 
-    <div class="info-box info-gold"><strong>نکته کلیدی:</strong> این اکوسیستم دیجیتال، زیرساخت فنی، داده‌ای و بازاریابی لازم برای توسعه هر محصول در سبد آریان‌کهن را فراهم می‌کند.</div>
+    <div class="info-box"><strong>نکته کلیدی:</strong> این اکوسیستم دیجیتال، زیرساخت فنی، داده‌ای و بازاریابی لازم برای توسعه هر محصول در سبد آریان‌کهن را فراهم می‌کند.</div>
 </section>
 
+<!-- ====== بخش ۵: لایه هوشمند ایجنتیک — نسخه خلاصه ====== -->
 <section class="section" id="s5">
     <div class="section-head">
         <span class="section-icon">۵</span>
         <div class="section-head-content">
             <h2 class="section-title">لایه هوشمند ایجنتیک (AI Agentic Layer) — فاز دوم</h2>
-            <div class="section-subtitle">هوش مصنوعی تصمیم‌ساز، سفارشی برای هر دپارتمان آریان‌کهن</div>
+            <div class="section-subtitle">هوش مصنوعی تصمیم‌ساز، سفارشی و درجه یک برای هر دپارتمان</div>
         </div>
     </div>
 
     <div class="highlight">
-        <strong>هوش مصنوعی در این اکوسیستم، یک قابلیت جانبی نیست؛ یک لایه زنده، تصمیم‌ساز و کاملاً سفارشی است که در فاز دوم پروژه، پس از تحویل هسته اصلی و کارکردن تیم آریان‌کهن با سیستم، روی زیرساخت سوار می‌شود.</strong>
+        <strong>پس از استقرار کامل اکوسیستم و کارکردن تیم آریان‌کهن با سیستم، در فاز دوم، لایه هوشمند ایجنتیک روی همان زیرساخت سوار می‌شود.</strong>
+        هوش مصنوعی در این اکوسیستم یک قابلیت جانبی نیست؛ یک لایه زنده، کاملاً سفارشی و درجه یک است که بر اساس نیاز دقیق هر دپارتمان — از فروش و مالی تا انبار و لجستیک — به‌صورت اختصاصی پیاده‌سازی می‌شود.
     </div>
 
-    <h3>فازبندی پروژه — چرا AI در فاز دوم؟</h3>
-    <p>ما باور داریم که پیاده‌سازی هوش مصنوعی باید <strong>پس از شناخت دقیق فرآیندهای واقعی سازمان</strong> انجام شود، نه قبل از آن:</p>
-    <ul>
-        <li><strong>فاز اول:</strong> هسته اصلی ERP + CRM + سایت‌ها + پنل نمایندگان + ربات‌ها مستقر و تحویل داده می‌شود.</li>
-        <li><strong>پس از تحویل فاز اول:</strong> تیم آریان‌کهن به مدت چند ماه با سیستم کار می‌کند و فرآیندهای واقعی، نقاط قوت، چالش‌ها و نیازهای دقیق هر دپارتمان مشخص می‌شود.</li>
-        <li><strong>فاز دوم:</strong> بر اساس بازخورد واقعی تیم آریان‌کهن، تیم کدپکس دستیارهای ایجنتیک اختصاصی را برای هر دپارتمان طراحی و پیاده‌سازی می‌کند.</li>
-    </ul>
-
-    <div class="highlight">
-        <strong>تعهد کدپکس: پیاده‌سازی هر ایجنتی که آریان‌کهن نیاز داشته باشد</strong><br>
-        تیم کدپکس کاملاً قابلیت پیاده‌سازی هر نوع ایجنت تخصصی را دارد. از ایجنت‌های فروش و درآمد تا ایجنت‌های عملیات، مالی، انبار، لجستیک، منابع انسانی و... — همه به‌صورت کدنویسی اختصاصی و بومی برای آریان‌کهن توسعه داده می‌شوند.
+    <div class="cards">
+        <div class="card"><h4>AI Sales & Revenue Agent</h4><p>هدایت خودکار چرخه فروش — از شناسایی فرصت تا بستن معامله، همراه با تحلیل سودآوری کانال‌ها و پیشنهاد فروش متقاطع.</p></div>
+        <div class="card"><h4>AI Management Copilot</h4><p>دستیار تحلیلی سطح مدیریت — پاسخ به سوالات کلیدی، هشدارهای هوشمند و گزارش‌های اجرایی خودکار.</p></div>
+        <div class="card"><h4>AI Operations Agent</h4><p>پایش و بهینه‌سازی فرآیندهای عملیاتی، انبار، لجستیک و پخش — پیش‌بینی تقاضا و مدیریت موجودی.</p></div>
     </div>
 
-    <h3>سه دسته اصلی ایجنت‌های قابل پیاده‌سازی</h3>
-
-    <div class="agent-grid">
-        <div class="agent-card">
-            <div class="agent-num">۰۱</div>
-            <h4>AI Sales & Revenue Agent</h4>
-            <div class="agent-role">عامل هوشمند فروش و درآمد</div>
-            <p>عامل هوشمندی که تمام چرخه فروش را از شناسایی فرصت تا بستن معامله به‌صورت خودکار هدایت و بهینه‌سازی می‌کند.</p>
-            <div class="agent-caps">
-                <span>تحلیل سودآوری کانال</span>
-                <span>پیشنهاد فروش متقاطع</span>
-                <span>قیمت‌گذاری پویا</span>
-                <span>Lead Scoring</span>
-                <span>پیش‌بینی فروش</span>
-            </div>
-        </div>
-        <div class="agent-card">
-            <div class="agent-num">۰۲</div>
-            <h4>AI Management Copilot</h4>
-            <div class="agent-role">دستیار هوشمند مدیریت</div>
-            <p>دستیار تحلیلی سطح مدیریت که به سوالات کلیدی پاسخ می‌دهد، هشدارهای هوشمند ارسال می‌کند و گزارش‌های اجرایی تولید می‌کند.</p>
-            <div class="agent-caps">
-                <span>تحلیل رفتار مشتری</span>
-                <span>هشدارهای هوشمند</span>
-                <span>گزارش خودکار</span>
-                <span>تحلیل سبد محصول</span>
-                <span>رصد رقبا</span>
-            </div>
-        </div>
-        <div class="agent-card">
-            <div class="agent-num">۰۳</div>
-            <h4>AI Operations Agent</h4>
-            <div class="agent-role">عامل هوشمند عملیات و پخش</div>
-            <p>عامل هوشمندی که فرآیندهای عملیاتی، انبار، لجستیک و پخش را پایش، پیش‌بینی و بهینه‌سازی می‌کند.</p>
-            <div class="agent-caps">
-                <span>پیش‌بینی تقاضا</span>
-                <span>بهینه‌سازی مسیر پخش</span>
-                <span>مدیریت موجودی</span>
-                <span>هشدار سررسید</span>
-                <span>کاهش ضایعات</span>
-            </div>
-        </div>
-    </div>
-
-    <div class="ai-showcase">
-        <div class="ai-showcase-inner">
-            <div>
-                <span class="eyebrow">AI Agentic Layer — Phase 2</span>
-                <h3>نمونه‌ای از توانمندی‌های لایه هوشمند</h3>
-                <div class="ai-features">
-                    <div class="ai-feature"><strong>تحلیل سودآوری کانال‌ها:</strong> «در مشهد ماهانه ۱۰ میلیون تومان فروش دارید اما هزینه پخش سالانه ۱ میلیون تومان است؛ این کانال به‌صرفه نیست.»</div>
-                    <div class="ai-feature"><strong>پیشنهاد فروش متقاطع:</strong> «فروشگاه زنجیره‌ای X مصرف بالایی از یک محصول دارد؛ پیشنهاد می‌شود محصولات مکمل هم به آن فروخته شود.»</div>
-                    <div class="ai-feature"><strong>تحلیل رفتار مشتری:</strong> شناسایی الگوهای خرید سوپرمارکت‌ها و فروشگاه‌های زنجیره‌ای برای پیش‌بینی تقاضا.</div>
-                    <div class="ai-feature"><strong>تحلیل بازار و رقبا:</strong> رصد لحظه‌ای قیمت رقبا، تغییرات بازار و ارائه استراتژی به مدیریت.</div>
-                    <div class="ai-feature"><strong>هشدارهای هوشمند:</strong> کاهش فروش، افزایش موجودی، معوق شدن مطالبات — پیش از وقوع.</div>
-                    <div class="ai-feature"><strong>گزارش خودکار مدیریتی:</strong> گزارش‌های روزانه، هفتگی و ماهانه با تحلیل‌های کاربردی.</div>
-                    <div class="ai-feature"><strong>پیش‌بینی فروش:</strong> پیش‌بینی تقاضا برای هر محصول در هر منطقه و هر کانال با دقت بالا.</div>
-                    <div class="ai-feature"><strong>تحلیل سبد محصول:</strong> پیشنهاد حذف یا اضافه کردن محصول به سبد هر کانال بر اساس سودآوری.</div>
-                </div>
-            </div>
-            <div class="chat-window">
-                <div class="chat-head">
-                    <div class="chat-avatar">AI</div>
-                    <div>
-                        <strong>AI Agent آریان‌کهن</strong>
-                        <small>● فاز دوم — تحلیل و تصمیم‌سازی خودکار</small>
-                    </div>
-                </div>
-                <div class="bubble ai">سلام. من دستیار هوشمند آریان‌کهن هستم. امروز چه تحلیلی برایتان آماده کنم؟</div>
-                <div class="bubble user">عملکرد فروش مشهد در سه ماه گذشته چطور بوده؟</div>
-                <div class="bubble ai">در مشهد ماهانه حدود ۱۰ میلیون تومان فروش دارید. هزینه پخش سالانه حدود ۱ میلیون تومان است. با احتساب حاشیه سود، این کانال به‌صرفه نیست و پیشنهاد می‌شود فروش مشهد متوقف یا به نماینده محلی واگذار شود.</div>
-                <div class="typing"><span></span><span></span><span></span></div>
-            </div>
-        </div>
-    </div>
-
-    <div class="cost-comparison">
-        <h4>تفاوت کلیدی کدپکس با سایر تیم‌ها <span>مقایسه هزینه‌ها</span></h4>
-        <p>
-            بسیاری از تیم‌های دیجیتال برای پیاده‌سازی AI Agent از <strong>کدهای آماده n8n و سرویس‌های ChatGPT</strong> استفاده می‌کنند.
-            این رویکرد اگرچه در کوتاه‌مدت سریع به نظر می‌رسد، اما <strong>هزینه‌های ماهانه سنگین</strong> روی دوش کارفرما می‌گذارد.
-        </p>
-        <div class="comparison-grid">
-            <div class="comparison-card others">
-                <h5>تیم‌های معمولی (کد آماده)</h5>
-                <ul>
-                    <li>استفاده از سرویس‌های آماده ChatGPT / n8n</li>
-                    <li>هزینه توکن ماهانه حداقل ۵۰۰ دلار</li>
-                    <li>وابستگی دائمی به سرویس‌های خارجی</li>
-                    <li>عدم مالکیت کد و داده‌ها</li>
-                    <li>محدودیت در سفارشی‌سازی</li>
-                    <li>هزینه پشتیبانی ماهانه اضافی</li>
-                </ul>
-            </div>
-            <div class="comparison-card codepacks">
-                <h5>تیم کدپکس (کدنویسی اختصاصی)</h5>
-                <ul>
-                    <li>کدنویسی ۱۰۰٪ اختصاصی و بومی</li>
-                    <li>بدون هیچ هزینه توکن ماهانه</li>
-                    <li>استقلال کامل از سرویس‌های خارجی</li>
-                    <li>مالکیت ۱۰۰٪ کد و داده‌ها برای آریان‌کهن</li>
-                    <li>سفارشی‌سازی کامل برای هر دپارتمان</li>
-                    <li>پشتیبانی دائمی رایگان مادام‌العمر</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-
-    <div class="ai-expansion">
-        <h4>فاز دوم — بسته دستیارهای ایجنتیک هوش مصنوعی <span>سفارشی برای هر دپارتمان</span></h4>
-        <p>
-            پس از تکمیل فاز اول، استقرار کامل اکوسیستم و کارکردن تیم آریان‌کهن با سیستم، تیم فنی کدپکس با <strong>بررسی دقیق ماژول‌های مختلف سازمان و برگزاری جلسات تحلیلی با مدیریت</strong>،
-            ماژول‌های هوش مصنوعی ایجنتیک را به‌صورت کاملاً سفارشی و هدفمند برای هر دپارتمان پیاده‌سازی می‌کند.
-            این رویکرد تضمین می‌کند که سرمایه‌گذاری روی AI دقیقاً در جایی انجام شود که بیشترین ارزش را برای آریان‌کهن ایجاد می‌کند.
-        </p>
-        <div class="ai-expansion-grid">
-            <div class="ai-expansion-item"><strong>بررسی نیاز هر دپارتمان</strong><p>شناسایی دقیق دپارتمان‌هایی که AI می‌تواند بیشترین ارزش را ایجاد کند — از فروش تا مالی، از انبار تا لجستیک.</p></div>
-            <div class="ai-expansion-item"><strong>اولویت‌بندی با مدیریت</strong><p>تعیین اولویت ماژول‌های AI بر اساس استراتژی کسب‌وکار و صلاح‌دید مدیریت آریان‌کهن.</p></div>
-            <div class="ai-expansion-item"><strong>کدنویسی اختصاصی</strong><p>توسعه ماژول‌های AI کاملاً اختصاصی با کدنویسی بومی — بدون استفاده از کدهای آماده و بدون هزینه توکن.</p></div>
-            <div class="ai-expansion-item"><strong>یکپارچه‌سازی بومی</strong><p>اتصال کامل ماژول‌های AI به ERP، CRM و سایت‌ها به‌صورت بومی و بدون وابستگی خارجی.</p></div>
-            <div class="ai-expansion-item"><strong>مقیاس‌پذیری آینده</strong><p>طراحی به‌گونه‌ای که هر ماژول AI در آینده به‌سادگی قابل توسعه، توقف یا جایگزینی باشد.</p></div>
-            <div class="ai-expansion-item"><strong>امنیت و مالکیت</strong><p>مالکیت کامل ماژول‌های AI، داده‌های آموزش‌دیده و مدل‌ها به‌صورت ۱۰۰٪ در اختیار آریان‌کهن.</p></div>
-        </div>
-    </div>
-
-    <div class="info-box info-green"><strong>تعهد کدپکس:</strong> پشتیبانی دائمی رایگان مادام‌العمر برای تمام ایجنت‌های پیاده‌سازی‌شده — بدون هیچ هزینه توکن یا تمدید سالانه.</div>
+    <div class="info-box info-green"><strong>تعهد کدپکس:</strong> پیاده‌سازی هر ایجنتی که آریان‌کهن نیاز داشته باشد — با کدنویسی کاملاً اختصاصی، بدون هزینه توکن و با پشتیبانی دائمی رایگان مادام‌العمر.</div>
 </section>
 
 <section class="section" id="s6">
@@ -2375,6 +1797,7 @@ footer p { margin: 3px 0; }
     <div class="info-box info-green"><strong>نتیجه:</strong> هیچ لیدی گم نمی‌شود، فرآیند فروش کاملاً شفاف و شتاب‌یافته است.</div>
 </section>
 
+<!-- ====== بخش ۱۰: ربات‌ها — نسخه خلاصه ====== -->
 <section class="section" id="s10">
     <div class="section-head">
         <span class="section-icon">۱۰</span>
@@ -2395,20 +1818,14 @@ footer p { margin: 3px 0; }
             </div>
         </div>
         <p>
-            دو ربات اختصاصی با قابلیت دریافت دکمه‌های تعاملی (Inline Keyboards) در پیام‌رسان‌های <strong>بله</strong> و <strong>تلگرام</strong> برای آریان‌کهن طراحی می‌شوند.
-            این ربات‌ها که به تمام بسترها متصل هستند و به‌صورت هوشمند عمل می‌کنند، هم برای ارتباط با مشتریان و هم برای اطلاع‌رسانی داخلی به تیم فروش و نمایندگان استفاده می‌شوند.
-            <br><br>
-            این سرویس به‌صورت کاملاً اختصاصی و با کدنویسی بومی برای آریان‌کهن اجرا می‌شود — بدون وابستگی به سرویس‌های خارجی و بدون هزینه ماهانه.
+            دو ربات اختصاصی و هوشمند در پیام‌رسان‌های <strong>بله</strong> و <strong>تلگرام</strong> که به تمام بسترها متصل هستند و هم برای ارتباط با مشتریان، هم اطلاع‌رسانی به تیم فروش و نمایندگان و هم انتقال خودکار لید به CRM استفاده می‌شوند — بدون وابستگی به سرویس‌های خارجی.
         </p>
         <div class="bot-grid">
-            <div class="bot-item"><strong>ثبت درخواست</strong><p>ثبت درخواست مشاوره، استعلام قیمت و سفارش از طریق ربات با فرم‌های مرحله‌ای</p></div>
-            <div class="bot-item"><strong>تشخیص نیاز</strong><p>دریافت اطلاعات اولیه و دسته‌بندی نیاز مشتری با استفاده از منوهای پویا</p></div>
+            <div class="bot-item"><strong>ثبت درخواست و استعلام</strong><p>دریافت درخواست مشاوره، استعلام قیمت و سفارش با فرم‌های مرحله‌ای پویا</p></div>
             <div class="bot-item"><strong>اعلان فوری لید</strong><p>ارسال لید جدید با تمام جزئیات به گروه فروش در لحظه</p></div>
-            <div class="bot-item"><strong>اطلاع‌رسانی به نمایندگان</strong><p>ارسال قیمت‌های به‌روز، تخفیف‌ها و اطلاعیه‌های انبار به تمام نمایندگان</p></div>
-            <div class="bot-item"><strong>گزارش‌های روزانه</strong><p>دریافت خلاصه روزانه لیدها، وضعیت پیگیری‌ها، گردش فروش فروشگاه‌های زنجیره‌ای</p></div>
-            <div class="bot-item"><strong>همگام‌سازی با CRM</strong><p>اتصال کامل دوطرفه ربات به CRM از طریق Webhook و API</p></div>
+            <div class="bot-item"><strong>اطلاع‌رسانی و گزارش</strong><p>ارسال قیمت‌های به‌روز، تخفیف‌ها و گزارش‌های روزانه به تیم فروش و نمایندگان</p></div>
         </div>
-        <div class="bot-goal"><strong>هدف:</strong> کاهش زمان پاسخ‌گویی به زیر ۲ ثانیه، افزایش سرعت انتقال لیدها و ایجاد یک کانال ارتباطی مستقیم بین سیستم‌های دیجیتال و نیروی انسانی.</div>
+        <div class="bot-goal"><strong>هدف:</strong> پاسخ‌گویی زیر ۲ ثانیه، انتقال سریع لیدها و ایجاد یک کانال ارتباطی مستقیم بین سیستم‌های دیجیتال و نیروی انسانی.</div>
     </div>
 </section>
 
