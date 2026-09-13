@@ -10,10 +10,6 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
-/* ================================================================
-   DESIGN TOKENS — Formal, corporate, two-tone palette
-   Grayscale + Arian Cohan corporate teal
-   ================================================================ */
 :root {
     --bg: #F7F8F9;
     --surface: #FFFFFF;
@@ -91,9 +87,6 @@
     --shadow-lg: 0 18px 48px rgba(0, 0, 0, 0.5);
 }
 
-/* ================================================================
-   RESET & BASE
-   ================================================================ */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 html {
     scroll-behavior: smooth;
@@ -132,9 +125,6 @@ button { font-family: inherit; border: 0; cursor: pointer; background: none; col
 img, svg { max-width: 100%; display: block; }
 ul { list-style: none; }
 
-/* ================================================================
-   LAYOUT
-   ================================================================ */
 .container {
     width: min(1180px, calc(100% - 40px));
     margin: 0 auto;
@@ -142,9 +132,7 @@ ul { list-style: none; }
     z-index: 2;
 }
 
-/* ================================================================
-   HEADER
-   ================================================================ */
+/* HEADER */
 .site-header {
     position: sticky; top: 0; z-index: 1000;
     height: var(--header-h);
@@ -175,14 +163,12 @@ ul { list-style: none; }
     transition: opacity 0.25s;
 }
 .logo:hover { opacity: 0.85; }
-
 .logo-mark {
     position: relative;
     width: 40px; height: 40px;
     flex-shrink: 0;
 }
 .logo-mark svg { width: 100%; height: 100%; display: block; }
-
 .logo-text {
     display: inline-flex;
     flex-direction: column;
@@ -203,7 +189,6 @@ ul { list-style: none; }
     text-align: right;
     margin-top: 2px;
 }
-
 .header-actions { display: flex; align-items: center; gap: 8px; }
 
 .theme-toggle {
@@ -268,9 +253,7 @@ ul { list-style: none; }
 .hamburger.active span:nth-child(2) { opacity: 0; }
 .hamburger.active span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
 
-/* ================================================================
-   MOBILE OVERLAY
-   ================================================================ */
+/* MOBILE OVERLAY */
 .mobile-overlay {
     position: fixed; inset: 0; z-index: 999;
     background: rgba(15, 20, 25, 0.55);
@@ -344,9 +327,7 @@ ul { list-style: none; }
     color: #fff;
 }
 
-/* ================================================================
-   HERO
-   ================================================================ */
+/* HERO */
 .hero {
     position: relative;
     margin: 32px auto 40px;
@@ -390,7 +371,6 @@ ul { list-style: none; }
     margin: auto;
     text-align: center;
 }
-
 .hero-label {
     display: inline-flex;
     align-items: center;
@@ -415,7 +395,6 @@ ul { list-style: none; }
     0%, 100% { box-shadow: 0 0 0 0 var(--brand-soft); }
     50% { box-shadow: 0 0 0 7px transparent; }
 }
-
 .hero h1 {
     font-size: clamp(2rem, 5.4vw, 3.7rem);
     line-height: 1.24;
@@ -439,7 +418,6 @@ ul { list-style: none; }
     opacity: 0.25;
     border-radius: 3px;
 }
-
 .hero-description {
     max-width: 760px;
     margin: 0 auto;
@@ -448,7 +426,6 @@ ul { list-style: none; }
     line-height: 2;
 }
 .hero-description strong { color: var(--brand); font-weight: 700; }
-
 .hero-chips {
     display: flex;
     flex-wrap: wrap;
@@ -474,7 +451,6 @@ ul { list-style: none; }
     border-color: var(--brand);
     background: var(--brand-soft);
 }
-
 .hero-stats {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -509,9 +485,7 @@ ul { list-style: none; }
     line-height: 1.5;
 }
 
-/* ================================================================
-   TOC
-   ================================================================ */
+/* TOC */
 .toc {
     position: relative;
     padding: 24px 26px;
@@ -599,9 +573,7 @@ ul { list-style: none; }
     color: #fff;
 }
 
-/* ================================================================
-   SECTIONS
-   ================================================================ */
+/* SECTIONS */
 .section {
     position: relative;
     margin-bottom: 20px;
@@ -623,7 +595,6 @@ ul { list-style: none; }
     border-color: var(--border-strong);
     box-shadow: var(--shadow-sm);
 }
-
 .section-head {
     display: flex;
     align-items: center;
@@ -663,7 +634,6 @@ ul { list-style: none; }
     font-size: 0.74rem;
     font-weight: 500;
 }
-
 .section h3 {
     color: var(--text);
     margin: 30px 0 14px;
@@ -701,9 +671,7 @@ ul { list-style: none; }
     opacity: 0.5;
 }
 
-/* ================================================================
-   HIGHLIGHTS & INFO BOXES
-   ================================================================ */
+/* HIGHLIGHTS */
 .highlight {
     position: relative;
     padding: 22px 24px;
@@ -738,9 +706,7 @@ ul { list-style: none; }
 .info-box.info-blue { border-right-color: var(--brand); }
 .info-box.info-gold { border-right-color: var(--warning); }
 
-/* ================================================================
-   CARDS
-   ================================================================ */
+/* CARDS */
 .cards {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -776,9 +742,7 @@ ul { list-style: none; }
     color: var(--text-2);
 }
 
-/* ================================================================
-   AI SHOWCASE
-   ================================================================ */
+/* AI SHOWCASE */
 .ai-showcase {
     position: relative;
     margin-top: 22px;
@@ -908,9 +872,7 @@ ul { list-style: none; }
     to { opacity: 1; transform: translateY(-3px); }
 }
 
-/* ================================================================
-   BOT SERVICE
-   ================================================================ */
+/* BOT SERVICE */
 .bot-service {
     position: relative;
     padding: 34px;
@@ -1022,9 +984,7 @@ ul { list-style: none; }
 }
 .bot-goal strong { color: var(--brand); font-weight: 700; }
 
-/* ================================================================
-   CRM FLOW
-   ================================================================ */
+/* CRM FLOW */
 .crm-flow {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -1095,9 +1055,7 @@ ul { list-style: none; }
     line-height: 1.7;
 }
 
-/* ================================================================
-   PORTFOLIO
-   ================================================================ */
+/* PORTFOLIO */
 .portfolio-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -1182,9 +1140,7 @@ ul { list-style: none; }
     direction: ltr;
 }
 
-/* ================================================================
-   TEAM
-   ================================================================ */
+/* TEAM */
 .team-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -1252,553 +1208,7 @@ ul { list-style: none; }
     direction: ltr;
 }
 
-/* ================================================================
-   ROADMAP
-   ================================================================ */
-.roadmap {
-    display: grid;
-    gap: 10px;
-    margin: 22px 0;
-}
-.roadmap-step {
-    display: grid;
-    grid-template-columns: 52px 1fr auto;
-    gap: 18px;
-    align-items: center;
-    padding: 16px 20px;
-    border-radius: var(--r-md);
-    background: var(--surface-2);
-    border: 1px solid var(--border);
-    transition: all 0.3s var(--ease);
-}
-.roadmap-step:hover {
-    border-color: var(--brand);
-    background: var(--surface);
-    transform: translateX(-3px);
-}
-.roadmap-num {
-    width: 42px; height: 42px;
-    border-radius: var(--r-sm);
-    display: grid;
-    place-items: center;
-    background: var(--surface);
-    border: 1px solid var(--border);
-    color: var(--brand);
-    font-weight: 800;
-    font-size: 0.9rem;
-    flex-shrink: 0;
-    transition: all 0.3s var(--ease);
-}
-.roadmap-step:hover .roadmap-num {
-    background: var(--brand);
-    color: #fff;
-    border-color: var(--brand);
-}
-.roadmap-content strong {
-    display: block;
-    color: var(--text);
-    font-size: 0.9rem;
-    font-weight: 700;
-    margin-bottom: 3px;
-}
-.roadmap-content p {
-    margin: 0;
-    color: var(--text-3);
-    font-size: 0.72rem;
-    line-height: 1.75;
-}
-.roadmap-duration {
-    padding: 6px 13px;
-    border-radius: var(--r-xs);
-    background: var(--surface-3);
-    color: var(--text-2);
-    font-size: 0.66rem;
-    font-weight: 700;
-    white-space: nowrap;
-    border: 1px solid var(--border);
-}
-.roadmap-duration.done {
-    background: var(--success-soft);
-    color: var(--success);
-    border-color: transparent;
-}
-.roadmap-duration.phase2 {
-    background: var(--brand-soft);
-    color: var(--brand);
-    border-color: transparent;
-}
-
-/* ================================================================
-   TRACKS
-   ================================================================ */
-.tracks-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 14px;
-    margin: 22px 0;
-}
-.track-card {
-    position: relative;
-    padding: 24px 22px;
-    border-radius: var(--r-md);
-    background: var(--surface-2);
-    border: 1px solid var(--border);
-    transition: all 0.3s var(--ease);
-}
-.track-card::before {
-    content: "";
-    position: absolute;
-    top: 0; right: 0; bottom: 0;
-    width: 3px;
-    background: var(--brand);
-    opacity: 0.4;
-    border-radius: 0 4px 4px 0;
-}
-.track-card:hover {
-    border-color: var(--brand);
-    background: var(--surface);
-    transform: translateY(-3px);
-}
-.track-badge {
-    display: inline-flex;
-    align-items: center;
-    padding: 4px 11px;
-    border-radius: var(--r-xs);
-    margin-bottom: 14px;
-    background: var(--surface-3);
-    color: var(--text-3);
-    font-size: 0.6rem;
-    font-weight: 700;
-    letter-spacing: 0.04em;
-}
-.track-card h4 {
-    color: var(--text);
-    font-size: 1rem;
-    font-weight: 800;
-    margin-bottom: 10px;
-    letter-spacing: -0.008em;
-}
-.track-card p {
-    color: var(--text-2);
-    font-size: 0.78rem;
-    line-height: 1.85;
-    margin-bottom: 14px;
-}
-.track-delivery {
-    display: inline-flex;
-    align-items: center;
-    padding: 7px 14px;
-    border-radius: var(--r-xs);
-    background: var(--brand-soft);
-    color: var(--brand);
-    font-size: 0.72rem;
-    font-weight: 700;
-    border: 1px solid transparent;
-}
-
-/* ================================================================
-   SCOPE GRID
-   ================================================================ */
-.scope-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 12px;
-    margin: 22px 0;
-}
-.scope-card {
-    padding: 22px 20px;
-    border-radius: var(--r-md);
-    background: var(--surface-2);
-    border: 1px solid var(--border);
-    transition: all 0.3s var(--ease);
-}
-.scope-card:hover {
-    border-color: var(--brand);
-    background: var(--surface);
-    transform: translateY(-3px);
-}
-.scope-num {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 28px; height: 28px;
-    border-radius: var(--r-xs);
-    background: var(--brand-soft);
-    color: var(--brand);
-    font-size: 0.68rem;
-    font-weight: 800;
-    margin-bottom: 12px;
-}
-.scope-card strong {
-    display: block;
-    color: var(--text);
-    font-size: 0.88rem;
-    font-weight: 800;
-    margin-bottom: 8px;
-}
-.scope-card p {
-    color: var(--text-3);
-    font-size: 0.72rem;
-    line-height: 1.8;
-    margin: 0;
-}
-
-/* ================================================================
-   SERVICES TABLE
-   ================================================================ */
-.services-table {
-    margin: 22px 0;
-    border-radius: var(--r-md);
-    overflow: hidden;
-    border: 1px solid var(--border);
-    background: var(--surface);
-}
-.services-row {
-    display: grid;
-    grid-template-columns: 1fr auto;
-    gap: 16px;
-    padding: 15px 22px;
-    align-items: center;
-    border-bottom: 1px solid var(--divider);
-    transition: background 0.2s var(--ease);
-}
-.services-row:last-child { border-bottom: 0; }
-.services-row:hover { background: var(--surface-2); }
-.services-row .srv-title {
-    color: var(--text-2);
-    font-size: 0.82rem;
-    font-weight: 500;
-    line-height: 1.7;
-}
-.services-row .srv-price {
-    color: var(--brand);
-    font-size: 0.84rem;
-    font-weight: 800;
-    white-space: nowrap;
-}
-.services-row.total-row {
-    background: var(--brand-soft);
-    padding: 20px 22px;
-}
-.services-row.total-row .srv-title {
-    color: var(--text);
-    font-weight: 800;
-    font-size: 0.9rem;
-}
-.services-row.total-row .srv-price {
-    color: var(--brand);
-    font-size: 1rem;
-}
-.services-row.header-row {
-    background: var(--surface-3);
-}
-.services-row.header-row .srv-title,
-.services-row.header-row .srv-price {
-    color: var(--text-3);
-    font-weight: 700;
-    font-size: 0.68rem;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-}
-
-/* ================================================================
-   PAYMENT GRID
-   ================================================================ */
-.payment-grid {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 10px;
-    margin: 24px 0;
-}
-.payment-card {
-    padding: 22px 14px 18px;
-    border-radius: var(--r-md);
-    text-align: center;
-    background: var(--surface-2);
-    border: 1px solid var(--border);
-    transition: all 0.3s var(--ease);
-}
-.payment-card:hover {
-    border-color: var(--brand);
-    background: var(--surface);
-    transform: translateY(-3px);
-}
-.payment-percent {
-    font-size: 1.55rem;
-    font-weight: 900;
-    color: var(--brand);
-    margin-bottom: 6px;
-    letter-spacing: -0.025em;
-    line-height: 1;
-}
-.payment-label {
-    color: var(--text);
-    font-size: 0.76rem;
-    font-weight: 700;
-    margin-bottom: 3px;
-    line-height: 1.5;
-}
-.payment-sub {
-    color: var(--text-3);
-    font-size: 0.62rem;
-    line-height: 1.55;
-}
-
-/* ================================================================
-   PHASE 2 BLOCK
-   ================================================================ */
-.phase2-block {
-    position: relative;
-    margin: 28px 0 20px;
-    padding: 34px 30px;
-    border-radius: var(--r-lg);
-    background: var(--surface-2);
-    border: 1px solid var(--border);
-    border-right: 3px solid var(--brand);
-}
-.phase2-head {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    margin-bottom: 16px;
-    flex-wrap: wrap;
-}
-.phase2-badge {
-    display: inline-flex;
-    align-items: center;
-    padding: 5px 14px;
-    border-radius: var(--r-pill);
-    background: var(--brand);
-    color: #fff;
-    font-size: 0.62rem;
-    font-weight: 800;
-    letter-spacing: 0.06em;
-}
-.phase2-block h3 {
-    color: var(--text);
-    font-size: 1.25rem;
-    font-weight: 800;
-    margin: 0;
-    letter-spacing: -0.015em;
-}
-.phase2-block > p {
-    color: var(--text-2);
-    font-size: 0.86rem;
-    line-height: 1.95;
-    margin-bottom: 20px;
-}
-.phase2-block > p strong { color: var(--text); font-weight: 700; }
-
-.phase2-meta {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
-    margin: 20px 0;
-}
-.phase2-meta-card {
-    padding: 20px 22px;
-    border-radius: var(--r-md);
-    background: var(--surface);
-    border: 1px solid var(--border);
-    transition: all 0.3s var(--ease);
-}
-.phase2-meta-card:hover {
-    border-color: var(--brand);
-    transform: translateY(-3px);
-}
-.phase2-meta-card .meta-icon {
-    font-size: 0.6rem;
-    font-weight: 800;
-    color: var(--brand);
-    letter-spacing: 0.1em;
-    margin-bottom: 10px;
-    display: block;
-    text-transform: uppercase;
-}
-.phase2-meta-card strong {
-    display: block;
-    color: var(--text);
-    font-size: 1.05rem;
-    font-weight: 900;
-    margin-bottom: 6px;
-    letter-spacing: -0.015em;
-}
-.phase2-meta-card span {
-    color: var(--text-3);
-    font-size: 0.72rem;
-    line-height: 1.7;
-}
-
-.phase2-benefits {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
-    margin-top: 20px;
-}
-.phase2-benefit {
-    padding: 16px 18px;
-    border-radius: var(--r-sm);
-    background: var(--surface);
-    border: 1px solid var(--border);
-    transition: all 0.3s var(--ease);
-}
-.phase2-benefit:hover {
-    border-color: var(--brand);
-}
-.phase2-benefit strong {
-    display: block;
-    color: var(--text);
-    font-size: 0.8rem;
-    font-weight: 700;
-    margin-bottom: 6px;
-}
-.phase2-benefit p {
-    color: var(--text-3);
-    font-size: 0.7rem;
-    line-height: 1.75;
-    margin: 0;
-}
-
-/* ================================================================
-   COST COMPARISON
-   ================================================================ */
-.cost-comparison {
-    position: relative;
-    margin: 24px 0 20px;
-    padding: 28px 26px;
-    border-radius: var(--r-lg);
-    background: var(--surface-2);
-    border: 1px solid var(--border);
-    border-right: 3px solid var(--brand);
-}
-.cost-comparison h4 {
-    color: var(--text);
-    font-size: 1.08rem;
-    font-weight: 800;
-    margin: 0 0 14px;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    flex-wrap: wrap;
-}
-.cost-comparison h4 span {
-    display: inline-flex;
-    padding: 3px 11px;
-    border-radius: var(--r-xs);
-    background: var(--surface-3);
-    color: var(--text-3);
-    font-size: 0.6rem;
-    font-weight: 700;
-    letter-spacing: 0.06em;
-}
-.cost-comparison > p {
-    color: var(--text-2);
-    font-size: 0.85rem;
-    line-height: 1.9;
-    margin-bottom: 18px;
-}
-.cost-comparison > p strong { color: var(--text); }
-
-.comparison-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 12px;
-}
-.comparison-card {
-    padding: 20px 22px;
-    border-radius: var(--r-md);
-    background: var(--surface);
-    border: 1px solid var(--border);
-    transition: all 0.3s var(--ease);
-}
-.comparison-card:hover { transform: translateY(-3px); }
-.comparison-card.codepacks {
-    border: 1.5px solid var(--brand);
-}
-.comparison-card.others {
-    border: 1.5px solid var(--border-strong);
-}
-.comparison-card h5 {
-    font-size: 0.85rem;
-    font-weight: 800;
-    margin-bottom: 12px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    letter-spacing: -0.005em;
-}
-.comparison-card.codepacks h5 { color: var(--brand); }
-.comparison-card.others h5 { color: var(--text-3); }
-.comparison-card ul { padding: 0; }
-.comparison-card li {
-    padding: 5px 0;
-    font-size: 0.75rem;
-    color: var(--text-2);
-    line-height: 1.75;
-    display: flex;
-    align-items: flex-start;
-    gap: 10px;
-}
-.comparison-card.codepacks li::before {
-    content: "";
-    flex-shrink: 0;
-    width: 5px; height: 5px;
-    border-radius: 50%;
-    background: var(--brand);
-    margin-top: 9px;
-}
-.comparison-card.others li::before {
-    content: "";
-    flex-shrink: 0;
-    width: 5px; height: 5px;
-    border-radius: 50%;
-    background: var(--text-4);
-    margin-top: 9px;
-}
-
-/* ================================================================
-   SUPPORT NOTE
-   ================================================================ */
-.support-note {
-    position: relative;
-    margin: 22px 0;
-    padding: 26px 28px;
-    border-radius: var(--r-lg);
-    background: var(--surface-2);
-    border: 1px solid var(--border);
-    border-right: 3px solid var(--brand);
-}
-.support-note h4 {
-    color: var(--text);
-    font-size: 1rem;
-    font-weight: 800;
-    margin: 0 0 12px;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    flex-wrap: wrap;
-}
-.support-note h4 span {
-    display: inline-flex;
-    padding: 3px 11px;
-    border-radius: var(--r-xs);
-    background: var(--brand-soft);
-    color: var(--brand);
-    font-size: 0.58rem;
-    font-weight: 700;
-    letter-spacing: 0.06em;
-}
-.support-note p {
-    color: var(--text-2);
-    font-size: 0.85rem;
-    line-height: 1.95;
-    margin: 0;
-}
-.support-note p strong { color: var(--brand); font-weight: 700; }
-
-/* ================================================================
-   AGENT GRID
-   ================================================================ */
+/* AGENT GRID */
 .agent-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -1869,9 +1279,7 @@ ul { list-style: none; }
     color: var(--text-3);
 }
 
-/* ================================================================
-   AI EXPANSION
-   ================================================================ */
+/* AI EXPANSION */
 .ai-expansion {
     position: relative;
     margin-top: 24px;
@@ -1937,9 +1345,139 @@ ul { list-style: none; }
     margin: 0;
 }
 
-/* ================================================================
-   FINAL CTA
-   ================================================================ */
+/* COST COMPARISON */
+.cost-comparison {
+    position: relative;
+    margin: 24px 0 20px;
+    padding: 28px 26px;
+    border-radius: var(--r-lg);
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    border-right: 3px solid var(--brand);
+}
+.cost-comparison h4 {
+    color: var(--text);
+    font-size: 1.08rem;
+    font-weight: 800;
+    margin: 0 0 14px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+.cost-comparison h4 span {
+    display: inline-flex;
+    padding: 3px 11px;
+    border-radius: var(--r-xs);
+    background: var(--surface-3);
+    color: var(--text-3);
+    font-size: 0.6rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+}
+.cost-comparison > p {
+    color: var(--text-2);
+    font-size: 0.85rem;
+    line-height: 1.9;
+    margin-bottom: 18px;
+}
+.cost-comparison > p strong { color: var(--text); }
+.comparison-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+.comparison-card {
+    padding: 20px 22px;
+    border-radius: var(--r-md);
+    background: var(--surface);
+    border: 1px solid var(--border);
+    transition: all 0.3s var(--ease);
+}
+.comparison-card:hover { transform: translateY(-3px); }
+.comparison-card.codepacks {
+    border: 1.5px solid var(--brand);
+}
+.comparison-card.others {
+    border: 1.5px solid var(--border-strong);
+}
+.comparison-card h5 {
+    font-size: 0.85rem;
+    font-weight: 800;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    letter-spacing: -0.005em;
+}
+.comparison-card.codepacks h5 { color: var(--brand); }
+.comparison-card.others h5 { color: var(--text-3); }
+.comparison-card ul { padding: 0; }
+.comparison-card li {
+    padding: 5px 0;
+    font-size: 0.75rem;
+    color: var(--text-2);
+    line-height: 1.75;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+}
+.comparison-card.codepacks li::before {
+    content: "";
+    flex-shrink: 0;
+    width: 5px; height: 5px;
+    border-radius: 50%;
+    background: var(--brand);
+    margin-top: 9px;
+}
+.comparison-card.others li::before {
+    content: "";
+    flex-shrink: 0;
+    width: 5px; height: 5px;
+    border-radius: 50%;
+    background: var(--text-4);
+    margin-top: 9px;
+}
+
+/* SUPPORT NOTE */
+.support-note {
+    position: relative;
+    margin: 22px 0;
+    padding: 26px 28px;
+    border-radius: var(--r-lg);
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    border-right: 3px solid var(--brand);
+}
+.support-note h4 {
+    color: var(--text);
+    font-size: 1rem;
+    font-weight: 800;
+    margin: 0 0 12px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+.support-note h4 span {
+    display: inline-flex;
+    padding: 3px 11px;
+    border-radius: var(--r-xs);
+    background: var(--brand-soft);
+    color: var(--brand);
+    font-size: 0.58rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+}
+.support-note p {
+    color: var(--text-2);
+    font-size: 0.85rem;
+    line-height: 1.95;
+    margin: 0;
+}
+.support-note p strong { color: var(--brand); font-weight: 700; }
+
+/* FINAL CTA */
 .final-cta {
     position: relative;
     margin: 40px 0 20px;
@@ -2037,9 +1575,7 @@ ul { list-style: none; }
     background: var(--brand-soft);
 }
 
-/* ================================================================
-   FOOTER
-   ================================================================ */
+/* FOOTER */
 footer {
     padding: 40px 20px 55px;
     text-align: center;
@@ -2069,9 +1605,7 @@ footer p { margin: 3px 0; }
     direction: ltr;
 }
 
-/* ================================================================
-   BACK TO TOP
-   ================================================================ */
+/* BACK TO TOP */
 .back-top {
     position: fixed;
     left: 24px;
@@ -2103,9 +1637,7 @@ footer p { margin: 3px 0; }
     box-shadow: 0 16px 38px rgba(31, 138, 148, 0.4);
 }
 
-/* ================================================================
-   CONTACT MODAL
-   ================================================================ */
+/* CONTACT MODAL */
 .contact-modal {
     position: fixed; inset: 0;
     z-index: 1100;
@@ -2221,14 +1753,10 @@ footer p { margin: 3px 0; }
     direction: ltr;
 }
 
-/* ================================================================
-   RESPONSIVE
-   ================================================================ */
+/* RESPONSIVE */
 @media (max-width: 1024px) {
-    .payment-grid { grid-template-columns: repeat(3, 1fr); }
     .agent-grid { grid-template-columns: 1fr 1fr; }
     .ai-expansion-grid { grid-template-columns: 1fr 1fr; }
-    .phase2-benefits { grid-template-columns: 1fr 1fr; }
 }
 
 @media (max-width: 920px) {
@@ -2240,11 +1768,7 @@ footer p { margin: 3px 0; }
     .crm-step:not(:last-child)::after,
     .crm-step:not(:last-child)::before { display: none; }
     .team-grid { grid-template-columns: 1fr 1fr; }
-    .scope-grid { grid-template-columns: 1fr 1fr; }
-    .tracks-grid { grid-template-columns: 1fr; }
-    .payment-grid { grid-template-columns: 1fr 1fr; }
     .comparison-grid { grid-template-columns: 1fr; }
-    .phase2-meta { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 768px) {
@@ -2300,31 +1824,12 @@ footer p { margin: 3px 0; }
     .team-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
     .team-card { padding: 22px 14px 18px; }
 
-    .roadmap-step { grid-template-columns: 42px 1fr; gap: 14px; padding: 14px 16px; }
-    .roadmap-num { width: 38px; height: 38px; font-size: 0.85rem; }
-    .roadmap-duration { grid-column: 2; justify-self: flex-start; margin-top: 8px; }
-
-    .scope-grid { grid-template-columns: 1fr; }
-    .scope-card { padding: 20px 18px; }
-
-    .services-row { padding: 14px 18px; gap: 10px; }
-    .services-row .srv-title { font-size: 0.78rem; }
-    .services-row .srv-price { font-size: 0.78rem; }
-    .services-row.total-row { padding: 16px 18px; }
-
-    .payment-grid { grid-template-columns: 1fr 1fr; gap: 8px; }
-    .payment-card { padding: 18px 12px 16px; }
-    .payment-percent { font-size: 1.4rem; }
-
-    .phase2-block { padding: 26px 22px; }
-    .phase2-benefits { grid-template-columns: 1fr; }
-    .cost-comparison { padding: 24px 22px; }
-    .comparison-card { padding: 18px 18px; }
-
-    .support-note { padding: 24px 22px; }
     .agent-grid { grid-template-columns: 1fr; }
     .ai-expansion { padding: 24px 20px; }
     .ai-expansion-grid { grid-template-columns: 1fr; }
+    .cost-comparison { padding: 24px 22px; }
+    .comparison-card { padding: 18px 18px; }
+    .support-note { padding: 24px 22px; }
 
     .final-cta { padding: 52px 24px; border-radius: var(--r-xl); }
     .cta-button { width: 100%; padding: 15px 28px; }
@@ -2359,26 +1864,16 @@ footer p { margin: 3px 0; }
     .team-grid { grid-template-columns: 1fr; }
     .portfolio-grid { grid-template-columns: 1fr; }
 
-    .payment-grid { grid-template-columns: 1fr; }
-
-    .services-row { grid-template-columns: 1fr; gap: 8px; padding: 12px 16px; }
-    .services-row .srv-price { justify-self: flex-start; }
-
-    .phase2-block { padding: 22px 16px; }
-    .phase2-meta-card { padding: 16px 18px; }
-    .cost-comparison { padding: 20px 16px; }
-    .support-note { padding: 20px 18px; }
     .agent-card { padding: 22px 18px; }
     .ai-expansion { padding: 20px 16px; }
+    .cost-comparison { padding: 20px 16px; }
+    .support-note { padding: 20px 18px; }
 
     .final-cta { padding: 42px 18px; }
     .final-cta h2 { font-size: 1.3rem; }
     .cta-button { font-size: 0.85rem; padding: 14px 24px; }
 }
 
-/* ================================================================
-   REDUCED MOTION
-   ================================================================ */
 @media (prefers-reduced-motion: reduce) {
     *, *::before, *::after {
         animation-duration: 0.01ms !important;
@@ -2388,15 +1883,12 @@ footer p { margin: 3px 0; }
     }
 }
 
-/* ================================================================
-   PRINT
-   ================================================================ */
 @media print {
     .site-header, .mobile-overlay, .back-top, .toc, .contact-modal, .theme-toggle, .hamburger {
         display: none !important;
     }
     body { background: #fff; color: #000; font-size: 11px; }
-    .hero, .section, .bot-service, .final-cta, .ai-showcase, .phase2-block, .cost-comparison, .support-note {
+    .hero, .section, .bot-service, .final-cta, .ai-showcase, .cost-comparison, .support-note {
         break-inside: avoid;
         -webkit-print-color-adjust: exact;
         print-color-adjust: exact;
@@ -2409,9 +1901,6 @@ footer p { margin: 3px 0; }
 </head>
 <body>
 
-<!-- ============================================================
-     HEADER
-     ============================================================ -->
 <header class="site-header" id="siteHeader">
     <div class="header-inner">
         <a href="#" class="logo" aria-label="Code Packs">
@@ -2444,9 +1933,6 @@ footer p { margin: 3px 0; }
     </div>
 </header>
 
-<!-- ============================================================
-     MOBILE MENU
-     ============================================================ -->
 <div class="mobile-overlay" id="mobileOverlay">
     <nav class="mobile-panel">
         <div class="mobile-panel-title">فهرست پروپوزال</div>
@@ -2463,7 +1949,6 @@ footer p { margin: 3px 0; }
         <a href="#s11"><span class="mobile-num">۱۱</span>تیم کدپکس</a>
         <a href="#s12"><span class="mobile-num">۱۲</span>پروژه‌ها</a>
         <a href="#s13"><span class="mobile-num">۱۳</span>مالکیت و پشتیبانی</a>
-        <a href="#s14"><span class="mobile-num">۱۴</span>مسیر اجرا و پیشنهاد مالی</a>
     </nav>
 </div>
 
@@ -2471,9 +1956,6 @@ footer p { margin: 3px 0; }
 
 <main class="container">
 
-<!-- ============================================================
-     HERO
-     ============================================================ -->
 <section class="hero">
     <div class="hero-content">
         <div class="hero-label">
@@ -2504,9 +1986,6 @@ footer p { margin: 3px 0; }
     </div>
 </section>
 
-<!-- ============================================================
-     TOC
-     ============================================================ -->
 <section class="toc" id="toc">
     <div class="toc-header" id="tocHeader">
         <div class="toc-title">
@@ -2531,13 +2010,9 @@ footer p { margin: 3px 0; }
         <a href="#s11"><span class="toc-num">۱۱</span>تیم کدپکس</a>
         <a href="#s12"><span class="toc-num">۱۲</span>پروژه‌ها</a>
         <a href="#s13"><span class="toc-num">۱۳</span>مالکیت و پشتیبانی</a>
-        <a href="#s14"><span class="toc-num">۱۴</span>مسیر اجرا و پیشنهاد مالی</a>
     </div>
 </section>
 
-<!-- ============================================================
-     SECTION 1
-     ============================================================ -->
 <section class="section" id="s1">
     <div class="section-head">
         <span class="section-icon">۱</span>
@@ -2560,9 +2035,6 @@ footer p { margin: 3px 0; }
     </p>
 </section>
 
-<!-- ============================================================
-     SECTION 2
-     ============================================================ -->
 <section class="section" id="s2">
     <div class="section-head">
         <span class="section-icon">۲</span>
@@ -2596,9 +2068,6 @@ footer p { margin: 3px 0; }
     <div class="info-box"><strong>نتیجه:</strong> مدیریت کل مجموعه پخش از یک نقطه، حذف سیلوهای اطلاعاتی، کاهش خطاهای انسانی و افزایش سرعت تصمیم‌گیری با کمک داده‌های لحظه‌ای.</div>
 </section>
 
-<!-- ============================================================
-     SECTION 3
-     ============================================================ -->
 <section class="section" id="s3">
     <div class="section-head">
         <span class="section-icon">۳</span>
@@ -2631,9 +2100,6 @@ footer p { margin: 3px 0; }
     <div class="info-box info-green"><strong>نتیجه:</strong> شفافیت کامل در گردش مالی، حذف مرجوعی‌های ثبت‌نشده و کنترل لحظه‌ای مطالبات از فروشگاه‌های زنجیره‌ای و سوپرمارکت‌ها.</div>
 </section>
 
-<!-- ============================================================
-     SECTION 4
-     ============================================================ -->
 <section class="section" id="s4">
     <div class="section-head">
         <span class="section-icon">۴</span>
@@ -2664,9 +2130,6 @@ footer p { margin: 3px 0; }
     <div class="info-box info-gold"><strong>نکته کلیدی:</strong> این اکوسیستم دیجیتال، زیرساخت فنی، داده‌ای و بازاریابی لازم برای توسعه هر محصول در سبد آریان‌کهن را فراهم می‌کند.</div>
 </section>
 
-<!-- ============================================================
-     SECTION 5 — AI AGENTIC LAYER
-     ============================================================ -->
 <section class="section" id="s5">
     <div class="section-head">
         <span class="section-icon">۵</span>
@@ -2821,9 +2284,6 @@ footer p { margin: 3px 0; }
     <div class="info-box info-green"><strong>تعهد کدپکس:</strong> پشتیبانی دائمی رایگان مادام‌العمر برای تمام ایجنت‌های پیاده‌سازی‌شده — بدون هیچ هزینه توکن یا تمدید سالانه.</div>
 </section>
 
-<!-- ============================================================
-     SECTION 6
-     ============================================================ -->
 <section class="section" id="s6">
     <div class="section-head">
         <span class="section-icon">۶</span>
@@ -2847,9 +2307,6 @@ footer p { margin: 3px 0; }
     <div class="info-box info-green"><strong>شعار کلیدی:</strong> آریان‌کهن فقط در فضای وب حضور نخواهد داشت؛ برای هر محصول، کاربرد، صنعت و نیاز، یک مسیر قابل کشف در موتورهای جستجو ایجاد خواهد شد.</div>
 </section>
 
-<!-- ============================================================
-     SECTION 7
-     ============================================================ -->
 <section class="section" id="s7">
     <div class="section-head">
         <span class="section-icon">۷</span>
@@ -2874,9 +2331,6 @@ footer p { margin: 3px 0; }
     <div class="info-box"><strong>نتیجه:</strong> دو وب‌سایت که هم معرف هویت پخش آریان‌کهن هستند و هم موتور فروش؛ با تجربه کاربری عالی، نرخ تبدیل بالا و کنترل کامل از یک نقطه.</div>
 </section>
 
-<!-- ============================================================
-     SECTION 8
-     ============================================================ -->
 <section class="section" id="s8">
     <div class="section-head">
         <span class="section-icon">۸</span>
@@ -2901,9 +2355,6 @@ footer p { margin: 3px 0; }
     <div class="info-box"><strong>نتیجه:</strong> نمایندگان به‌عنوان بازوی پخش آریان‌کهن، با ابزارهای هوشمند توانمند می‌شوند و فرآیند فروش مویرگی شتاب می‌گیرد.</div>
 </section>
 
-<!-- ============================================================
-     SECTION 9
-     ============================================================ -->
 <section class="section" id="s9">
     <div class="section-head">
         <span class="section-icon">۹</span>
@@ -2924,9 +2375,6 @@ footer p { margin: 3px 0; }
     <div class="info-box info-green"><strong>نتیجه:</strong> هیچ لیدی گم نمی‌شود، فرآیند فروش کاملاً شفاف و شتاب‌یافته است.</div>
 </section>
 
-<!-- ============================================================
-     SECTION 10
-     ============================================================ -->
 <section class="section" id="s10">
     <div class="section-head">
         <span class="section-icon">۱۰</span>
@@ -2964,9 +2412,6 @@ footer p { margin: 3px 0; }
     </div>
 </section>
 
-<!-- ============================================================
-     SECTION 11
-     ============================================================ -->
 <section class="section" id="s11">
     <div class="section-head">
         <span class="section-icon">۱۱</span>
@@ -2986,9 +2431,6 @@ footer p { margin: 3px 0; }
     <div class="info-box info-green"><strong>ما یک تیم هستیم، نه یک دیجیتال مارکتر تنها.</strong> هر تخصص در جای خود، اما همه در راستای یک هدف: رشد هوشمند آریان‌کهن.</div>
 </section>
 
-<!-- ============================================================
-     SECTION 12
-     ============================================================ -->
 <section class="section" id="s12">
     <div class="section-head">
         <span class="section-icon">۱۲</span>
@@ -3087,9 +2529,6 @@ footer p { margin: 3px 0; }
     <div class="info-box"><strong>نکته کلیدی:</strong> هر یک از این پروژه‌ها نشان‌دهنده توانایی ما در ترکیب تخصص‌های مختلف — از طراحی سایت و سئو تا هوش مصنوعی و اتوماسیون — برای خلق یک سیستم یکپارچه است که دقیقاً همان چیزی است که <strong>آریان‌کهن</strong> به آن نیاز دارد.</div>
 </section>
 
-<!-- ============================================================
-     SECTION 13
-     ============================================================ -->
 <section class="section" id="s13">
     <div class="section-head">
         <span class="section-icon">۱۳</span>
@@ -3113,252 +2552,6 @@ footer p { margin: 3px 0; }
     <div class="info-box info-green"><strong>پشتیبانی:</strong> ERP مرکزی (هسته اصلی) دارای پشتیبانی دائمی رایگان مادام‌العمر است. سایر بخش‌ها نیز پشتیبانی فنی و رفع خطاهای احتمالی در بازه‌ای مشخص پس از تحویل، به‌صورت رایگان ارائه خواهد شد.</div>
 </section>
 
-<!-- ============================================================
-     SECTION 14
-     ============================================================ -->
-<section class="section" id="s14">
-    <div class="section-head">
-        <span class="section-icon">۱۴</span>
-        <div class="section-head-content">
-            <h2 class="section-title">مسیر اجرا و پیشنهاد مالی</h2>
-            <div class="section-subtitle">Project Delivery Roadmap & Commercial Proposal</div>
-        </div>
-    </div>
-
-    <h3>مسیر اجرای پروژه (Project Delivery Roadmap)</h3>
-    <p>
-        پروژه در قالب یک برنامه فازبندی‌شده، شفاف و قابل پیگیری اجرا می‌شود. بخشی از کارها به‌صورت موازی پیش می‌روند تا زمان تحویل کوتاه‌تر شود.
-        سایت شرکتی در <strong>هفته چهارم</strong>، سایت فروشگاهی در <strong>هفته ششم</strong> و کل اکوسیستم (ERP + CRM + ربات‌ها) در <strong>هفته ۱۲ تا ۱۴</strong> تحویل داده می‌شود.
-    </p>
-
-    <div class="tracks-grid">
-        <div class="track-card">
-            <div class="track-badge">ترک ۱ — سریع‌ترین تحویل</div>
-            <h4>وب‌سایت شرکتی</h4>
-            <p>تحلیل، طراحی UI/UX اختصاصی، کدنویسی، سئو اولیه، چت‌بات ۲۴ ساعته متصل به بله و اتصال به ERP.</p>
-            <div class="track-delivery">تحویل در هفته چهارم</div>
-        </div>
-        <div class="track-card">
-            <div class="track-badge">ترک ۲ — موتور فروش</div>
-            <h4>وب‌سایت فروشگاهی</h4>
-            <p>طراحی و کدنویسی فروشگاه، دستیار خرید هوش مصنوعی ایجنتیک، اتصال به ERP، سئو اولیه و تست نهایی.</p>
-            <div class="track-delivery">تحویل در هفته ششم</div>
-        </div>
-        <div class="track-card" style="grid-column: 1 / -1;">
-            <div class="track-badge">ترک ۳ — هسته اصلی (طولانی‌ترین بخش)</div>
-            <h4>ERP + CRM + پنل نمایندگان + ربات‌ها</h4>
-            <p>توسعه همزمان هسته مرکزی ERP، CRM لینک‌شده، پنل نمایندگان شهرستان، ربات‌های بله و تلگرام و اتوماسیون n8n. این ترک به‌صورت موازی با دو ترک سایت‌ها پیش می‌رود و در پایان هفته ۱۲ تا ۱۴ تحویل نهایی می‌شود.</p>
-            <div class="track-delivery">تحویل نهایی در هفته ۱۲ تا ۱۴</div>
-        </div>
-    </div>
-
-    <div class="roadmap">
-        <div class="roadmap-step">
-            <div class="roadmap-num">۱</div>
-            <div class="roadmap-content"><strong>تحلیل و معماری اطلاعات</strong><p>تحلیل برند، محصولات، فرآیندهای پخش، مخاطبان، ساختار صفحات و معماری ERP + CRM + SEO.</p></div>
-            <div class="roadmap-duration">۵ تا ۷ روز</div>
-        </div>
-        <div class="roadmap-step">
-            <div class="roadmap-num">۲</div>
-            <div class="roadmap-content"><strong>طراحی UI / UX (موازی برای سایت‌ها و پنل‌ها)</strong><p>طراحی Wireframe، زبان بصری، رابط اختصاصی سایت شرکتی، فروشگاهی و پنل‌های مدیریتی.</p></div>
-            <div class="roadmap-duration">۷ تا ۱۰ روز</div>
-        </div>
-        <div class="roadmap-step">
-            <div class="roadmap-num">۳</div>
-            <div class="roadmap-content"><strong>توسعه وب‌سایت شرکتی + سئو اولیه + چت‌بات بله</strong><p>کدنویسی سایت، سئو اولیه، چت‌بات ۲۴ ساعته و اتصال اولیه به هسته ERP.</p></div>
-            <div class="roadmap-duration done">تحویل هفته ۴</div>
-        </div>
-        <div class="roadmap-step">
-            <div class="roadmap-num">۴</div>
-            <div class="roadmap-content"><strong>توسعه وب‌سایت فروشگاهی + دستیار خرید AI</strong><p>کدنویسی فروشگاه، دستیار خرید ایجنتیک، سئو اولیه، اتصال کامل به ERP و تست.</p></div>
-            <div class="roadmap-duration done">تحویل هفته ۶</div>
-        </div>
-        <div class="roadmap-step">
-            <div class="roadmap-num">۵</div>
-            <div class="roadmap-content"><strong>توسعه هسته ERP + CRM + پنل نمایندگان</strong><p>پیاده‌سازی مرکز فرماندهی، APIها، انبار، قیمت‌گذاری سلکتیو، فروشگاه‌های زنجیره‌ای، مطالبات، مرجوعی، CRM یکپارچه و پنل نمایندگان شهرستان.</p></div>
-            <div class="roadmap-duration">۸ تا ۱۰ هفته (موازی)</div>
-        </div>
-        <div class="roadmap-step">
-            <div class="roadmap-num">۶</div>
-            <div class="roadmap-content"><strong>ورود محتوا، اتوماسیون n8n و ربات‌ها</strong><p>راه‌اندازی محتوای اولیه، فرم‌ها، مسیرهای Lead، اتوماسیون‌های n8n و ربات‌های بله و تلگرام.</p></div>
-            <div class="roadmap-duration">۴ تا ۶ روز</div>
-        </div>
-        <div class="roadmap-step">
-            <div class="roadmap-num">۷</div>
-            <div class="roadmap-content"><strong>تست، بهینه‌سازی و استقرار نهایی</strong><p>تست Responsive، Performance، امنیت، فرم‌ها، Deploy نهایی و تحویل مستندات.</p></div>
-            <div class="roadmap-duration">۳ تا ۵ روز</div>
-        </div>
-        <div class="roadmap-step">
-            <div class="roadmap-num">۸</div>
-            <div class="roadmap-content"><strong>فاز دوم — لایه هوشمند ایجنتیک (پس از تحویل و کارکردن تیم)</strong><p>پس از استقرار، تحویل و کارکردن تیم آریان‌کهن با سیستم، ماژول‌های AI ایجنتیک به‌صورت سفارشی برای هر دپارتمان پیاده‌سازی می‌شوند.</p></div>
-            <div class="roadmap-duration phase2">فاز دوم — ۳ ماه</div>
-        </div>
-    </div>
-
-    <div class="info-box info-green">
-        <strong>زمان فاز اول:</strong> حدود ۱۲ تا ۱۴ هفته از زمان نهایی‌شدن Scope و دریافت اطلاعات موردنیاز پروژه.
-        سایت شرکتی در هفته چهارم، سایت فروشگاهی در هفته ششم و هسته اصلی (ERP + CRM + ربات‌ها) در پایان هفته ۱۲ تا ۱۴ تحویل داده می‌شود.
-    </div>
-
-    <h3>پیشنهاد مالی فاز اول (Phase 1)</h3>
-    <p>ارائه خدمات فاز اول پروژه (هسته اصلی اکوسیستم) بر اساس توافق دوطرفه و در قرارداد نهایی تعیین می‌شود.</p>
-
-    <div class="services-table">
-        <div class="services-row header-row">
-            <span class="srv-title">خدمت / بخش پروژه — فاز اول</span>
-            <span class="srv-price">پیشنهاد</span>
-        </div>
-        <div class="services-row">
-            <span class="srv-title">وب‌سایت شرکتی + سئو اولیه + چت‌بات ۲۴ ساعته متصل به بله</span>
-            <span class="srv-price">توافقی</span>
-        </div>
-        <div class="services-row">
-            <span class="srv-title">وب‌سایت فروشگاهی + سئو اولیه + دستیار خرید هوش مصنوعی ایجنتیک</span>
-            <span class="srv-price">توافقی</span>
-        </div>
-        <div class="services-row">
-            <span class="srv-title">ERP مرکزی + CRM یکپارچه + پنل نمایندگان شهرستان + پشتیبانی دائمی رایگان مادام‌العمر</span>
-            <span class="srv-price">توافقی</span>
-        </div>
-        <div class="services-row">
-            <span class="srv-title">ربات هوشمند بله و تلگرام (متصل به تمام بسترها — کدنویسی اختصاصی)</span>
-            <span class="srv-price">توافقی</span>
-        </div>
-        <div class="services-row total-row">
-            <span class="srv-title">مجموع فاز اول (قابل پرداخت)</span>
-            <span class="srv-price">توافقی</span>
-        </div>
-    </div>
-
-    <h3>محدوده خدمات فاز اول (Scope اصلی)</h3>
-    <div class="scope-grid">
-        <div class="scope-card"><span class="scope-num">۰۱</span><strong>UI / UX اختصاصی</strong><p>طراحی کامل رابط کاربری هر دو سایت و پنل‌ها، بدون استفاده از قالب آماده؛ بسیار روان و جذاب.</p></div>
-        <div class="scope-card"><span class="scope-num">۰۲</span><strong>توسعه اختصاصی</strong><p>کدنویسی کامل Frontend، Backend، ساختار ERP و CRM و همه ماژول‌های پخش به‌صورت اختصاصی.</p></div>
-        <div class="scope-card"><span class="scope-num">۰۳</span><strong>پنل مدیریت متمرکز</strong><p>مدیریت تمام محتوا، محصولات، سفارش‌ها و کانال‌ها فقط از طریق ERP مرکزی؛ بدون پنل‌های پراکنده.</p></div>
-        <div class="scope-card"><span class="scope-num">۰۴</span><strong>چت‌بات و دستیار AI</strong><p>چت‌بات ۲۴ ساعته متصل به بله + دستیار خرید ایجنتیک با هدایت مستقیم به پرداخت.</p></div>
-        <div class="scope-card"><span class="scope-num">۰۵</span><strong>SEO Foundation</strong><p>ساختار فنی اولیه، Sitemap، Meta، معماری مناسب صفحات و بهینه‌سازی سرعت برای هر دو سایت.</p></div>
-        <div class="scope-card"><span class="scope-num">۰۶</span><strong>استقرار و تحویل</strong><p>Deploy، Repository، سورس کد کامل، دیتابیس، مستندات و آموزش تیم آریان‌کهن.</p></div>
-    </div>
-
-    <h3>شرایط پرداخت فاز اول</h3>
-    <p>پرداخت پروژه در ۵ مرحله شفاف و منصفانه انجام می‌شود؛ هر مرحله پس از تحویل و تأیید خروجی مربوطه:</p>
-    <div class="payment-grid">
-        <div class="payment-card">
-            <div class="payment-percent">۳۰٪</div>
-            <div class="payment-label">عقد قرارداد</div>
-            <div class="payment-sub">و شروع پروژه</div>
-        </div>
-        <div class="payment-card">
-            <div class="payment-percent">۱۰٪</div>
-            <div class="payment-label">تحویل سایت شرکتی</div>
-            <div class="payment-sub">پایان هفته ۴</div>
-        </div>
-        <div class="payment-card">
-            <div class="payment-percent">۲۰٪</div>
-            <div class="payment-label">تحویل سایت فروشگاهی</div>
-            <div class="payment-sub">پایان هفته ۶</div>
-        </div>
-        <div class="payment-card">
-            <div class="payment-percent">۲۰٪</div>
-            <div class="payment-label">ارائه نسخه اولیه ERP</div>
-            <div class="payment-sub">میانه پروژه</div>
-        </div>
-        <div class="payment-card">
-            <div class="payment-percent">۲۰٪</div>
-            <div class="payment-label">استقرار و تحویل نهایی</div>
-            <div class="payment-sub">پایان هفته ۱۲ تا ۱۴</div>
-        </div>
-    </div>
-
-    <div class="phase2-block">
-        <div class="phase2-head">
-            <span class="phase2-badge">فاز دوم — پس از تحویل</span>
-            <h3>بسته دستیارهای ایجنتیک هوش مصنوعی</h3>
-        </div>
-        <p>
-            پس از <strong>تکمیل فاز اول، استقرار کامل اکوسیستم و کارکردن تیم آریان‌کهن با سیستم به مدت چند ماه</strong>،
-            تیم فنی کدپکس با برگزاری جلسات تحلیلی با مدیریت و بررسی دقیق دپارتمان‌های مختلف،
-            <strong>ماژول‌های هوش مصنوعی ایجنتیک را به‌صورت کاملاً سفارشی برای هر دپارتمان پیاده‌سازی می‌کند.</strong>
-            <br><br>
-            این رویکرد باعث می‌شود که سرمایه‌گذاری روی AI دقیقاً در جایی انجام شود که بیشترین ارزش را برای آریان‌کهن ایجاد می‌کند — بر اساس نیازهای واقعی سازمان، نه فرضیات اولیه.
-        </p>
-        <div class="phase2-meta">
-            <div class="phase2-meta-card">
-                <span class="meta-icon">مدت زمان</span>
-                <strong>۳ ماه</strong>
-                <span>مدت زمان پیش‌بینی‌شده برای پیاده‌سازی کامل ایجنت‌های تخصصی در تمام دپارتمان‌ها</span>
-            </div>
-            <div class="phase2-meta-card">
-                <span class="meta-icon">سرمایه‌گذاری</span>
-                <strong>توافقی</strong>
-                <span>بازه قیمت‌گذاری برای پیاده‌سازی کل ایجنت‌های تخصصی — بر اساس حجم کار نهایی و توافق دوطرفه</span>
-            </div>
-        </div>
-        <div class="phase2-benefits">
-            <div class="phase2-benefit"><strong>سفارشی برای هر دپارتمان</strong><p>ایجنت‌های اختصاصی برای فروش، مالی، انبار، لجستیک، منابع انسانی و هر دپارتمانی که نیاز داشته باشد.</p></div>
-            <div class="phase2-benefit"><strong>کدنویسی بومی</strong><p>بدون استفاده از کدهای آماده — کاملاً اختصاصی، بدون وابستگی به سرویس‌های خارجی.</p></div>
-            <div class="phase2-benefit"><strong>بدون هزینه توکن</strong><p>برخلاف تیم‌های معمولی که ماهانه ۵۰۰+ دلار هزینه توکن می‌دهند، کدپکس این هزینه را صفر می‌کند.</p></div>
-            <div class="phase2-benefit"><strong>مالکیت ۱۰۰٪</strong><p>تمام کدها، مدل‌ها و داده‌های AI در اختیار کامل آریان‌کهن قرار می‌گیرد.</p></div>
-            <div class="phase2-benefit"><strong>مقیاس‌پذیری آینده</strong><p>هر ایجنت در آینده به‌سادگی قابل توسعه، توقف یا جایگزینی است — بدون وابستگی به تیم خارجی.</p></div>
-            <div class="phase2-benefit"><strong>پشتیبانی دائمی رایگان</strong><p>پشتیبانی مادام‌العمر رایگان برای تمام ایجنت‌ها — بدون هزینه پنهان یا تمدید سالانه.</p></div>
-        </div>
-    </div>
-
-    <div class="cost-comparison">
-        <h4>چرا کدپکس؟ <span>مقایسه هزینه‌ها</span></h4>
-        <p>
-            بسیاری از تیم‌های دیجیتال برای پیاده‌سازی AI Agent از <strong>کدهای آماده n8n و سرویس‌های ChatGPT</strong> استفاده می‌کنند.
-            این رویکرد اگرچه در کوتاه‌مدت سریع به نظر می‌رسد، اما <strong>هزینه‌های ماهانه سنگین</strong> روی دوش کارفرما می‌گذارد.
-        </p>
-        <div class="comparison-grid">
-            <div class="comparison-card others">
-                <h5>تیم‌های معمولی (کد آماده)</h5>
-                <ul>
-                    <li>استفاده از سرویس‌های آماده ChatGPT / n8n</li>
-                    <li>هزینه توکن ماهانه حداقل ۵۰۰ دلار</li>
-                    <li>وابستگی دائمی به سرویس‌های خارجی</li>
-                    <li>عدم مالکیت کد و داده‌ها</li>
-                    <li>محدودیت در سفارشی‌سازی</li>
-                    <li>هزینه پشتیبانی ماهانه اضافی</li>
-                </ul>
-            </div>
-            <div class="comparison-card codepacks">
-                <h5>تیم کدپکس (کدنویسی اختصاصی)</h5>
-                <ul>
-                    <li>کدنویسی ۱۰۰٪ اختصاصی و بومی</li>
-                    <li>بدون هیچ هزینه توکن ماهانه</li>
-                    <li>استقلال کامل از سرویس‌های خارجی</li>
-                    <li>مالکیت ۱۰۰٪ کد و داده‌ها برای آریان‌کهن</li>
-                    <li>سفارشی‌سازی کامل برای هر دپارتمان</li>
-                    <li>پشتیبانی دائمی رایگان مادام‌العمر</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-
-    <div class="support-note">
-        <h4>تعهد همیشگی Code Packs <span>تفاوت با رویه رایج بازار</span></h4>
-        <p>
-            در بازار رایج دیجیتال، <strong>تقریباً تمام شرکت‌ها برای پشتیبانی، نگهداری و رفع خطا هزینه‌های ماهانه دریافت می‌کنند</strong>؛
-            اما در <strong>Code Packs</strong> این رویه را نداریم. ما باور داریم که پشتیبانی بخشی از پروژه است، نه یک محصول جداگانه.
-            <br><br>
-            <strong>پشتیبانی فنی کل پکیج و تمام ایجنت‌های AI به‌صورت کاملاً رایگان</strong> ارائه می‌شود و ما <strong>همیشه در کنار مجموعه آریان‌کهن خواهیم بود</strong> — بدون هزینه پنهان، بدون تمدید سالانه و بدون محدودیت زمانی.
-        </p>
-    </div>
-
-    <div class="info-box info-green" style="margin-top: 20px;">
-        <strong>نکات مهم:</strong><br>
-        • <strong>فاز اول:</strong> وب‌سایت شرکتی + فروشگاهی + ERP و CRM و پنل نمایندگان + ربات‌های بله و تلگرام — <strong>قیمت‌گذاری توافقی</strong>.<br>
-        • <strong>فاز دوم:</strong> بسته دستیارهای ایجنتیک هوش مصنوعی — ۳ ماه، <strong>قیمت‌گذاری توافقی</strong> بسته به حجم کار.<br>
-        • <strong>پشتیبانی فنی کل پکیج به‌صورت رایگان</strong> ارائه می‌شود و ما همیشه در کنار آریان‌کهن خواهیم بود.<br>
-        • <strong>بدون هزینه توکن ماهانه</strong> — کدنویسی کاملاً اختصاصی و بومی.<br>
-        • شرایط پرداخت و زمان‌بندی تسویه در قرارداد نهایی مشخص خواهد شد.
-    </div>
-</section>
-
-<!-- ============================================================
-     FINAL CTA
-     ============================================================ -->
 <section class="final-cta">
     <div class="final-content">
         <h2>یک هسته مرکزی، <span class="accent">تمام کانال‌های پخش، یکپارچه و هوشمند</span></h2>
@@ -3390,9 +2583,6 @@ footer p { margin: 3px 0; }
 
 </main>
 
-<!-- ============================================================
-     CONTACT MODAL
-     ============================================================ -->
 <div class="contact-modal" id="contactModal">
     <div class="contact-modal-overlay" id="modalOverlay"></div>
     <div class="contact-modal-box">
@@ -3423,7 +2613,6 @@ footer p { margin: 3px 0; }
 (function() {
     "use strict";
 
-    /* THEME */
     const html = document.documentElement;
     const themeToggle = document.getElementById("themeToggle");
     const STORAGE_KEY = "cp-theme";
@@ -3447,7 +2636,6 @@ footer p { margin: 3px 0; }
         try { localStorage.setItem(STORAGE_KEY, next); } catch (e) {}
     });
 
-    /* ELEMENTS */
     const header = document.getElementById("siteHeader");
     const hamburger = document.getElementById("hamburger");
     const mobileOverlay = document.getElementById("mobileOverlay");
