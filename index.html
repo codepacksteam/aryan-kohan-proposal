@@ -690,10 +690,7 @@ ul { list-style: none; }
 .info-box strong { color: var(--text); font-weight: 700; }
 .info-box.info-green { border-right-color: var(--success); }
 
-/* ============================================================
-   CARDS — ACCORDION / EXPANDABLE
-   Title always visible; description opens below on click.
-   ============================================================ */
+/* CARDS — ACCORDION */
 .cards {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -727,7 +724,6 @@ ul { list-style: none; }
     border-color: var(--brand);
     box-shadow: var(--shadow-sm);
 }
-
 .card h4 {
     color: var(--text);
     font-size: 0.92rem;
@@ -743,8 +739,6 @@ ul { list-style: none; }
 }
 .card:hover h4 { color: var(--brand); }
 .card.expanded h4 { color: var(--brand); }
-
-/* Chevron indicator */
 .card h4::after {
     content: "";
     width: 7px;
@@ -764,8 +758,6 @@ ul { list-style: none; }
     border-color: var(--brand);
     margin-top: 4px;
 }
-
-/* Description — collapsed by default */
 .card p {
     font-size: 0.8rem;
     line-height: 1.85;
@@ -1563,7 +1555,7 @@ footer p { margin: 3px 0; }
         <a href="#s10"><span class="mobile-num">۱۰</span>ربات‌های بله و تلگرام</a>
         <a href="#s11"><span class="mobile-num">۱۱</span>تیم کدپکس</a>
         <a href="#s12"><span class="mobile-num">۱۲</span>پروژه‌ها</a>
-        <a href="#s13"><span class="mobile-num">۱۳</span>مالکیت و پشتیبانی</a>
+        <a href="#s13"><span class="mobile-num">۱۳</span>استقرار، آموزش و پشتیبانی</a>
     </nav>
 </div>
 
@@ -1624,7 +1616,7 @@ footer p { margin: 3px 0; }
         <a href="#s10"><span class="toc-num">۱۰</span>ربات‌های بله و تلگرام</a>
         <a href="#s11"><span class="toc-num">۱۱</span>تیم کدپکس</a>
         <a href="#s12"><span class="toc-num">۱۲</span>پروژه‌ها</a>
-        <a href="#s13"><span class="toc-num">۱۳</span>مالکیت و پشتیبانی</a>
+        <a href="#s13"><span class="toc-num">۱۳</span>استقرار، آموزش و پشتیبانی</a>
     </div>
 </section>
 
@@ -1678,7 +1670,7 @@ footer p { margin: 3px 0; }
         <div class="card"><h4>یکپارچه‌سازی با سیستم‌های موجود</h4><p>APIهای اختصاصی برای اتصال به نرم‌افزارهای حسابداری، انبار و فروش آریان‌کهن بدون نیاز به تغییر زیرساخت.</p></div>
     </div>
 
-    <div class="info-box info-green"><strong>پشتیبانی دائمی رایگان مادام‌العمر:</strong> این ERP اختصاصی پس از تحویل، تا همیشه به‌صورت رایگان پشتیبانی می‌شود. بدون هزینه پنهان یا تمدید سالانه.</div>
+    <div class="info-box info-green"><strong>استقرار، آموزش و پشتیبانی:</strong> پس از تحویل کامل پروژه، تیم کدپکس به مدت <strong>۲ ماه</strong> در کنار تیم آریان‌کهن خواهد بود — شامل استقرار سیستم، آموزش دپارتمان‌های مختلف و پشتیبانی کامل در راه‌اندازی. پس از این دوره، <strong>۴ ماه پشتیبانی رایگان</strong> نیز برای تیم شما در نظر گرفته شده است.</div>
 
     <div class="info-box"><strong>نتیجه:</strong> مدیریت کل مجموعه پخش از یک نقطه، حذف سیلوهای اطلاعاتی، کاهش خطاهای انسانی و افزایش سرعت تصمیم‌گیری با کمک داده‌های لحظه‌ای.</div>
 </section>
@@ -1765,7 +1757,7 @@ footer p { margin: 3px 0; }
         <div class="card"><h4>AI Operations Agent</h4><p>پایش و بهینه‌سازی فرآیندهای عملیاتی، انبار، لجستیک و پخش — پیش‌بینی تقاضا و مدیریت موجودی.</p></div>
     </div>
 
-    <div class="info-box info-green"><strong>تعهد کدپکس:</strong> پیاده‌سازی هر ایجنتی که آریان‌کهن نیاز داشته باشد — با کدنویسی کاملاً اختصاصی، بدون هزینه توکن و با پشتیبانی دائمی رایگان مادام‌العمر.</div>
+    <div class="info-box info-green"><strong>تعهد کدپکس:</strong> پیاده‌سازی هر ایجنتی که آریان‌کهن نیاز داشته باشد — با کدنویسی کاملاً اختصاصی و بدون هزینه توکن. استقرار و آموزش نیز طبق برنامه فاز استقرار انجام می‌شود.</div>
 </section>
 
 <section class="section" id="s6">
@@ -2011,13 +2003,13 @@ footer p { margin: 3px 0; }
     <div class="section-head">
         <span class="section-icon">۱۳</span>
         <div class="section-head-content">
-            <h2 class="section-title">مالکیت، تحویل و پشتیبانی</h2>
-            <div class="section-subtitle">Ownership, Delivery & Support</div>
+            <h2 class="section-title">استقرار، آموزش و پشتیبانی</h2>
+            <div class="section-subtitle">Deployment, Training & Support</div>
         </div>
     </div>
     <div class="highlight">
         <strong>هدف کدپکس ایجاد وابستگی فنی نیست.</strong>
-        پس از تکمیل پروژه و تسویه قرارداد، تمام دارایی‌های اختصاصی توسعه‌یافته برای آریان‌کهن تحویل داده می‌شود.
+        پس از تکمیل پروژه و تسویه قرارداد، تمام دارایی‌های اختصاصی توسعه‌یافته برای آریان‌کهن تحویل داده می‌شود. در ادامه، تیم کدپکس در قالب فاز استقرار و آموزش، در کنار تیم آریان‌کهن خواهد بود.
     </div>
     <div class="cards">
         <div class="card"><h4>سورس‌کد کامل</h4><p>تحویل سورس پروژه و ساختار توسعه‌یافته</p></div>
@@ -2025,9 +2017,9 @@ footer p { margin: 3px 0; }
         <div class="card"><h4>Database</h4><p>مالکیت کامل داده‌ها و اطلاعات سایت برای آریان‌کهن</p></div>
         <div class="card"><h4>دسترسی‌ها</h4><p>تحویل تمام دسترسی‌های مدیریتی مرتبط با پروژه</p></div>
         <div class="card"><h4>مستندات کامل</h4><p>راهنمای مدیریت سیستم، کدها و فرآیندها</p></div>
-        <div class="card"><h4>پشتیبانی دائمی رایگان</h4><p>ERP اختصاصی دارای پشتیبانی دائمی رایگان مادام‌العمر است؛ بدون هزینه پنهان.</p></div>
+        <div class="card"><h4>استقرار، آموزش و پشتیبانی</h4><p>۲ ماه استقرار و آموزش دپارتمان‌ها + ۴ ماه پشتیبانی رایگان پس از استقرار</p></div>
     </div>
-    <div class="info-box info-green"><strong>پشتیبانی:</strong> ERP مرکزی (هسته اصلی) دارای پشتیبانی دائمی رایگان مادام‌العمر است. سایر بخش‌ها نیز پشتیبانی فنی و رفع خطاهای احتمالی در بازه‌ای مشخص پس از تحویل، به‌صورت رایگان ارائه خواهد شد.</div>
+    <div class="info-box info-green"><strong>برنامه استقرار و پشتیبانی:</strong> پس از تحویل کامل پروژه، تیم کدپکس به مدت <strong>۲ ماه</strong> در کنار تیم آریان‌کهن خواهد بود — شامل استقرار سیستم، آموزش دپارتمان‌های مختلف و پشتیبانی کامل در راه‌اندازی. پس از این دوره، <strong>۴ ماه پشتیبانی رایگان</strong> نیز برای تیم شما در نظر گرفته شده است.</div>
 </section>
 
 <section class="final-cta">
@@ -2091,9 +2083,6 @@ footer p { margin: 3px 0; }
 (function() {
     "use strict";
 
-    /* ============================================================
-       THEME
-       ============================================================ */
     const html = document.documentElement;
     const themeToggle = document.getElementById("themeToggle");
     const STORAGE_KEY = "cp-theme";
@@ -2117,9 +2106,6 @@ footer p { margin: 3px 0; }
         try { localStorage.setItem(STORAGE_KEY, next); } catch (e) {}
     });
 
-    /* ============================================================
-       ELEMENTS
-       ============================================================ */
     const header = document.getElementById("siteHeader");
     const hamburger = document.getElementById("hamburger");
     const mobileOverlay = document.getElementById("mobileOverlay");
@@ -2136,9 +2122,6 @@ footer p { margin: 3px 0; }
     const modalOverlay = document.getElementById("modalOverlay");
     const modalClose = document.getElementById("modalClose");
 
-    /* ============================================================
-       MENU
-       ============================================================ */
     function openMenu() {
         mobileOverlay.classList.add("active");
         hamburger.classList.add("active");
@@ -2166,9 +2149,6 @@ footer p { margin: 3px 0; }
         }
     });
 
-    /* ============================================================
-       TOC COLLAPSE
-       ============================================================ */
     tocHeader.addEventListener("click", function() {
         toc.classList.toggle("collapsed");
     });
@@ -2177,9 +2157,6 @@ footer p { margin: 3px 0; }
         toc.scrollIntoView({ behavior: "smooth", block: "start" });
     });
 
-    /* ============================================================
-       REVEAL SECTIONS ON SCROLL
-       ============================================================ */
     const revealObserver = new IntersectionObserver(function(entries) {
         entries.forEach(function(entry) {
             if (entry.isIntersecting) {
@@ -2190,12 +2167,8 @@ footer p { margin: 3px 0; }
     }, { threshold: 0.06, rootMargin: "0px 0px -50px 0px" });
     sections.forEach(function(section) { revealObserver.observe(section); });
 
-    /* ============================================================
-       ACCORDION CARDS — click to expand description
-       ============================================================ */
     const cards = document.querySelectorAll(".card");
     cards.forEach(function(card) {
-        // Accessibility: make card focusable and role=button
         card.setAttribute("role", "button");
         card.setAttribute("tabindex", "0");
         card.setAttribute("aria-expanded", "false");
@@ -2214,9 +2187,6 @@ footer p { margin: 3px 0; }
         });
     });
 
-    /* ============================================================
-       ACTIVE SECTION
-       ============================================================ */
     function updateActiveSection() {
         const scrollPosition = window.scrollY + 160;
         let activeId = "";
@@ -2234,9 +2204,6 @@ footer p { margin: 3px 0; }
         });
     }
 
-    /* ============================================================
-       SCROLL HANDLER (RAF throttled)
-       ============================================================ */
     let rafId = null;
     function handleScroll() {
         if (rafId) return;
@@ -2250,16 +2217,10 @@ footer p { margin: 3px 0; }
     }
     window.addEventListener("scroll", handleScroll, { passive: true });
 
-    /* ============================================================
-       BACK TO TOP
-       ============================================================ */
     backTop.addEventListener("click", function() {
         window.scrollTo({ top: 0, behavior: "smooth" });
     });
 
-    /* ============================================================
-       SMOOTH SCROLL
-       ============================================================ */
     document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
         anchor.addEventListener("click", function(e) {
             const href = this.getAttribute("href");
@@ -2271,9 +2232,6 @@ footer p { margin: 3px 0; }
         });
     });
 
-    /* ============================================================
-       CONTACT MODAL
-       ============================================================ */
     function openModal() {
         contactModal.classList.add("active");
         document.body.classList.add("menu-open");
@@ -2293,9 +2251,6 @@ footer p { margin: 3px 0; }
         });
     });
 
-    /* ============================================================
-       INIT
-       ============================================================ */
     handleScroll();
 })();
 </script>
