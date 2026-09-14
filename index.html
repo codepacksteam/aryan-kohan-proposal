@@ -313,6 +313,14 @@ ul { list-style: none; }
     background: var(--brand);
     color: #fff;
 }
+.mobile-panel a.cp-link .mobile-num {
+    background: linear-gradient(135deg, #0E3D4D, #1F8A94);
+    color: #fff;
+}
+.mobile-panel a.phase2-link .mobile-num {
+    background: linear-gradient(135deg, #A66B1F, #E0AA5C);
+    color: #fff;
+}
 
 /* HERO */
 .hero {
@@ -562,6 +570,10 @@ ul { list-style: none; }
     background: linear-gradient(135deg, #0E3D4D, #1F8A94);
     color: #fff;
 }
+.toc-links a.phase2-link .toc-num {
+    background: linear-gradient(135deg, #A66B1F, #E0AA5C);
+    color: #fff;
+}
 
 /* SECTIONS */
 .section {
@@ -772,13 +784,13 @@ ul { list-style: none; }
     overflow: hidden;
     transform: translateY(-6px);
     transition:
-        max-height 0.5s var(--ease),
+        max-height 0.6s var(--ease),
         opacity 0.35s var(--ease),
         transform 0.4s var(--ease),
         margin-top 0.35s var(--ease);
 }
 .card.expanded p {
-    max-height: 400px;
+    max-height: 600px;
     opacity: 1;
     transform: translateY(0);
     margin-top: 12px;
@@ -943,8 +955,316 @@ ul { list-style: none; }
 }
 
 /* ============================================================
-   SECTION 12 — CODE PACKS SHOWCASE
-   Distinct branded section — separate from the proposal
+   PHASE 2 SHOWCASE — "COMING SOON" Development section
+   ============================================================ */
+.section.phase2-showcase {
+    position: relative;
+    padding: 56px 40px 48px;
+    background:
+        linear-gradient(135deg,
+            #FFF9EE 0%,
+            #FBF3E4 30%,
+            #F6F1E8 55%,
+            #EFF4F5 100%);
+    border: 1.5px dashed rgba(166, 107, 31, 0.35);
+    overflow: hidden;
+    isolation: isolate;
+    box-shadow: 0 22px 60px rgba(166, 107, 31, 0.10);
+}
+[data-theme="dark"] .section.phase2-showcase {
+    background:
+        linear-gradient(135deg,
+            #1A1710 0%,
+            #1E1A12 30%,
+            #17211F 55%,
+            #0F1919 100%);
+    border-color: rgba(224, 170, 92, 0.35);
+    box-shadow: 0 22px 60px rgba(0, 0, 0, 0.4);
+}
+.section.phase2-showcase::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+        repeating-linear-gradient(
+            45deg,
+            transparent 0,
+            transparent 24px,
+            rgba(166, 107, 31, 0.055) 24px,
+            rgba(166, 107, 31, 0.055) 25px
+        );
+    z-index: 0;
+    pointer-events: none;
+}
+[data-theme="dark"] .section.phase2-showcase::before {
+    background-image:
+        repeating-linear-gradient(
+            45deg,
+            transparent 0,
+            transparent 24px,
+            rgba(224, 170, 92, 0.045) 24px,
+            rgba(224, 170, 92, 0.045) 25px
+        );
+}
+.section.phase2-showcase::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(circle at 0% 0%, rgba(224, 170, 92, 0.10), transparent 45%),
+        radial-gradient(circle at 100% 100%, rgba(77, 184, 194, 0.08), transparent 50%);
+    z-index: 0;
+    pointer-events: none;
+}
+.section.phase2-showcase:hover {
+    border-color: rgba(166, 107, 31, 0.55);
+    box-shadow: 0 28px 75px rgba(166, 107, 31, 0.15);
+}
+[data-theme="dark"] .section.phase2-showcase:hover {
+    border-color: rgba(224, 170, 92, 0.5);
+    box-shadow: 0 28px 75px rgba(0, 0, 0, 0.55);
+}
+.section.phase2-showcase > .phase2-content {
+    position: relative;
+    z-index: 3;
+}
+
+/* The big "COMING SOON" watermark */
+.phase2-watermark {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-14deg);
+    font-family: "Vazirmatn", sans-serif;
+    font-size: clamp(4.5rem, 14vw, 11rem);
+    font-weight: 900;
+    letter-spacing: 0.12em;
+    color: rgba(166, 107, 31, 0.07);
+    white-space: nowrap;
+    pointer-events: none;
+    user-select: none;
+    direction: ltr;
+    z-index: 1;
+    line-height: 1;
+    text-align: center;
+}
+.phase2-watermark span {
+    display: block;
+    font-size: 0.32em;
+    letter-spacing: 0.4em;
+    margin-top: 12px;
+    opacity: 0.7;
+}
+[data-theme="dark"] .phase2-watermark {
+    color: rgba(224, 170, 92, 0.09);
+}
+
+/* Phase 2 badge */
+.phase2-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 7px 18px;
+    margin-bottom: 20px;
+    border-radius: var(--r-pill);
+    background: linear-gradient(135deg, rgba(166, 107, 31, 0.14), rgba(224, 170, 92, 0.10));
+    border: 1px solid rgba(166, 107, 31, 0.35);
+    color: #8A5514;
+    font-size: 0.68rem;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    position: relative;
+    z-index: 3;
+    box-shadow: 0 6px 20px rgba(166, 107, 31, 0.12);
+}
+[data-theme="dark"] .phase2-badge {
+    background: linear-gradient(135deg, rgba(224, 170, 92, 0.15), rgba(166, 107, 31, 0.08));
+    color: #E0AA5C;
+    border-color: rgba(224, 170, 92, 0.35);
+}
+.phase2-badge-dot {
+    width: 7px; height: 7px;
+    border-radius: 50%;
+    background: #C58A34;
+    box-shadow: 0 0 0 0 rgba(197, 138, 52, 0.5);
+    animation: phase2Pulse 2s ease-in-out infinite;
+}
+[data-theme="dark"] .phase2-badge-dot { background: #E0AA5C; }
+@keyframes phase2Pulse {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(197, 138, 52, 0.6); }
+    50% { box-shadow: 0 0 0 9px rgba(197, 138, 52, 0); }
+}
+
+/* Phase 2 section icon — amber tone */
+.section.phase2-showcase .section-icon {
+    background: linear-gradient(135deg, rgba(166, 107, 31, 0.14), rgba(224, 170, 92, 0.10));
+    color: #A66B1F;
+    border: 1px solid rgba(166, 107, 31, 0.25);
+}
+[data-theme="dark"] .section.phase2-showcase .section-icon {
+    background: linear-gradient(135deg, rgba(224, 170, 92, 0.15), rgba(166, 107, 31, 0.10));
+    color: #E0AA5C;
+    border-color: rgba(224, 170, 92, 0.3);
+}
+.section.phase2-showcase:hover .section-icon {
+    background: linear-gradient(135deg, #C58A34, #E0AA5C);
+    color: #fff;
+    border-color: transparent;
+}
+.section.phase2-showcase .section-head {
+    border-bottom-color: rgba(166, 107, 31, 0.2);
+}
+.section.phase2-showcase .highlight {
+    background: rgba(255, 255, 255, 0.55);
+    border-color: rgba(166, 107, 31, 0.2);
+    border-right-color: #C58A34;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+[data-theme="dark"] .section.phase2-showcase .highlight {
+    background: rgba(255, 255, 255, 0.03);
+    border-color: rgba(224, 170, 92, 0.2);
+    border-right-color: #E0AA5C;
+}
+.section.phase2-showcase .highlight:hover {
+    background: rgba(255, 255, 255, 0.75);
+}
+[data-theme="dark"] .section.phase2-showcase .highlight:hover {
+    background: rgba(255, 255, 255, 0.06);
+}
+.section.phase2-showcase .highlight strong:first-child { color: #A66B1F; }
+[data-theme="dark"] .section.phase2-showcase .highlight strong:first-child { color: #E0AA5C; }
+
+/* Phase 2 cards (accordion) */
+.section.phase2-showcase .card {
+    background: rgba(255, 255, 255, 0.65);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-color: rgba(166, 107, 31, 0.18);
+}
+[data-theme="dark"] .section.phase2-showcase .card {
+    background: rgba(255, 255, 255, 0.03);
+    border-color: rgba(224, 170, 92, 0.15);
+}
+.section.phase2-showcase .card:hover {
+    background: rgba(255, 255, 255, 0.9);
+    border-color: #C58A34;
+    box-shadow: 0 12px 32px rgba(166, 107, 31, 0.12);
+}
+[data-theme="dark"] .section.phase2-showcase .card:hover {
+    background: rgba(255, 255, 255, 0.06);
+    border-color: #E0AA5C;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4);
+}
+.section.phase2-showcase .card.expanded {
+    background: rgba(255, 255, 255, 0.95);
+    border-color: #C58A34;
+    box-shadow: 0 14px 36px rgba(166, 107, 31, 0.15);
+}
+[data-theme="dark"] .section.phase2-showcase .card.expanded {
+    background: rgba(255, 255, 255, 0.07);
+    border-color: #E0AA5C;
+    box-shadow: 0 14px 36px rgba(0, 0, 0, 0.5);
+}
+.section.phase2-showcase .card:hover h4,
+.section.phase2-showcase .card.expanded h4 { color: #A66B1F; }
+[data-theme="dark"] .section.phase2-showcase .card:hover h4,
+[data-theme="dark"] .section.phase2-showcase .card.expanded h4 { color: #E0AA5C; }
+.section.phase2-showcase .card:hover h4::after,
+.section.phase2-showcase .card.expanded h4::after {
+    border-color: #A66B1F;
+}
+[data-theme="dark"] .section.phase2-showcase .card:hover h4::after,
+[data-theme="dark"] .section.phase2-showcase .card.expanded h4::after {
+    border-color: #E0AA5C;
+}
+
+/* Phase 2 card expanded content */
+.section.phase2-showcase .card p {
+    color: var(--text-2);
+    font-size: 0.78rem;
+    line-height: 1.95;
+}
+[data-theme="dark"] .section.phase2-showcase .card p {
+    color: #C5CBD3;
+}
+.section.phase2-showcase .card p strong {
+    color: #A66B1F;
+    font-weight: 700;
+    display: inline-block;
+    margin-bottom: 4px;
+}
+[data-theme="dark"] .section.phase2-showcase .card p strong { color: #E0AA5C; }
+
+.section.phase2-showcase .info-box {
+    background: rgba(255, 255, 255, 0.6);
+    border-color: rgba(166, 107, 31, 0.18);
+    border-right-color: #C58A34;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+[data-theme="dark"] .section.phase2-showcase .info-box {
+    background: rgba(255, 255, 255, 0.03);
+    border-color: rgba(224, 170, 92, 0.15);
+    border-right-color: #E0AA5C;
+}
+.section.phase2-showcase .info-box.info-green {
+    border-right-color: var(--success);
+    background: rgba(235, 245, 240, 0.6);
+}
+[data-theme="dark"] .section.phase2-showcase .info-box.info-green {
+    background: rgba(93, 196, 154, 0.06);
+}
+
+/* Phase 2 timeline mini-strip */
+.phase2-timeline {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin: 22px 0;
+    position: relative;
+    z-index: 3;
+}
+.phase2-timeline-card {
+    padding: 18px 18px;
+    border-radius: var(--r-md);
+    background: rgba(255, 255, 255, 0.65);
+    border: 1px solid rgba(166, 107, 31, 0.18);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    transition: all 0.3s var(--ease);
+    text-align: center;
+}
+[data-theme="dark"] .phase2-timeline-card {
+    background: rgba(255, 255, 255, 0.03);
+    border-color: rgba(224, 170, 92, 0.15);
+}
+.phase2-timeline-card:hover {
+    transform: translateY(-3px);
+    border-color: #C58A34;
+    box-shadow: 0 12px 30px rgba(166, 107, 31, 0.12);
+}
+[data-theme="dark"] .phase2-timeline-card:hover {
+    border-color: #E0AA5C;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+}
+.phase2-timeline-card strong {
+    display: block;
+    color: #A66B1F;
+    font-size: 0.86rem;
+    font-weight: 800;
+    margin-bottom: 5px;
+}
+[data-theme="dark"] .phase2-timeline-card strong { color: #E0AA5C; }
+.phase2-timeline-card span {
+    display: block;
+    color: var(--text-3);
+    font-size: 0.68rem;
+    line-height: 1.7;
+}
+
+/* ============================================================
+   SECTION CP SHOWCASE
    ============================================================ */
 .section.cp-showcase {
     position: relative;
@@ -966,15 +1286,13 @@ ul { list-style: none; }
     position: absolute;
     inset: 0;
     height: 100%;
-    background-image:
-        radial-gradient(circle, rgba(77, 184, 194, 0.14) 1px, transparent 1.4px);
+    background-image: radial-gradient(circle, rgba(77, 184, 194, 0.14) 1px, transparent 1.4px);
     background-size: 34px 34px;
     -webkit-mask-image: radial-gradient(ellipse 90% 70% at 50% 30%, black, transparent);
     mask-image: radial-gradient(ellipse 90% 70% at 50% 30%, black, transparent);
-    opacity: 0.7;
+    opacity: 1;
     z-index: 0;
     pointer-events: none;
-    opacity: 1;
 }
 .section.cp-showcase::after {
     content: "";
@@ -996,7 +1314,6 @@ ul { list-style: none; }
     box-shadow: 0 34px 90px rgba(10, 37, 48, 0.45);
 }
 
-/* Divider transition — a decorative "insert" marker */
 .cp-divider {
     display: flex;
     align-items: center;
@@ -1035,7 +1352,6 @@ ul { list-style: none; }
     color: var(--brand);
 }
 
-/* CP Header inside the showcase */
 .cp-header {
     text-align: center;
     margin-bottom: 42px;
@@ -1093,13 +1409,8 @@ ul { list-style: none; }
     0%, 100% { transform: translateY(0) rotate(0); }
     50% { transform: translateY(-6px) rotate(-2deg); }
 }
-.cp-logo-mark svg {
-    width: 100%;
-    height: 100%;
-}
-.cp-logo-text {
-    text-align: right;
-}
+.cp-logo-mark svg { width: 100%; height: 100%; }
+.cp-logo-text { text-align: right; }
 .cp-logo-text h2 {
     margin: 0;
     font-size: 2.4rem;
@@ -1110,7 +1421,6 @@ ul { list-style: none; }
     text-shadow: 0 2px 20px rgba(77, 184, 194, 0.35);
 }
 .cp-logo-text p {
-    margin: 4px 0 0;
     color: #7ACDD5;
     font-size: 0.78rem;
     font-weight: 600;
@@ -1120,19 +1430,21 @@ ul { list-style: none; }
     text-align: right;
     margin: 4px 0 0;
 }
+
+/* CP Tagline — BLACK text (per request) */
 .cp-tagline {
     max-width: 640px;
     margin: 8px auto 0;
-    color: #B8D4DA;
+    color: #000000;
     font-size: 0.94rem;
     line-height: 1.95;
+    font-weight: 400;
 }
 .cp-tagline strong {
-    color: #7ACDD5;
-    font-weight: 700;
+    color: #000000;
+    font-weight: 800;
 }
 
-/* CP Stats strip */
 .cp-stats {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -1188,7 +1500,6 @@ ul { list-style: none; }
     line-height: 1.5;
 }
 
-/* CP subheading */
 .cp-subhead {
     display: flex;
     align-items: center;
@@ -1217,7 +1528,6 @@ ul { list-style: none; }
 .cp-subhead h3::before { right: -28px; }
 .cp-subhead h3::after { left: -28px; }
 
-/* CP Team Grid */
 .cp-team-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -1239,9 +1549,7 @@ ul { list-style: none; }
 .cp-team-card::before {
     content: "";
     position: absolute;
-    top: 0;
-    right: 0;
-    left: 0;
+    top: 0; right: 0; left: 0;
     height: 2px;
     background: linear-gradient(90deg, transparent, #4DB8C2, transparent);
     opacity: 0;
@@ -1318,7 +1626,6 @@ ul { list-style: none; }
     border-color: rgba(77, 184, 194, 0.4);
 }
 
-/* CP Portfolio Grid */
 .cp-portfolio {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -1343,8 +1650,7 @@ ul { list-style: none; }
     content: "";
     position: absolute;
     inset: 0;
-    background:
-        radial-gradient(circle at 100% 0%, rgba(77, 184, 194, 0.12), transparent 55%);
+    background: radial-gradient(circle at 100% 0%, rgba(77, 184, 194, 0.12), transparent 55%);
     opacity: 0;
     transition: opacity 0.4s var(--ease);
     pointer-events: none;
@@ -1433,7 +1739,6 @@ ul { list-style: none; }
     border-color: rgba(77, 184, 194, 0.3);
 }
 
-/* CP Footer note */
 .cp-note {
     position: relative;
     margin-top: 40px;
@@ -1454,7 +1759,6 @@ ul { list-style: none; }
 }
 .cp-note strong { color: #7ACDD5; font-weight: 700; }
 
-/* CP staggered reveal animations */
 .cp-showcase .cp-team-card,
 .cp-showcase .cp-project,
 .cp-showcase .cp-stat,
@@ -1764,6 +2068,7 @@ footer p { margin: 3px 0; }
 @media (max-width: 1024px) {
     .cp-team-grid,
     .cp-portfolio { grid-template-columns: repeat(2, 1fr); }
+    .phase2-timeline { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 920px) {
@@ -1817,6 +2122,13 @@ footer p { margin: 3px 0; }
 
     .crm-flow { grid-template-columns: 1fr; }
 
+    .section.phase2-showcase { padding: 38px 22px 34px; }
+    .phase2-watermark {
+        font-size: clamp(3rem, 20vw, 5rem);
+        letter-spacing: 0.08em;
+    }
+    .phase2-timeline { grid-template-columns: 1fr; }
+
     .section.cp-showcase { padding: 42px 22px 40px; }
     .cp-logo-mark { width: 52px; height: 52px; border-radius: 16px; }
     .cp-logo-text h2 { font-size: 1.7rem; }
@@ -1863,6 +2175,11 @@ footer p { margin: 3px 0; }
     .bot-service { padding: 22px 18px; }
     .bot-service h3 { font-size: 1.08rem; }
     .bot-grid { grid-template-columns: 1fr; }
+
+    .section.phase2-showcase { padding: 30px 16px 28px; }
+    .phase2-badge { font-size: 0.6rem; padding: 5px 13px; }
+    .phase2-watermark { font-size: 2.6rem; letter-spacing: 0.06em; }
+    .phase2-watermark span { font-size: 0.4em; }
 
     .section.cp-showcase { padding: 34px 18px 32px; }
     .cp-logo-row { flex-direction: column; gap: 12px; }
@@ -1969,14 +2286,14 @@ footer p { margin: 3px 0; }
         <a href="#s2"><span class="mobile-num">۲</span>مرکز فرماندهی پخش</a>
         <a href="#s3"><span class="mobile-num">۳</span>فروشگاه‌های زنجیره‌ای و پخش مویرگی</a>
         <a href="#s4"><span class="mobile-num">۴</span>استراتژی رشد و توسعه بازار</a>
-        <a href="#s5"><span class="mobile-num">۵</span>لایه هوشمند ایجنتیک</a>
-        <a href="#s6"><span class="mobile-num">۶</span>موتور رشد و سایت تامین</a>
-        <a href="#s7"><span class="mobile-num">۷</span>وب‌سایت شرکتی و فروشگاهی</a>
-        <a href="#s8"><span class="mobile-num">۸</span>پنل نمایندگان شهرستان</a>
-        <a href="#s9"><span class="mobile-num">۹</span>CRM و اتوماسیون</a>
-        <a href="#s10"><span class="mobile-num">۱۰</span>ربات‌های بله و تلگرام</a>
-        <a href="#s11"><span class="mobile-num">۱۱</span>استقرار، آموزش و پشتیبانی</a>
-        <a href="#s12" class="cp-link"><span class="mobile-num">★</span>معرفی Code Packs</a>
+        <a href="#s5"><span class="mobile-num">۵</span>موتور رشد و سایت تامین</a>
+        <a href="#s6"><span class="mobile-num">۶</span>وب‌سایت شرکتی و فروشگاهی</a>
+        <a href="#s7"><span class="mobile-num">۷</span>پنل نمایندگان شهرستان</a>
+        <a href="#s8"><span class="mobile-num">۸</span>CRM و اتوماسیون</a>
+        <a href="#s9"><span class="mobile-num">۹</span>ربات‌های بله و تلگرام</a>
+        <a href="#s10"><span class="mobile-num">۱۰</span>استقرار، آموزش و پشتیبانی</a>
+        <a href="#s11" class="phase2-link"><span class="mobile-num">★</span>فاز دوم: لایه هوشمند ایجنتیک</a>
+        <a href="#s12" class="cp-link"><span class="mobile-num">◆</span>معرفی Code Packs</a>
     </nav>
 </div>
 
@@ -2029,14 +2346,14 @@ footer p { margin: 3px 0; }
         <a href="#s2"><span class="toc-num">۲</span>مرکز فرماندهی پخش</a>
         <a href="#s3"><span class="toc-num">۳</span>فروشگاه‌های زنجیره‌ای و پخش مویرگی</a>
         <a href="#s4"><span class="toc-num">۴</span>استراتژی رشد و توسعه بازار</a>
-        <a href="#s5"><span class="toc-num">۵</span>لایه هوشمند ایجنتیک</a>
-        <a href="#s6"><span class="toc-num">۶</span>موتور رشد و سایت تامین</a>
-        <a href="#s7"><span class="toc-num">۷</span>وب‌سایت شرکتی و فروشگاهی</a>
-        <a href="#s8"><span class="toc-num">۸</span>پنل نمایندگان شهرستان</a>
-        <a href="#s9"><span class="toc-num">۹</span>CRM و اتوماسیون</a>
-        <a href="#s10"><span class="toc-num">۱۰</span>ربات‌های بله و تلگرام</a>
-        <a href="#s11"><span class="toc-num">۱۱</span>استقرار، آموزش و پشتیبانی</a>
-        <a href="#s12" class="cp-link"><span class="toc-num">★</span>معرفی Code Packs</a>
+        <a href="#s5"><span class="toc-num">۵</span>موتور رشد و سایت تامین</a>
+        <a href="#s6"><span class="toc-num">۶</span>وب‌سایت شرکتی و فروشگاهی</a>
+        <a href="#s7"><span class="toc-num">۷</span>پنل نمایندگان شهرستان</a>
+        <a href="#s8"><span class="toc-num">۸</span>CRM و اتوماسیون</a>
+        <a href="#s9"><span class="toc-num">۹</span>ربات‌های بله و تلگرام</a>
+        <a href="#s10"><span class="toc-num">۱۰</span>استقرار، آموزش و پشتیبانی</a>
+        <a href="#s11" class="phase2-link"><span class="toc-num">★</span>فاز دوم: لایه هوشمند ایجنتیک</a>
+        <a href="#s12" class="cp-link"><span class="toc-num">◆</span>معرفی Code Packs</a>
     </div>
 </section>
 
@@ -2051,7 +2368,7 @@ footer p { margin: 3px 0; }
     <div class="highlight">
         <strong>معماری سه‌لایه کدپکس برای آریان‌کهن:</strong><br>
         <strong>۱. هسته مرکزی (Distribution Intelligent Core):</strong> مرکز فرماندهی که انبار، پخش به فروشگاه‌های زنجیره‌ای، پخش مویرگی به سوپرمارکت‌ها، نمایندگان شهرستان، مطالبات، مرجوعی و لجستیک را به هم متصل می‌کند.<br>
-        <strong>۲. لایه هوشمند ایجنتیک (AI Agentic Layer — فاز دوم):</strong> هوش مصنوعی تصمیم‌ساز که پس از تحویل فاز اول، کارکردن تیم آریان‌کهن با سیستم و مشخص‌شدن نیازهای دقیق هر دپارتمان، به‌صورت سفارشی روی بخش‌های تحویل‌شده پیاده‌سازی می‌شود.<br>
+        <strong>۲. لایه هوشمند ایجنتیک (AI Agentic Layer — فاز دوم توسعه):</strong> هوش مصنوعی تصمیم‌ساز که در نیمه اول سال ۱۴۰۶ و همزمان با دوره پشتیبانی، به‌صورت سفارشی روی بخش‌های تحویل‌شده پیاده‌سازی می‌شود.<br>
         <strong>۳. موتور رشد (Search Growth Engine):</strong> سئوی پیشرفته برای سایت فروشگاهی و شرکتی آریان‌کهن و محصولات پخش‌شده.
     </div>
     <p>
@@ -2090,7 +2407,7 @@ footer p { margin: 3px 0; }
         <div class="card"><h4>یکپارچه‌سازی با سیستم‌های موجود</h4><p>APIهای اختصاصی برای اتصال به نرم‌افزارهای حسابداری، انبار و فروش آریان‌کهن بدون نیاز به تغییر زیرساخت.</p></div>
     </div>
 
-    <div class="info-box info-green"><strong>استقرار، آموزش و پشتیبانی:</strong> پس از تحویل کامل پروژه، تیم کدپکس به مدت <strong>۱ ماه</strong> در کنار تیم آریان‌کهن خواهد بود — شامل استقرار سیستم، آموزش دپارتمان‌های مختلف و پشتیبانی کامل در راه‌اندازی. پس از این دوره، <strong>۶ ماه پشتیبانی رایگان</strong> نیز برای تیم شما در نظر گرفته شده است.</div>
+    <div class="info-box info-green"><strong>استقرار، آموزش و پشتیبانی:</strong> پس از تحویل کامل پروژه، تیم کدپکس به مدت <strong>۱ ماه</strong> در کنار تیم آریان‌کهن خواهد بود — شامل استقرار سیستم، آموزش دپارتمان‌های مختلف و پشتیبانی کامل در راه‌اندازی. پس از این دوره، <strong>۶ ماه پشتیبانی رایگان (نیمه اول سال ۱۴۰۶)</strong> نیز برای تیم شما در نظر گرفته شده است.</div>
 
     <div class="info-box"><strong>نتیجه:</strong> مدیریت کل مجموعه پخش از یک نقطه، حذف سیلوهای اطلاعاتی، کاهش خطاهای انسانی و افزایش سرعت تصمیم‌گیری با کمک داده‌های لحظه‌ای.</div>
 </section>
@@ -2161,29 +2478,6 @@ footer p { margin: 3px 0; }
     <div class="section-head">
         <span class="section-icon">۵</span>
         <div class="section-head-content">
-            <h2 class="section-title">لایه هوشمند ایجنتیک (AI Agentic Layer) — فاز دوم</h2>
-            <div class="section-subtitle">هوش مصنوعی تصمیم‌ساز، سفارشی و درجه یک برای هر دپارتمان</div>
-        </div>
-    </div>
-
-    <div class="highlight">
-        <strong>پس از استقرار کامل اکوسیستم و کارکردن تیم آریان‌کهن با سیستم، در فاز دوم، لایه هوشمند ایجنتیک روی همان زیرساخت سوار می‌شود.</strong>
-        هوش مصنوعی در این اکوسیستم یک قابلیت جانبی نیست؛ یک لایه زنده، کاملاً سفارشی و درجه یک است که بر اساس نیاز دقیق هر دپارتمان — از فروش و مالی تا انبار و لجستیک — به‌صورت اختصاصی پیاده‌سازی می‌شود.
-    </div>
-
-    <div class="cards">
-        <div class="card"><h4>AI Sales & Revenue Agent</h4><p>هدایت خودکار چرخه فروش — از شناسایی فرصت تا بستن معامله، همراه با تحلیل سودآوری کانال‌ها و پیشنهاد فروش متقاطع.</p></div>
-        <div class="card"><h4>AI Management Copilot</h4><p>دستیار تحلیلی سطح مدیریت — پاسخ به سوالات کلیدی، هشدارهای هوشمند و گزارش‌های اجرایی خودکار.</p></div>
-        <div class="card"><h4>AI Operations Agent</h4><p>پایش و بهینه‌سازی فرآیندهای عملیاتی، انبار، لجستیک و پخش — پیش‌بینی تقاضا و مدیریت موجودی.</p></div>
-    </div>
-
-    <div class="info-box info-green"><strong>تعهد کدپکس:</strong> پیاده‌سازی هر ایجنتی که آریان‌کهن نیاز داشته باشد — با کدنویسی کاملاً اختصاصی و بدون هزینه توکن. استقرار و آموزش نیز طبق برنامه فاز استقرار انجام می‌شود.</div>
-</section>
-
-<section class="section" id="s6">
-    <div class="section-head">
-        <span class="section-icon">۶</span>
-        <div class="section-head-content">
             <h2 class="section-title">موتور رشد دیجیتال (Search Growth Engine) و سایت تامین</h2>
             <div class="section-subtitle">آریان‌کهن به‌عنوان شرکت پخش، برای هر محصول و هر کاربرد قابل کشف</div>
         </div>
@@ -2203,9 +2497,9 @@ footer p { margin: 3px 0; }
     <div class="info-box info-green"><strong>شعار کلیدی:</strong> آریان‌کهن فقط در فضای وب حضور نخواهد داشت؛ برای هر محصول، کاربرد، صنعت و نیاز، یک مسیر قابل کشف در موتورهای جستجو ایجاد خواهد شد.</div>
 </section>
 
-<section class="section" id="s7">
+<section class="section" id="s6">
     <div class="section-head">
-        <span class="section-icon">۷</span>
+        <span class="section-icon">۶</span>
         <div class="section-head-content">
             <h2 class="section-title">وب‌سایت شرکتی و فروشگاهی آریان‌کهن</h2>
             <div class="section-subtitle">دو سایت کدنویسی‌شده اختصاصی، متصل به ERP مرکزی</div>
@@ -2227,9 +2521,9 @@ footer p { margin: 3px 0; }
     <div class="info-box"><strong>نتیجه:</strong> دو وب‌سایت که هم معرف هویت پخش آریان‌کهن هستند و هم موتور فروش؛ با تجربه کاربری عالی، نرخ تبدیل بالا و کنترل کامل از یک نقطه.</div>
 </section>
 
-<section class="section" id="s8">
+<section class="section" id="s7">
     <div class="section-head">
-        <span class="section-icon">۸</span>
+        <span class="section-icon">۷</span>
         <div class="section-head-content">
             <h2 class="section-title">پنل اختصاصی نمایندگان شهرستان</h2>
             <div class="section-subtitle">مدیریت مستقیم سوپرمارکت‌ها، قیمت‌ها و پرداخت‌ها</div>
@@ -2251,9 +2545,9 @@ footer p { margin: 3px 0; }
     <div class="info-box"><strong>نتیجه:</strong> نمایندگان به‌عنوان بازوی پخش آریان‌کهن، با ابزارهای هوشمند توانمند می‌شوند و فرآیند فروش مویرگی شتاب می‌گیرد.</div>
 </section>
 
-<section class="section" id="s9">
+<section class="section" id="s8">
     <div class="section-head">
-        <span class="section-icon">۹</span>
+        <span class="section-icon">۸</span>
         <div class="section-head-content">
             <h2 class="section-title">CRM یکپارچه با اتوماسیون هوشمند</h2>
             <div class="section-subtitle">مدیریت ارتباط با مشتری و اتوماسیون فرآیندها با n8n</div>
@@ -2271,9 +2565,9 @@ footer p { margin: 3px 0; }
     <div class="info-box info-green"><strong>نتیجه:</strong> هیچ لیدی گم نمی‌شود، فرآیند فروش کاملاً شفاف و شتاب‌یافته است.</div>
 </section>
 
-<section class="section" id="s10">
+<section class="section" id="s9">
     <div class="section-head">
-        <span class="section-icon">۱۰</span>
+        <span class="section-icon">۹</span>
         <div class="section-head-content">
             <h2 class="section-title">ربات‌های هوشمند بله و تلگرام</h2>
             <div class="section-subtitle">سرویس اختصاصی با کدنویسی بومی</div>
@@ -2298,9 +2592,9 @@ footer p { margin: 3px 0; }
     </div>
 </section>
 
-<section class="section" id="s11">
+<section class="section" id="s10">
     <div class="section-head">
-        <span class="section-icon">۱۱</span>
+        <span class="section-icon">۱۰</span>
         <div class="section-head-content">
             <h2 class="section-title">استقرار، آموزش و پشتیبانی</h2>
             <div class="section-subtitle">Deployment, Training & Support</div>
@@ -2316,13 +2610,105 @@ footer p { margin: 3px 0; }
         <div class="card"><h4>Database</h4><p>مالکیت کامل داده‌ها و اطلاعات سایت برای آریان‌کهن</p></div>
         <div class="card"><h4>دسترسی‌ها</h4><p>تحویل تمام دسترسی‌های مدیریتی مرتبط با پروژه</p></div>
         <div class="card"><h4>مستندات کامل</h4><p>راهنمای مدیریت سیستم، کدها و فرآیندها</p></div>
-        <div class="card"><h4>استقرار، آموزش و پشتیبانی</h4><p>۱ ماه استقرار و آموزش دپارتمان‌ها + ۶ ماه پشتیبانی رایگان پس از استقرار</p></div>
+        <div class="card"><h4>استقرار، آموزش و پشتیبانی</h4><p>۱ ماه استقرار و آموزش دپارتمان‌ها + ۶ ماه پشتیبانی رایگان (نیمه اول ۱۴۰۶)</p></div>
     </div>
-    <div class="info-box info-green"><strong>برنامه استقرار و پشتیبانی:</strong> پس از تحویل کامل پروژه، تیم کدپکس به مدت <strong>۱ ماه</strong> در کنار تیم آریان‌کهن خواهد بود — شامل استقرار سیستم، آموزش دپارتمان‌های مختلف و پشتیبانی کامل در راه‌اندازی. پس از این دوره، <strong>۶ ماه پشتیبانی رایگان</strong> نیز برای تیم شما در نظر گرفته شده است.</div>
+    <div class="info-box info-green"><strong>برنامه استقرار و پشتیبانی:</strong> پس از تحویل کامل پروژه، تیم کدپکس به مدت <strong>۱ ماه</strong> در کنار تیم آریان‌کهن خواهد بود — شامل استقرار سیستم، آموزش دپارتمان‌های مختلف و پشتیبانی کامل در راه‌اندازی. پس از این دوره، <strong>۶ ماه پشتیبانی رایگان در نیمه اول سال ۱۴۰۶</strong> نیز برای تیم شما در نظر گرفته شده است.</div>
 </section>
 
 <!-- ============================================================
-     CP DIVIDER — Visual transition into the Code Packs showcase
+     SECTION 11 — PHASE 2 DEVELOPMENT
+     ============================================================ -->
+<section class="section phase2-showcase" id="s11">
+    <div class="phase2-watermark">
+        COMING SOON
+        <span>PHASE II</span>
+    </div>
+
+    <div class="phase2-content">
+
+        <div class="section-head">
+            <span class="section-icon">۱۱</span>
+            <div class="section-head-content">
+                <h2 class="section-title">فاز دوم توسعه — لایه هوشمند ایجنتیک (AI Agentic Layer)</h2>
+                <div class="section-subtitle">پیاده‌سازی سفارشی در نیمه اول سال ۱۴۰۶ — همزمان با دوره پشتیبانی</div>
+            </div>
+        </div>
+
+        <div class="phase2-badge">
+            <span class="phase2-badge-dot"></span>
+            فاز دوم توسعه — نیمه اول سال ۱۴۰۶
+        </div>
+
+        <div class="highlight">
+            <strong>فاز دوم، پس از تثبیت اکوسیستم و در دوره پشتیبانی فعال می‌شود.</strong>
+            پس از تحویل فاز اول، استقرار کامل و ۱ ماه آموزش، تیم آریان‌کهن در بازه پشتیبانی <strong>۶ ماهه (نیمه اول سال ۱۴۰۶)</strong> با سیستم کار می‌کند. در همین بازه، تیم کدپکس ماژول‌های هوشمند ایجنتیک را بر اساس نیازهای واقعی هر دپارتمان به‌صورت سفارشی پیاده‌سازی می‌کند.
+        </div>
+
+        <div class="phase2-timeline">
+            <div class="phase2-timeline-card">
+                <strong>پایه‌گذاری</strong>
+                <span>پس از تحویل فاز اول و اتمام ۱ ماه آموزش و استقرار</span>
+            </div>
+            <div class="phase2-timeline-card">
+                <strong>پیاده‌سازی</strong>
+                <span>در بازه ۶ ماه پشتیبانی — نیمه اول سال ۱۴۰۶</span>
+            </div>
+            <div class="phase2-timeline-card">
+                <strong>توسعه مستمر</strong>
+                <span>افزودن ایجنت‌های اختصاصی بر اساس نیاز هر دپارتمان</span>
+            </div>
+        </div>
+
+        <h3>سه دسته ایجنت‌های قابل پیاده‌سازی</h3>
+
+        <div class="cards">
+            <div class="card">
+                <h4>AI Sales & Revenue Agent</h4>
+                <p>
+                    <strong>عامل هوشمند فروش و درآمد</strong><br>
+                    هدایت خودکار چرخه فروش — از شناسایی فرصت تا بستن معامله.<br>
+                    • تحلیل سودآوری هر کانال فروش به‌صورت تفکیکی<br>
+                    • پیشنهاد فروش متقاطع (Cross-sell و Up-sell) به مشتریان موجود<br>
+                    • قیمت‌گذاری پویا بر اساس تقاضا، رقبا و حاشیه سود<br>
+                    • امتیازدهی خودکار لیدها بر اساس احتمال تبدیل<br>
+                    • پیش‌بینی دقیق فروش برای هر محصول و هر منطقه
+                </p>
+            </div>
+            <div class="card">
+                <h4>AI Management Copilot</h4>
+                <p>
+                    <strong>دستیار تحلیلی سطح مدیریت</strong><br>
+                    پاسخ لحظه‌ای به سوالات کلیدی کسب‌وکار.<br>
+                    • پاسخ به سوالات مدیریتی به زبان طبیعی<br>
+                    • هشدارهای هوشمند پیش از وقوع مشکلات<br>
+                    • تحلیل رفتار مشتری و الگوهای خرید<br>
+                    • رصد لحظه‌ای رقبا و تغییرات بازار<br>
+                    • گزارش‌های اجرایی خودکار (روزانه، هفتگی، ماهانه)
+                </p>
+            </div>
+            <div class="card">
+                <h4>AI Operations Agent</h4>
+                <p>
+                    <strong>عامل هوشمند عملیات و پخش</strong><br>
+                    پایش و بهینه‌سازی فرآیندهای عملیاتی، انبار، لجستیک و پخش.<br>
+                    • پیش‌بینی دقیق تقاضا برای هر محصول<br>
+                    • بهینه‌سازی مسیر پخش و توزیع<br>
+                    • مدیریت خودکار موجودی و نقطه سفارش<br>
+                    • هشدار سررسید مطالبات و پیگیری خودکار<br>
+                    • کاهش ضایعات و بهبود بهره‌وری انبار
+                </p>
+            </div>
+        </div>
+
+        <div class="info-box info-green">
+            <strong>تعهد کدپکس:</strong> پیاده‌سازی هر ایجنتی که آریان‌کهن نیاز داشته باشد — با کدنویسی کاملاً اختصاصی، بدون هزینه توکن و بر پایه همان زیرساخت تحویل‌شده.
+        </div>
+
+    </div>
+</section>
+
+<!-- ============================================================
+     CP DIVIDER
      ============================================================ -->
 <div class="cp-divider">
     <span>
@@ -2333,11 +2719,9 @@ footer p { margin: 3px 0; }
 </div>
 
 <!-- ============================================================
-     SECTION 12 — CODE PACKS SHOWCASE (Team + Projects merged)
-     Distinct, branded "About Code Packs" panel
+     SECTION 12 — CODE PACKS SHOWCASE
      ============================================================ -->
 <section class="section cp-showcase" id="s12">
-    <!-- ===== CP Header ===== -->
     <div class="cp-header">
         <div class="cp-badge">
             <span class="cp-badge-dot"></span>
@@ -2363,7 +2747,6 @@ footer p { margin: 3px 0; }
         </p>
     </div>
 
-    <!-- ===== CP Stats ===== -->
     <div class="cp-stats">
         <div class="cp-stat">
             <strong>۶</strong>
@@ -2383,7 +2766,6 @@ footer p { margin: 3px 0; }
         </div>
     </div>
 
-    <!-- ===== CP Team ===== -->
     <div class="cp-subhead">
         <h3>تیم کدپکس — ۶ تخصص مکمل</h3>
     </div>
@@ -2438,7 +2820,6 @@ footer p { margin: 3px 0; }
         </div>
     </div>
 
-    <!-- ===== CP Portfolio ===== -->
     <div class="cp-subhead">
         <h3>پروژه‌های شاخص کدپکس</h3>
     </div>
@@ -2544,7 +2925,6 @@ footer p { margin: 3px 0; }
         </article>
     </div>
 
-    <!-- ===== CP Footer note ===== -->
     <div class="cp-note">
         <p>
             هر یک از این پروژه‌ها نشان‌دهنده توانایی ما در ترکیب تخصص‌های مختلف است — از طراحی و توسعه تا هوش مصنوعی و اتوماسیون —
@@ -2698,6 +3078,7 @@ footer p { margin: 3px 0; }
     }, { threshold: 0.06, rootMargin: "0px 0px -50px 0px" });
     sections.forEach(function(section) { revealObserver.observe(section); });
 
+    // Accordion for cards — includes phase2-showcase cards
     const cards = document.querySelectorAll(".section:not(.cp-showcase) .card");
     cards.forEach(function(card) {
         card.setAttribute("role", "button");
