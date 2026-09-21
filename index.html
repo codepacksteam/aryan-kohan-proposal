@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#F7F8F9">
-<title>پروپوزال اکوسیستم دیجیتال آریان‌کهن | Code Packs</title>
-<meta name="description" content="طراحی مرکز فرماندهی دیجیتال، سیستم پخش، پنل نمایندگان شهرستان، مدیریت فروشگاه‌های زنجیره‌ای و لایه هوشمند AI برای شرکت پخش آریان‌کهن">
+<title>پروپوزال وب‌سایت شرکتی آریان‌کهن | Code Packs</title>
+<meta name="description" content="طراحی وب‌سایت شرکتی آریان‌کهن همراه با دستیار هوشمند رایا و بات بله — Code Packs">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -317,10 +317,6 @@ ul { list-style: none; }
     background: linear-gradient(135deg, #0E3D4D, #1F8A94);
     color: #fff;
 }
-.mobile-panel a.phase2-link .mobile-num {
-    background: linear-gradient(135deg, #A66B1F, #E0AA5C);
-    color: #fff;
-}
 
 /* HERO */
 .hero {
@@ -570,10 +566,6 @@ ul { list-style: none; }
     background: linear-gradient(135deg, #0E3D4D, #1F8A94);
     color: #fff;
 }
-.toc-links a.phase2-link .toc-num {
-    background: linear-gradient(135deg, #A66B1F, #E0AA5C);
-    color: #fff;
-}
 
 /* SECTIONS */
 .section {
@@ -650,27 +642,55 @@ ul { list-style: none; }
     font-size: 0.9rem;
 }
 .section p strong { color: var(--text); font-weight: 700; }
-.section ul {
-    margin: 12px 0 18px;
-    padding-right: 4px;
-    color: var(--text-2);
+
+/* PRICE BADGE */
+.price-badge {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+    padding: 20px 26px;
+    margin: 4px 0 24px;
+    border-radius: var(--r-lg);
+    background: linear-gradient(135deg, var(--brand-soft), transparent 80%);
+    border: 1.5px solid var(--brand);
+    flex-wrap: wrap;
 }
-.section ul li {
-    position: relative;
-    padding-right: 22px;
-    margin-bottom: 10px;
-    font-size: 0.9rem;
-    line-height: 1.85;
+.price-badge-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    min-width: 0;
 }
-.section ul li::before {
-    content: "";
-    position: absolute;
-    right: 4px;
-    top: 12px;
-    width: 6px; height: 6px;
-    border-radius: 50%;
-    background: var(--brand);
-    opacity: 0.5;
+.price-badge-label {
+    font-size: 0.68rem;
+    font-weight: 700;
+    color: var(--text-3);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+.price-badge-title {
+    font-size: 1rem;
+    font-weight: 800;
+    color: var(--text);
+    letter-spacing: -0.008em;
+}
+.price-badge-value {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 6px;
+    font-size: 1.85rem;
+    font-weight: 900;
+    color: var(--brand);
+    letter-spacing: -0.025em;
+    direction: rtl;
+    line-height: 1;
+}
+.price-badge-value small {
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: var(--text-3);
+    letter-spacing: 0;
 }
 
 /* HIGHLIGHTS */
@@ -883,384 +903,300 @@ ul { list-style: none; }
 }
 .bot-goal strong { color: var(--brand); font-weight: 700; }
 
-/* CRM FLOW */
-.crm-flow {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 12px;
-    margin: 22px 0;
-}
-.crm-step {
+/* ============================================================
+   TIMELINE + FINANCIAL
+   ============================================================ */
+.section.financial {
     position: relative;
-    padding: 22px 16px;
+    padding: 48px 40px 44px;
+    background:
+        linear-gradient(135deg,
+            #F0FAFB 0%,
+            #F7FCFD 30%,
+            #FAFDFD 60%,
+            #F2F9FA 100%);
+    border: 1.5px solid rgba(31, 138, 148, 0.25);
+    box-shadow: 0 22px 60px rgba(31, 138, 148, 0.10);
+}
+[data-theme="dark"] .section.financial {
+    background:
+        linear-gradient(135deg,
+            #0B1A1D 0%,
+            #0D1F23 30%,
+            #0C1E22 60%,
+            #0A1A1E 100%);
+    border-color: rgba(77, 184, 194, 0.3);
+    box-shadow: 0 22px 60px rgba(0, 0, 0, 0.4);
+}
+.section.financial::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+        repeating-linear-gradient(
+            45deg,
+            transparent 0,
+            transparent 28px,
+            rgba(31, 138, 148, 0.04) 28px,
+            rgba(31, 138, 148, 0.04) 29px
+        );
+    z-index: 0;
+    pointer-events: none;
+}
+[data-theme="dark"] .section.financial::before {
+    background-image:
+        repeating-linear-gradient(
+            45deg,
+            transparent 0,
+            transparent 28px,
+            rgba(77, 184, 194, 0.035) 28px,
+            rgba(77, 184, 194, 0.035) 29px
+        );
+}
+.section.financial > * {
+    position: relative;
+    z-index: 2;
+}
+.section.financial .section-head {
+    border-bottom-color: rgba(31, 138, 148, 0.2);
+}
+
+/* Summary cards at top of financial */
+.fin-summary {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-bottom: 32px;
+}
+.fin-summary-card {
+    padding: 22px 20px;
+    border-radius: var(--r-md);
+    background: var(--surface);
+    border: 1px solid var(--border);
     text-align: center;
+    transition: all 0.3s var(--ease);
+    box-shadow: var(--shadow-xs);
+}
+.fin-summary-card:hover {
+    border-color: var(--brand);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-sm);
+}
+.fin-summary-card .icon {
+    width: 40px;
+    height: 40px;
+    margin: 0 auto 12px;
+    display: grid;
+    place-items: center;
+    border-radius: var(--r-sm);
+    background: var(--brand-soft);
+    color: var(--brand);
+}
+.fin-summary-card .icon svg {
+    width: 20px;
+    height: 20px;
+}
+.fin-summary-card strong {
+    display: block;
+    font-size: 1.35rem;
+    font-weight: 900;
+    color: var(--brand);
+    letter-spacing: -0.02em;
+    margin-bottom: 4px;
+    line-height: 1.2;
+}
+.fin-summary-card span {
+    display: block;
+    color: var(--text-3);
+    font-size: 0.72rem;
+    font-weight: 600;
+    line-height: 1.5;
+}
+
+/* Timeline */
+.timeline-wrap {
+    margin-top: 8px;
+    padding: 28px 26px 22px;
+    border-radius: var(--r-lg);
+    background: var(--surface);
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow-xs);
+}
+.timeline-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 22px;
+    color: var(--text);
+    font-size: 1rem;
+    font-weight: 800;
+}
+.timeline-title svg {
+    width: 18px;
+    height: 18px;
+    color: var(--brand);
+}
+.timeline {
+    position: relative;
+    padding-right: 30px;
+}
+.timeline::before {
+    content: "";
+    position: absolute;
+    right: 10px;
+    top: 14px;
+    bottom: 14px;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--brand), rgba(31, 138, 148, 0.15));
+    border-radius: 2px;
+}
+.tl-item {
+    position: relative;
+    margin-bottom: 14px;
+    padding: 16px 20px;
     border-radius: var(--r-md);
     background: var(--surface-2);
     border: 1px solid var(--border);
     transition: all 0.3s var(--ease);
 }
-.crm-step:hover {
+.tl-item:last-child { margin-bottom: 0; }
+.tl-item::before {
+    content: "";
+    position: absolute;
+    right: -26px;
+    top: 22px;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--brand);
+    border: 3px solid var(--surface);
+    box-shadow: 0 0 0 2px var(--brand);
+    z-index: 2;
+}
+.tl-item:hover {
     border-color: var(--brand);
     background: var(--surface);
+    box-shadow: var(--shadow-sm);
 }
-.crm-step:not(:last-child)::after {
-    content: "";
-    position: absolute;
-    left: -13px;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 2;
-    width: 22px; height: 22px;
-    display: grid;
-    place-items: center;
-    border-radius: 50%;
+.tl-item:hover::before {
+    background: var(--brand-dark);
+    box-shadow: 0 0 0 2px var(--brand-dark), 0 0 0 6px var(--brand-soft);
+}
+.tl-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 8px;
+}
+.tl-head strong {
+    color: var(--text);
+    font-size: 0.92rem;
+    font-weight: 800;
+}
+.tl-days {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 12px;
+    border-radius: var(--r-pill);
+    background: var(--brand-soft);
+    color: var(--brand);
+    font-size: 0.68rem;
+    font-weight: 700;
+    white-space: nowrap;
+}
+.tl-item p {
+    margin: 0;
+    color: var(--text-2);
+    font-size: 0.8rem;
+    line-height: 1.8;
+}
+.tl-item p strong { color: var(--text); font-weight: 700; }
+
+/* Payment table */
+.payment-wrap {
+    margin-top: 26px;
+    padding: 26px 24px;
+    border-radius: var(--r-lg);
     background: var(--surface);
     border: 1px solid var(--border);
+    box-shadow: var(--shadow-xs);
 }
-.crm-step:not(:last-child)::before {
-    content: "";
-    position: absolute;
-    left: -20px;
-    top: 50%;
-    width: 6px; height: 6px;
-    border-top: 1.5px solid var(--text-3);
-    border-left: 1.5px solid var(--text-3);
-    transform: translateY(-50%) rotate(-45deg);
-    z-index: 3;
+.payment-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    color: var(--text);
+    font-size: 1rem;
+    font-weight: 800;
 }
-.crm-step-num {
+.payment-title svg {
+    width: 18px;
+    height: 18px;
+    color: var(--brand);
+}
+.payment-table {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 8px;
+}
+.payment-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 14px 18px;
+    border-radius: var(--r-sm);
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    flex-wrap: wrap;
+    transition: all 0.25s var(--ease);
+}
+.payment-row:hover {
+    background: var(--surface);
+    border-color: var(--border-strong);
+}
+.payment-row.total {
+    background: linear-gradient(135deg, var(--brand-soft), rgba(31, 138, 148, 0.02));
+    border-color: var(--brand);
+    margin-top: 4px;
+}
+.payment-row.total .payment-amount {
+    font-size: 1.1rem;
+}
+.payment-label {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-weight: 700;
+    color: var(--text);
+    font-size: 0.86rem;
+    flex: 1;
+    min-width: 0;
+}
+.payment-percent {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 30px; height: 30px;
-    border-radius: var(--r-xs);
-    background: var(--brand-soft);
-    color: var(--brand);
-    font-size: 0.7rem;
-    font-weight: 800;
-    margin-bottom: 10px;
-}
-.crm-step strong {
-    display: block;
-    color: var(--text);
-    font-size: 0.82rem;
-    font-weight: 700;
-    margin-bottom: 6px;
-}
-.crm-step p {
-    margin: 0;
-    color: var(--text-3);
-    font-size: 0.68rem;
-    line-height: 1.7;
-}
-
-/* ============================================================
-   PHASE 2 SHOWCASE — "COMING SOON" Development section
-   ============================================================ */
-.section.phase2-showcase {
-    position: relative;
-    padding: 56px 40px 48px;
-    background:
-        linear-gradient(135deg,
-            #FFF9EE 0%,
-            #FBF3E4 30%,
-            #F6F1E8 55%,
-            #EFF4F5 100%);
-    border: 1.5px dashed rgba(166, 107, 31, 0.35);
-    overflow: hidden;
-    isolation: isolate;
-    box-shadow: 0 22px 60px rgba(166, 107, 31, 0.10);
-}
-[data-theme="dark"] .section.phase2-showcase {
-    background:
-        linear-gradient(135deg,
-            #1A1710 0%,
-            #1E1A12 30%,
-            #17211F 55%,
-            #0F1919 100%);
-    border-color: rgba(224, 170, 92, 0.35);
-    box-shadow: 0 22px 60px rgba(0, 0, 0, 0.4);
-}
-.section.phase2-showcase::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background-image:
-        repeating-linear-gradient(
-            45deg,
-            transparent 0,
-            transparent 24px,
-            rgba(166, 107, 31, 0.055) 24px,
-            rgba(166, 107, 31, 0.055) 25px
-        );
-    z-index: 0;
-    pointer-events: none;
-}
-[data-theme="dark"] .section.phase2-showcase::before {
-    background-image:
-        repeating-linear-gradient(
-            45deg,
-            transparent 0,
-            transparent 24px,
-            rgba(224, 170, 92, 0.045) 24px,
-            rgba(224, 170, 92, 0.045) 25px
-        );
-}
-.section.phase2-showcase::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background:
-        radial-gradient(circle at 0% 0%, rgba(224, 170, 92, 0.10), transparent 45%),
-        radial-gradient(circle at 100% 100%, rgba(77, 184, 194, 0.08), transparent 50%);
-    z-index: 0;
-    pointer-events: none;
-}
-.section.phase2-showcase:hover {
-    border-color: rgba(166, 107, 31, 0.55);
-    box-shadow: 0 28px 75px rgba(166, 107, 31, 0.15);
-}
-[data-theme="dark"] .section.phase2-showcase:hover {
-    border-color: rgba(224, 170, 92, 0.5);
-    box-shadow: 0 28px 75px rgba(0, 0, 0, 0.55);
-}
-.section.phase2-showcase > .phase2-content {
-    position: relative;
-    z-index: 3;
-}
-
-/* The big "COMING SOON" watermark */
-.phase2-watermark {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) rotate(-14deg);
-    font-family: "Vazirmatn", sans-serif;
-    font-size: clamp(4.5rem, 14vw, 11rem);
-    font-weight: 900;
-    letter-spacing: 0.12em;
-    color: rgba(166, 107, 31, 0.07);
-    white-space: nowrap;
-    pointer-events: none;
-    user-select: none;
-    direction: ltr;
-    z-index: 1;
-    line-height: 1;
-    text-align: center;
-}
-.phase2-watermark span {
-    display: block;
-    font-size: 0.32em;
-    letter-spacing: 0.4em;
-    margin-top: 12px;
-    opacity: 0.7;
-}
-[data-theme="dark"] .phase2-watermark {
-    color: rgba(224, 170, 92, 0.09);
-}
-
-/* Phase 2 badge */
-.phase2-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    padding: 7px 18px;
-    margin-bottom: 20px;
+    min-width: 52px;
+    padding: 4px 10px;
     border-radius: var(--r-pill);
-    background: linear-gradient(135deg, rgba(166, 107, 31, 0.14), rgba(224, 170, 92, 0.10));
-    border: 1px solid rgba(166, 107, 31, 0.35);
-    color: #8A5514;
-    font-size: 0.68rem;
-    font-weight: 800;
-    letter-spacing: 0.06em;
-    position: relative;
-    z-index: 3;
-    box-shadow: 0 6px 20px rgba(166, 107, 31, 0.12);
-}
-[data-theme="dark"] .phase2-badge {
-    background: linear-gradient(135deg, rgba(224, 170, 92, 0.15), rgba(166, 107, 31, 0.08));
-    color: #E0AA5C;
-    border-color: rgba(224, 170, 92, 0.35);
-}
-.phase2-badge-dot {
-    width: 7px; height: 7px;
-    border-radius: 50%;
-    background: #C58A34;
-    box-shadow: 0 0 0 0 rgba(197, 138, 52, 0.5);
-    animation: phase2Pulse 2s ease-in-out infinite;
-}
-[data-theme="dark"] .phase2-badge-dot { background: #E0AA5C; }
-@keyframes phase2Pulse {
-    0%, 100% { box-shadow: 0 0 0 0 rgba(197, 138, 52, 0.6); }
-    50% { box-shadow: 0 0 0 9px rgba(197, 138, 52, 0); }
-}
-
-/* Phase 2 section icon — amber tone */
-.section.phase2-showcase .section-icon {
-    background: linear-gradient(135deg, rgba(166, 107, 31, 0.14), rgba(224, 170, 92, 0.10));
-    color: #A66B1F;
-    border: 1px solid rgba(166, 107, 31, 0.25);
-}
-[data-theme="dark"] .section.phase2-showcase .section-icon {
-    background: linear-gradient(135deg, rgba(224, 170, 92, 0.15), rgba(166, 107, 31, 0.10));
-    color: #E0AA5C;
-    border-color: rgba(224, 170, 92, 0.3);
-}
-.section.phase2-showcase:hover .section-icon {
-    background: linear-gradient(135deg, #C58A34, #E0AA5C);
+    background: var(--brand);
     color: #fff;
-    border-color: transparent;
-}
-.section.phase2-showcase .section-head {
-    border-bottom-color: rgba(166, 107, 31, 0.2);
-}
-.section.phase2-showcase .highlight {
-    background: rgba(255, 255, 255, 0.55);
-    border-color: rgba(166, 107, 31, 0.2);
-    border-right-color: #C58A34;
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-}
-[data-theme="dark"] .section.phase2-showcase .highlight {
-    background: rgba(255, 255, 255, 0.03);
-    border-color: rgba(224, 170, 92, 0.2);
-    border-right-color: #E0AA5C;
-}
-.section.phase2-showcase .highlight:hover {
-    background: rgba(255, 255, 255, 0.75);
-}
-[data-theme="dark"] .section.phase2-showcase .highlight:hover {
-    background: rgba(255, 255, 255, 0.06);
-}
-.section.phase2-showcase .highlight strong:first-child { color: #A66B1F; }
-[data-theme="dark"] .section.phase2-showcase .highlight strong:first-child { color: #E0AA5C; }
-
-/* Phase 2 cards (accordion) */
-.section.phase2-showcase .card {
-    background: rgba(255, 255, 255, 0.65);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    border-color: rgba(166, 107, 31, 0.18);
-}
-[data-theme="dark"] .section.phase2-showcase .card {
-    background: rgba(255, 255, 255, 0.03);
-    border-color: rgba(224, 170, 92, 0.15);
-}
-.section.phase2-showcase .card:hover {
-    background: rgba(255, 255, 255, 0.9);
-    border-color: #C58A34;
-    box-shadow: 0 12px 32px rgba(166, 107, 31, 0.12);
-}
-[data-theme="dark"] .section.phase2-showcase .card:hover {
-    background: rgba(255, 255, 255, 0.06);
-    border-color: #E0AA5C;
-    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4);
-}
-.section.phase2-showcase .card.expanded {
-    background: rgba(255, 255, 255, 0.95);
-    border-color: #C58A34;
-    box-shadow: 0 14px 36px rgba(166, 107, 31, 0.15);
-}
-[data-theme="dark"] .section.phase2-showcase .card.expanded {
-    background: rgba(255, 255, 255, 0.07);
-    border-color: #E0AA5C;
-    box-shadow: 0 14px 36px rgba(0, 0, 0, 0.5);
-}
-.section.phase2-showcase .card:hover h4,
-.section.phase2-showcase .card.expanded h4 { color: #A66B1F; }
-[data-theme="dark"] .section.phase2-showcase .card:hover h4,
-[data-theme="dark"] .section.phase2-showcase .card.expanded h4 { color: #E0AA5C; }
-.section.phase2-showcase .card:hover h4::after,
-.section.phase2-showcase .card.expanded h4::after {
-    border-color: #A66B1F;
-}
-[data-theme="dark"] .section.phase2-showcase .card:hover h4::after,
-[data-theme="dark"] .section.phase2-showcase .card.expanded h4::after {
-    border-color: #E0AA5C;
-}
-
-/* Phase 2 card expanded content */
-.section.phase2-showcase .card p {
-    color: var(--text-2);
-    font-size: 0.78rem;
-    line-height: 1.95;
-}
-[data-theme="dark"] .section.phase2-showcase .card p {
-    color: #C5CBD3;
-}
-.section.phase2-showcase .card p strong {
-    color: #A66B1F;
-    font-weight: 700;
-    display: inline-block;
-    margin-bottom: 4px;
-}
-[data-theme="dark"] .section.phase2-showcase .card p strong { color: #E0AA5C; }
-
-.section.phase2-showcase .info-box {
-    background: rgba(255, 255, 255, 0.6);
-    border-color: rgba(166, 107, 31, 0.18);
-    border-right-color: #C58A34;
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-}
-[data-theme="dark"] .section.phase2-showcase .info-box {
-    background: rgba(255, 255, 255, 0.03);
-    border-color: rgba(224, 170, 92, 0.15);
-    border-right-color: #E0AA5C;
-}
-.section.phase2-showcase .info-box.info-green {
-    border-right-color: var(--success);
-    background: rgba(235, 245, 240, 0.6);
-}
-[data-theme="dark"] .section.phase2-showcase .info-box.info-green {
-    background: rgba(93, 196, 154, 0.06);
-}
-
-/* Phase 2 timeline mini-strip */
-.phase2-timeline {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 12px;
-    margin: 22px 0;
-    position: relative;
-    z-index: 3;
-}
-.phase2-timeline-card {
-    padding: 18px 18px;
-    border-radius: var(--r-md);
-    background: rgba(255, 255, 255, 0.65);
-    border: 1px solid rgba(166, 107, 31, 0.18);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    transition: all 0.3s var(--ease);
-    text-align: center;
-}
-[data-theme="dark"] .phase2-timeline-card {
-    background: rgba(255, 255, 255, 0.03);
-    border-color: rgba(224, 170, 92, 0.15);
-}
-.phase2-timeline-card:hover {
-    transform: translateY(-3px);
-    border-color: #C58A34;
-    box-shadow: 0 12px 30px rgba(166, 107, 31, 0.12);
-}
-[data-theme="dark"] .phase2-timeline-card:hover {
-    border-color: #E0AA5C;
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
-}
-.phase2-timeline-card strong {
-    display: block;
-    color: #A66B1F;
-    font-size: 0.86rem;
-    font-weight: 800;
-    margin-bottom: 5px;
-}
-[data-theme="dark"] .phase2-timeline-card strong { color: #E0AA5C; }
-.phase2-timeline-card span {
-    display: block;
-    color: var(--text-3);
     font-size: 0.68rem;
-    line-height: 1.7;
+    font-weight: 800;
+    letter-spacing: 0.02em;
+    flex-shrink: 0;
+}
+.payment-amount {
+    font-weight: 800;
+    color: var(--brand);
+    font-size: 0.95rem;
+    direction: rtl;
+    white-space: nowrap;
 }
 
 /* ============================================================
@@ -1431,7 +1367,6 @@ ul { list-style: none; }
     margin: 4px 0 0;
 }
 
-/* CP Tagline — BLACK text (per request) */
 .cp-tagline {
     max-width: 640px;
     margin: 8px auto 0;
@@ -2068,15 +2003,12 @@ footer p { margin: 3px 0; }
 @media (max-width: 1024px) {
     .cp-team-grid,
     .cp-portfolio { grid-template-columns: repeat(2, 1fr); }
-    .phase2-timeline { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 920px) {
     .bot-grid { grid-template-columns: 1fr 1fr; }
-    .crm-flow { grid-template-columns: 1fr 1fr; gap: 10px; }
-    .crm-step:not(:last-child)::after,
-    .crm-step:not(:last-child)::before { display: none; }
     .cp-stats { grid-template-columns: 1fr 1fr; }
+    .fin-summary { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 768px) {
@@ -2109,7 +2041,9 @@ footer p { margin: 3px 0; }
     .section-subtitle { font-size: 0.68rem; }
     .section h3 { font-size: 0.96rem; margin-top: 24px; }
     .section p { font-size: 0.86rem; }
-    .section ul li { font-size: 0.86rem; }
+
+    .price-badge { flex-direction: column; align-items: flex-start; gap: 12px; padding: 18px 20px; }
+    .price-badge-value { font-size: 1.5rem; }
 
     .highlight { padding: 18px 20px; font-size: 0.85rem; }
     .info-box { padding: 15px 18px; font-size: 0.82rem; }
@@ -2120,14 +2054,14 @@ footer p { margin: 3px 0; }
     .bot-service-top { flex-direction: column; align-items: stretch; }
     .bot-grid { grid-template-columns: 1fr 1fr; }
 
-    .crm-flow { grid-template-columns: 1fr; }
-
-    .section.phase2-showcase { padding: 38px 22px 34px; }
-    .phase2-watermark {
-        font-size: clamp(3rem, 20vw, 5rem);
-        letter-spacing: 0.08em;
-    }
-    .phase2-timeline { grid-template-columns: 1fr; }
+    .section.financial { padding: 34px 20px 32px; }
+    .timeline-wrap { padding: 22px 18px 18px; }
+    .timeline { padding-right: 24px; }
+    .timeline::before { right: 8px; }
+    .tl-item::before { right: -22px; width: 12px; height: 12px; }
+    .payment-wrap { padding: 22px 16px; }
+    .payment-row { padding: 12px 14px; }
+    .payment-amount { font-size: 0.88rem; }
 
     .section.cp-showcase { padding: 42px 22px 40px; }
     .cp-logo-mark { width: 52px; height: 52px; border-radius: 16px; }
@@ -2172,14 +2106,21 @@ footer p { margin: 3px 0; }
     .section-title { font-size: 1.05rem; }
     .section-icon { width: 36px; height: 36px; }
 
+    .price-badge { padding: 16px 16px; }
+    .price-badge-value { font-size: 1.3rem; }
+
     .bot-service { padding: 22px 18px; }
     .bot-service h3 { font-size: 1.08rem; }
     .bot-grid { grid-template-columns: 1fr; }
 
-    .section.phase2-showcase { padding: 30px 16px 28px; }
-    .phase2-badge { font-size: 0.6rem; padding: 5px 13px; }
-    .phase2-watermark { font-size: 2.6rem; letter-spacing: 0.06em; }
-    .phase2-watermark span { font-size: 0.4em; }
+    .section.financial { padding: 28px 16px 26px; }
+    .fin-summary-card { padding: 18px 14px; }
+    .fin-summary-card strong { font-size: 1.15rem; }
+    .timeline-wrap { padding: 18px 14px 14px; }
+    .payment-wrap { padding: 18px 14px; }
+    .payment-label { font-size: 0.78rem; }
+    .payment-row { flex-direction: column; align-items: flex-start; }
+    .payment-amount { font-size: 1rem; }
 
     .section.cp-showcase { padding: 34px 18px 32px; }
     .cp-logo-row { flex-direction: column; gap: 12px; }
@@ -2282,18 +2223,10 @@ footer p { margin: 3px 0; }
 <div class="mobile-overlay" id="mobileOverlay">
     <nav class="mobile-panel">
         <div class="mobile-panel-title">فهرست پروپوزال</div>
-        <a href="#s1"><span class="mobile-num">۱</span>چشم‌انداز معماری</a>
-        <a href="#s2"><span class="mobile-num">۲</span>مرکز فرماندهی پخش</a>
-        <a href="#s3"><span class="mobile-num">۳</span>فروشگاه‌های زنجیره‌ای و پخش مویرگی</a>
-        <a href="#s4"><span class="mobile-num">۴</span>استراتژی رشد و توسعه بازار</a>
-        <a href="#s5"><span class="mobile-num">۵</span>موتور رشد و سایت تامین</a>
-        <a href="#s6"><span class="mobile-num">۶</span>وب‌سایت شرکتی و فروشگاهی</a>
-        <a href="#s7"><span class="mobile-num">۷</span>پنل نمایندگان شهرستان</a>
-        <a href="#s8"><span class="mobile-num">۸</span>CRM و اتوماسیون</a>
-        <a href="#s9"><span class="mobile-num">۹</span>ربات‌های بله و تلگرام</a>
-        <a href="#s10"><span class="mobile-num">۱۰</span>استقرار، آموزش و پشتیبانی</a>
-        <a href="#s11" class="phase2-link"><span class="mobile-num">★</span>فاز دوم: لایه هوشمند ایجنتیک</a>
-        <a href="#s12" class="cp-link"><span class="mobile-num">◆</span>معرفی Code Packs</a>
+        <a href="#s1"><span class="mobile-num">۱</span>وب‌سایت شرکتی آریان‌کهن</a>
+        <a href="#s2"><span class="mobile-num">۲</span>دستیار هوشمند رایا و بات بله</a>
+        <a href="#s3"><span class="mobile-num">۳</span>تایم‌لاین و برنامه پرداخت</a>
+        <a href="#s4" class="cp-link"><span class="mobile-num">◆</span>معرفی Code Packs</a>
     </nav>
 </div>
 
@@ -2305,28 +2238,29 @@ footer p { margin: 3px 0; }
     <div class="hero-content">
         <div class="hero-label">
             <span class="hero-label-dot"></span>
-            پروپوزال تحول دیجیتال آریان‌کهن
+            پروپوزال وب‌سایت شرکتی آریان‌کهن
         </div>
         <h1>
-            یک هسته مرکزی،<br>
-            تمام کانال‌های پخش، <span class="accent">یکپارچه و هوشمند</span>
+            وب‌سایت شرکتی آریان‌کهن،<br>
+            با <span class="accent">دستیار هوشمند رایا و بات بله</span>
         </h1>
         <p class="hero-description">
-            مرکز فرماندهی دیجیتال آریان‌کهن با معماری API-First، مدیریت یکپارچه فروشگاه‌های زنجیره‌ای، پخش مویرگی از طریق نمایندگان شهرستان،
-            و لایه هوشمند AI ایجنتیک به‌صورت فازبندی‌شده. از انبار و مطالبات تا مرجوعی، سوپرمارکت‌ها و لجستیک؛ همه در <strong>یک اکوسیستم واحد</strong>.
+            در گام اول، یک <strong>وب‌سایت شرکتی حرفه‌ای و ۱۰۰٪ اختصاصی</strong> برای آریان‌کهن طراحی و توسعه می‌دهیم؛ همراه با
+            <strong>دستیار هوشمند رایا</strong> که به‌صورت ۲۴ ساعته با کاربران گفتگو می‌کند و
+            <strong>بات اختصاصی بله</strong> برای ارتباط مستقیم با مشتریان و تیم داخلی.
         </p>
         <div class="hero-chips">
-            <span class="hero-chip">Intelligent Distribution ERP</span>
-            <span class="hero-chip">Chain Store Management</span>
-            <span class="hero-chip">City Representative Panel</span>
-            <span class="hero-chip">Search Growth Engine</span>
-            <span class="hero-chip">AI Agentic Layer</span>
+            <span class="hero-chip">Corporate Website</span>
+            <span class="hero-chip">Raya AI Assistant</span>
+            <span class="hero-chip">Bale Bot</span>
+            <span class="hero-chip">SEO Ready</span>
+            <span class="hero-chip">Custom Code</span>
         </div>
         <div class="hero-stats">
-            <div class="hero-stat"><strong>AI-First</strong><span>هوش مصنوعی در تمام لایه‌ها</span></div>
-            <div class="hero-stat"><strong>هوشمند</strong><span>تحلیل و تصمیم‌سازی خودکار</span></div>
-            <div class="hero-stat"><strong>یکپارچه</strong><span>ERP + CRM + AI در یک هسته</span></div>
-            <div class="hero-stat"><strong>مقیاس‌پذیر</strong><span>همراه با رشد شبکه پخش</span></div>
+            <div class="hero-stat"><strong>۴۵ روز</strong><span>زمان کل تحویل پروژه</span></div>
+            <div class="hero-stat"><strong>۲ پکیج</strong><span>وب‌سایت + دستیار هوشمند</span></div>
+            <div class="hero-stat"><strong>۱۰۰٪</strong><span>کدنویسی اختصاصی و بومی</span></div>
+            <div class="hero-stat"><strong>۲۴/۷</strong><span>دستیار رایا پاسخ‌گو</span></div>
         </div>
     </div>
 </section>
@@ -2342,368 +2276,364 @@ footer p { margin: 3px 0; }
         <span class="toc-arrow">▼</span>
     </div>
     <div class="toc-links">
-        <a href="#s1"><span class="toc-num">۱</span>چشم‌انداز معماری</a>
-        <a href="#s2"><span class="toc-num">۲</span>مرکز فرماندهی پخش</a>
-        <a href="#s3"><span class="toc-num">۳</span>فروشگاه‌های زنجیره‌ای و پخش مویرگی</a>
-        <a href="#s4"><span class="toc-num">۴</span>استراتژی رشد و توسعه بازار</a>
-        <a href="#s5"><span class="toc-num">۵</span>موتور رشد و سایت تامین</a>
-        <a href="#s6"><span class="toc-num">۶</span>وب‌سایت شرکتی و فروشگاهی</a>
-        <a href="#s7"><span class="toc-num">۷</span>پنل نمایندگان شهرستان</a>
-        <a href="#s8"><span class="toc-num">۸</span>CRM و اتوماسیون</a>
-        <a href="#s9"><span class="toc-num">۹</span>ربات‌های بله و تلگرام</a>
-        <a href="#s10"><span class="toc-num">۱۰</span>استقرار، آموزش و پشتیبانی</a>
-        <a href="#s11" class="phase2-link"><span class="toc-num">★</span>فاز دوم: لایه هوشمند ایجنتیک</a>
-        <a href="#s12" class="cp-link"><span class="toc-num">◆</span>معرفی Code Packs</a>
+        <a href="#s1"><span class="toc-num">۱</span>وب‌سایت شرکتی آریان‌کهن</a>
+        <a href="#s2"><span class="toc-num">۲</span>دستیار هوشمند رایا و بات بله</a>
+        <a href="#s3"><span class="toc-num">۳</span>تایم‌لاین و برنامه پرداخت</a>
+        <a href="#s4" class="cp-link"><span class="toc-num">◆</span>معرفی Code Packs</a>
     </div>
 </section>
 
+<!-- ============================================================
+     SECTION 1 — CORPORATE WEBSITE
+     ============================================================ -->
 <section class="section" id="s1">
     <div class="section-head">
         <span class="section-icon">۱</span>
         <div class="section-head-content">
-            <h2 class="section-title">چشم‌انداز معماری دیجیتال آریان‌کهن</h2>
-            <div class="section-subtitle">از جزیره‌های جداگانه تا یک اکوسیستم یکپارچه پخش</div>
+            <h2 class="section-title">وب‌سایت شرکتی آریان‌کهن</h2>
+            <div class="section-subtitle">کدنویسی ۱۰۰٪ اختصاصی، UI/UX مدرن، سئو اولیه حرفه‌ای</div>
         </div>
     </div>
-    <div class="highlight">
-        <strong>معماری سه‌لایه کدپکس برای آریان‌کهن:</strong><br>
-        <strong>۱. هسته مرکزی (Distribution Intelligent Core):</strong> مرکز فرماندهی که انبار، پخش به فروشگاه‌های زنجیره‌ای، پخش مویرگی به سوپرمارکت‌ها، نمایندگان شهرستان، مطالبات، مرجوعی و لجستیک را به هم متصل می‌کند.<br>
-        <strong>۲. لایه هوشمند ایجنتیک (AI Agentic Layer — فاز دوم توسعه):</strong> هوش مصنوعی تصمیم‌ساز که در نیمه اول سال ۱۴۰۶ و همزمان با دوره پشتیبانی، به‌صورت سفارشی روی بخش‌های تحویل‌شده پیاده‌سازی می‌شود.<br>
-        <strong>۳. موتور رشد (Search Growth Engine):</strong> سئوی پیشرفته برای سایت فروشگاهی و شرکتی آریان‌کهن و محصولات پخش‌شده.
+
+    <div class="price-badge">
+        <div class="price-badge-info">
+            <span class="price-badge-label">Package 01 — Corporate Website</span>
+            <span class="price-badge-title">وب‌سایت شرکتی آریان‌کهن</span>
+        </div>
+        <div class="price-badge-value">۷۰,۰۰۰,۰۰۰<small>تومان</small></div>
     </div>
+
     <p>
-        هدف ما ایجاد یک <strong>سیستم زنده و مقیاس‌پذیر</strong> برای آریان‌کهن است که با رشد شبکه پخش و تنوع محصولات تکامل پیدا کند. این معماری نه تنها سیستم‌های فعلی را کنار نمی‌گذارد، بلکه از طریق APIهای اختصاصی، آنها را به یک شبکه واحد متصل می‌کند.
+        وب‌سایت شرکتی، <strong>هویت دیجیتال</strong> آریان‌کهن در فضای وب است. این وب‌سایت به‌گونه‌ای طراحی و پیاده‌سازی می‌شود که
+        هم <strong>اعتبار شرکت پخش</strong> را به مخاطب منتقل کند، هم <strong>محصولات و خدمات</strong> را به شکلی حرفه‌ای معرفی نماید و هم
+        <strong>موتور جذب مشتری</strong> برای آریان‌کهن باشد.
     </p>
     <p>
-        نتیجه نهایی: <strong>مدیریت یکپارچه پخش، تصمیم‌گیری لحظه‌ای، شفافیت مالی و رشد پایدار</strong>.
+        در این گام، تمرکز ما روی یک وب‌سایت <strong>سریع، زیبا و بهینه</strong> است که تمام نیازهای اولیه حضور دیجیتال آریان‌کهن را پوشش می‌دهد —
+        بدون پیچیدگی‌های اضافه و با تمرکز کامل روی کیفیت اجرا.
     </p>
+
+    <div class="highlight">
+        <strong>نگاه کلی به وب‌سایت شرکتی آریان‌کهن</strong><br>
+        <strong>هدف:</strong> ایجاد یک هویت دیجیتال معتبر، حرفه‌ای و قابل کشف برای شرکت پخش آریان‌کهن<br>
+        <strong>مخاطبان:</strong> تأمین‌کنندگان، فروشگاه‌های زنجیره‌ای، نمایندگان شهرستان، سوپرمارکت‌ها و مشتریان نهایی<br>
+        <strong>زبان طراحی:</strong> مدرن، مینیمال، سریع و کاملاً ریسپانسیو
+    </div>
+
+    <div class="cards">
+        <div class="card">
+            <h4>کدنویسی ۱۰۰٪ اختصاصی</h4>
+            <p>وب‌سایت به‌صورت کاملاً اختصاصی و از صفر کدنویسی می‌شود. بدون قالب‌های آماده، بدون وابستگی به پلتفرم‌های محدودکننده — کدی تمیز، سریع و قابل توسعه که مالکیت کامل آن در اختیار آریان‌کهن خواهد بود.</p>
+        </div>
+        <div class="card">
+            <h4>رابط کاربری مدرن و واکنش‌گرا</h4>
+            <p>طراحی UI/UX مدرن با تمرکز بر تجربه کاربری روان، سرعت بالا، انیمیشن‌های نرم و ساختار بصری منظم — به‌طوری که بازدیدکننده در کمترین زمان به هدف خود برسد. کاملاً ریسپانسیو در تمام دستگاه‌ها.</p>
+        </div>
+        <div class="card">
+            <h4>بهینه برای موتورهای جستجو</h4>
+            <p>سئوی اولیه حرفه‌ای شامل Technical SEO، ساختار URL استاندارد، Schema Markup، Sitemap و Internal Linking هوشمند — تا وب‌سایت از همان روز اول برای موتورهای جستجو آماده باشد.</p>
+        </div>
+        <div class="card">
+            <h4>معرفی حرفه‌ای شرکت پخش</h4>
+            <p>معرفی هویت آریان‌کهن به‌عنوان شرکت پخش معتبر، شبکه توزیع، نمایندگان شهرستان، محصولات پخش‌شده و حوزه‌های فعالیت — با چیدمانی حرفه‌ای و اعتمادساز.</p>
+        </div>
+        <div class="card">
+            <h4>نمایش محصولات و خدمات</h4>
+            <p>ارائه ساختاریافته محصولات پخش‌شده و خدمات شرکت، با دسته‌بندی هوشمند، جستجوی سریع، فیلترهای پیشرفته و صفحات اختصاصی برای هر محصول یا دسته.</p>
+        </div>
+        <div class="card">
+            <h4>فرم‌های ارتباطی هوشمند</h4>
+            <p>فرم‌های تماس، درخواست مشاوره، استعلام قیمت و ثبت درخواست نمایندگی — همه با اعتبارسنجی دقیق و ارسال خودکار به تیم مربوطه.</p>
+        </div>
+        <div class="card">
+            <h4>پنل مدیریت محتوا</h4>
+            <p>پنل ادمین اختصاصی برای مدیریت کامل محتوا، محصولات، دسته‌بندی‌ها، اخبار، تصاویر و پیام‌های دریافتی — بدون نیاز به دانش فنی.</p>
+        </div>
+        <div class="card">
+            <h4>سرعت و بهینه‌سازی فنی</h4>
+            <p>بهینه‌سازی Core Web Vitals، بارگذاری سریع تصاویر، فشرده‌سازی هوشمند و استفاده از جدیدترین تکنیک‌های فنی برای رسیدن به بالاترین امتیاز عملکرد.</p>
+        </div>
+    </div>
+
+    <div class="info-box info-green">
+        <strong>نتیجه:</strong> یک وب‌سایت شرکتی سریع، حرفه‌ای و متمایز که هویت دیجیتال آریان‌کهن را به بهترین شکل ممکن به مخاطب منتقل می‌کند و بستر رشد آینده را فراهم می‌سازد.
+    </div>
 </section>
 
+<!-- ============================================================
+     SECTION 2 — RAYA + BALE BOT
+     ============================================================ -->
 <section class="section" id="s2">
     <div class="section-head">
         <span class="section-icon">۲</span>
         <div class="section-head-content">
-            <h2 class="section-title">مرکز فرماندهی دیجیتال (Intelligent Distribution ERP + CRM)</h2>
-            <div class="section-subtitle">هسته یکپارچه آریان‌کهن با معماری API-First و CRM متصل</div>
+            <h2 class="section-title">دستیار هوشمند رایا و بات بله</h2>
+            <div class="section-subtitle">یک دستیار اختصاصی که ۲۴ ساعته با کاربران گفتگو می‌کند</div>
         </div>
     </div>
+
+    <div class="price-badge">
+        <div class="price-badge-info">
+            <span class="price-badge-label">Package 02 — AI Assistant & Bale Bot</span>
+            <span class="price-badge-title">دستیار هوشمند رایا + بات اختصاصی بله</span>
+        </div>
+        <div class="price-badge-value">۵۰,۰۰۰,۰۰۰<small>تومان</small></div>
+    </div>
+
     <p>
-        <strong>ERP هوشمند کدپکس</strong> قلب تپنده اکوسیستم دیجیتال آریان‌کهن است. این سیستم با معماری <strong>API-First</strong> طراحی شده تا بتواند علاوه بر ماژول‌های اختصاصی، به راحتی با سیستم‌های موجود (حسابداری، انبار، فروش) و هر سرویس جدید در آینده یکپارچه شود.
-        <br><br>
-        <strong>CRM اختصاصی</strong> نیز به‌صورت کاملاً یکپارچه با ERP طراحی و لینک می‌شود؛ به‌طوری که مدیریت ارتباط با مشتریان (فروشگاه‌های زنجیره‌ای، سوپرمارکت‌ها، نمایندگان) و فرآیند فروش به‌صورت شفاف و لحظه‌ای در همان هسته مرکزی انجام می‌شود.
+        <strong>رایا</strong> یک دستیار هوشمند اختصاصی است که به‌صورت <strong>۲۴ ساعته</strong> با کاربران گفتگو می‌کند. این دستیار با
+        <strong>کدنویسی بومی</strong> توسعه می‌یابد و به تمام بسترهای کسب‌وکار آریان‌کهن متصل است. رایا فقط یک پاسخ‌دهنده ساده نیست؛
+        بلکه با درک <strong>زبان طبیعی</strong>، <strong>نیت کاربر</strong> و <strong>زمینه گفتگو</strong>، تجربه‌ای انسانی و روان ارائه می‌دهد.
+    </p>
+    <p>
+        در کنار رایا، یک <strong>بات اختصاصی بله</strong> نیز طراحی و کدنویسی می‌شود که هم برای ارتباط با مشتریان و هم برای
+        اطلاع‌رسانی به تیم داخلی و انتقال سریع لیدها به کار می‌رود — بدون وابستگی به هیچ سرویس خارجی.
     </p>
 
     <div class="highlight">
-        <strong>قابلیت کلیدی: قیمت‌گذاری هوشمند و سلکتیو در تمام کانال‌ها</strong><br>
-        با ERP هوشمند آریان‌کهن، مدیران می‌توانند برای <strong>هر محصول</strong> به‌صورت مجزا در <strong>هر کانال فروش</strong> (فروشگاه‌های زنجیره‌ای، سوپرمارکت‌ها، پنل نمایندگان شهرستان، سایت تامین) قیمت را تعیین کنند یا محصول را فعال/غیرفعال نمایند. این قابلیت به‌صورت <strong>کاملاً سلکتیو</strong> و با کمک <strong>هوش مصنوعی</strong> انجام می‌شود.
+        <strong>دستیار رایا در یک نگاه</strong><br>
+        <strong>نوع:</strong> دستیار هوش مصنوعی با کدنویسی بومی و آموزش اختصاصی روی هویت برند<br>
+        <strong>دسترسی:</strong> ۲۴ ساعته، ۷ روز هفته — بدون تعطیلی<br>
+        <strong>اتصال:</strong> کاملاً یکپارچه با وب‌سایت و پیام‌رسان بله<br>
+        <strong>رفتار:</strong> شخصی‌سازی‌شده بر اساس هویت برند آریان‌کهن
     </div>
 
     <div class="cards">
-        <div class="card"><h4>مدیریت یکپارچه موجودی</h4><p>اتصال لحظه‌ای به انبارهای آریان‌کهن با قابلیت مشاهده موجودی در تمام کانال‌های پخش و جلوگیری از فروش بیش از حد.</p></div>
-        <div class="card"><h4>مدیریت فروشگاه‌های زنجیره‌ای</h4><p>ثبت سفارش، پیگیری گردش فروش، مدیریت مطالبات و مرجوعی هر فروشگاه زنجیره‌ای به‌صورت تفکیکی.</p></div>
-        <div class="card"><h4>قیمت‌گذاری پویا و سلکتیو</h4><p>کنترل متمرکز قیمت‌ها با امکان افزایش/کاهش درصدی یا مبلغی برای هر کانال فروش به‌صورت لحظه‌ای و مجزا.</p></div>
-        <div class="card"><h4>لجستیک هوشمند</h4><p>اتصال خودکار به پست، اسنپ، تیپاکس و حمل بین‌الملل با انتخاب بهترین روش ارسال بر اساس وزن، حجم و مقصد.</p></div>
-        <div class="card"><h4>CRM یکپارچه متصل</h4><p>مدیریت چرخه حیات مشتریان به‌صورت کاملاً لینک‌شده با ERP؛ بدون نیاز به سیستم جداگانه.</p></div>
-        <div class="card"><h4>یکپارچه‌سازی با سیستم‌های موجود</h4><p>APIهای اختصاصی برای اتصال به نرم‌افزارهای حسابداری، انبار و فروش آریان‌کهن بدون نیاز به تغییر زیرساخت.</p></div>
-    </div>
-
-    <div class="info-box info-green"><strong>استقرار، آموزش و پشتیبانی:</strong> پس از تحویل کامل پروژه، تیم کدپکس به مدت <strong>۱ ماه</strong> در کنار تیم آریان‌کهن خواهد بود — شامل استقرار سیستم، آموزش دپارتمان‌های مختلف و پشتیبانی کامل در راه‌اندازی. پس از این دوره، <strong>۶ ماه پشتیبانی رایگان (نیمه اول سال ۱۴۰۶)</strong> نیز برای تیم شما در نظر گرفته شده است.</div>
-
-    <div class="info-box"><strong>نتیجه:</strong> مدیریت کل مجموعه پخش از یک نقطه، حذف سیلوهای اطلاعاتی، کاهش خطاهای انسانی و افزایش سرعت تصمیم‌گیری با کمک داده‌های لحظه‌ای.</div>
-</section>
-
-<section class="section" id="s3">
-    <div class="section-head">
-        <span class="section-icon">۳</span>
-        <div class="section-head-content">
-            <h2 class="section-title">مدیریت فروشگاه‌های زنجیره‌ای و پخش مویرگی</h2>
-            <div class="section-subtitle">گردش فروش، مطالبات و مرجوعی — شفاف و یکپارچه</div>
+        <div class="card">
+            <h4>پاسخ‌گویی هوشمند ۲۴/۷</h4>
+            <p>رایا در هر ساعت از شبانه‌روز پاسخگوی کاربران است — بدون نیاز به اپراتور انسانی، بدون تأخیر و بدون تعطیلی. کاربر هر زمان که وارد سایت شود، یک همراه حرفه‌ای در کنار خود دارد.</p>
+        </div>
+        <div class="card">
+            <h4>درک زبان طبیعی فارسی</h4>
+            <p>رایا با درک زبان طبیعی فارسی، سوالات کاربران را همان‌طور که نوشته شده می‌فهمد — بدون نیاز به دستورات پیچیده یا کلمات کلیدی خاص. گفتگویی روان و انسانی.</p>
+        </div>
+        <div class="card">
+            <h4>ثبت درخواست و استعلام قیمت</h4>
+            <p>فرم‌های مرحله‌ای پویا برای دریافت درخواست مشاوره، استعلام قیمت و ثبت سفارش — همراه با اعتبارسنجی دقیق و ارسال خودکار به تیم مربوطه.</p>
+        </div>
+        <div class="card">
+            <h4>اعلان فوری لید جدید</h4>
+            <p>هر لید جدید با تمام جزئیات (نام، شماره تماس، درخواست، منبع) به‌صورت لحظه‌ای به گروه فروش ارسال می‌شود — هیچ فرصتی از دست نمی‌رود.</p>
+        </div>
+        <div class="card">
+            <h4>اطلاع‌رسانی و گزارش‌های روزانه</h4>
+            <p>ارسال قیمت‌های به‌روز، تخفیف‌ها و گزارش‌های روزانه به تیم فروش و نمایندگان — یک کانال ارتباطی مستقیم بین سیستم و نیروی انسانی.</p>
+        </div>
+        <div class="card">
+            <h4>انتقال سریع لیدها به تیم فروش</h4>
+            <p>هر گفتگویی که به درخواست مشاوره یا استعلام قیمت منتهی شود، به‌صورت خودکار ثبت و به تیم فروش منتقل می‌شود — با تمام جزئیات و زمینه گفتگو.</p>
+        </div>
+        <div class="card">
+            <h4>رفتار هوشمند و شخصی‌سازی‌شده</h4>
+            <p>رایا بر اساس هویت برند آریان‌کهن آموزش می‌بیند — با لحن، زبان و اطلاعات اختصاصی شرکت. مثل یک کارشناس داخلی که سال‌ها در آریان‌کهن کار کرده است.</p>
+        </div>
+        <div class="card">
+            <h4>بات اختصاصی بله</h4>
+            <p>یک بات کاملاً بومی و اختصاصی در پیام‌رسان بله، متصل به وب‌سایت و رایا — بدون وابستگی به سرویس‌های خارجی و با مالکیت کامل کد.</p>
         </div>
     </div>
-    <p>
-        آریان‌کهن علاوه بر فروش محصولات تأمین‌کننده به <strong>فروشگاه‌های زنجیره‌ای</strong>، پخش مویرگی به <strong>سوپرمارکت‌ها</strong> از طریق <strong>نمایندگان شهرستان</strong> را نیز در دستور کار دارد.
-        ERP اختصاصی کدپکس تمام این فرآیندها را به‌صورت یکپارچه و شفاف مدیریت می‌کند.
-    </p>
 
-    <div class="highlight">
-        <strong>سه قابلیت حیاتی برای آریان‌کهن</strong><br>
-        <strong>۱. گردش فروش فروشگاه‌های زنجیره‌ای:</strong> مشاهده دقیق میزان فروش هر فروشگاه زنجیره‌ای به‌صورت تفکیکی و مقایسه بازه‌های زمانی.<br>
-        <strong>۲. پیگیری مطالبات:</strong> مانده‌حساب و وضعیت پرداخت هر فروشگاه زنجیره‌ای و سوپرمارکت به‌صورت لحظه‌ای.<br>
-        <strong>۳. مدیریت مرجوعی:</strong> ثبت خودکار مرجوعی در سیستم، کسر خودکار از حساب تأمین‌کننده و از حساب فروشگاه زنجیره‌ای، بدون نیاز به دخالت دستی.
-    </div>
-
-    <div class="cards">
-        <div class="card"><h4>گردش فروش فروشگاه‌های زنجیره‌ای</h4><p>گزارش دقیق فروش هر فروشگاه زنجیره‌ای، تفکیک محصول، بازه زمانی و مقایسه عملکرد کانال‌ها.</p></div>
-        <div class="card"><h4>پیگیری مطالبات</h4><p>مشاهده مانده‌حساب، تاریخ سررسید و وضعیت پرداخت هر مشتری با هشدارهای هوشمند.</p></div>
-        <div class="card"><h4>مدیریت مرجوعی خودکار</h4><p>ثبت مرجوعی، کسر خودکار از حساب تأمین‌کننده و از حساب فروشگاه زنجیره‌ای؛ بدون نیاز به اصلاح دستی.</p></div>
-        <div class="card"><h4>پخش مویرگی به سوپرمارکت‌ها</h4><p>مدیریت سفارش‌ها، تحویل و تسویه سوپرمارکت‌ها از طریق نمایندگان شهرستان در یک پنل واحد.</p></div>
-        <div class="card"><h4>مدیریت درصد تخفیف سوپرمارکت‌ها</h4><p>تعیین و مشاهده درصد تخفیف هر سوپرمارکت به‌صورت مجزا (مثلاً «سوپرمارکت X ۱۰٪ می‌گیرد، Y ۲۰٪»).</p></div>
-        <div class="card"><h4>گزارش تفکیکی هر مشتری</h4><p>مشاهده سابقه خرید، محصولات دریافتی و وضعیت مالی هر سوپرمارکت و فروشگاه زنجیره‌ای.</p></div>
-    </div>
-
-    <div class="info-box info-green"><strong>نتیجه:</strong> شفافیت کامل در گردش مالی، حذف مرجوعی‌های ثبت‌نشده و کنترل لحظه‌ای مطالبات از فروشگاه‌های زنجیره‌ای و سوپرمارکت‌ها.</div>
-</section>
-
-<section class="section" id="s4">
-    <div class="section-head">
-        <span class="section-icon">۴</span>
-        <div class="section-head-content">
-            <h2 class="section-title">استراتژی رشد و توسعه بازار</h2>
-            <div class="section-subtitle">توسعه هدفمند سبد محصولات در کانال‌های پخش</div>
-        </div>
-    </div>
-    <p>
-        آریان‌کهن به‌عنوان شرکت پخش، مسئولیت توزیع و توسعه بازار <strong>سبد متنوعی از محصولات</strong> را بر عهده دارد.
-        این اکوسیستم دیجیتال به‌گونه‌ای طراحی می‌شود که برای <strong>هر محصول دلخواه</strong> — اعم از محصولات فعلی یا محصولات جدید در آینده — زیرساخت رشد، توزیع، بازاریابی و پایش لحظه‌ای فراهم باشد.
-    </p>
-
-    <div class="highlight">
-        <strong>رویکرد توسعه بازار در اکوسیستم آریان‌کهن</strong><br>
-        <strong>هدف:</strong> تبدیل هر محصول پخش‌شده به یک برند قابل کشف و قابل فروش در کانال‌های هدف<br>
-        <strong>کانال‌های فروش:</strong> فروشگاه‌های زنجیره‌ای + پخش مویرگی سوپرمارکت‌ها از طریق نمایندگان شهرستان<br>
-        <strong>پشتیبانی دیجیتال:</strong> SEO، بازاریابی، پنل نمایندگان، اتوماسیون و AI Agent
-    </div>
-
-    <div class="cards">
-        <div class="card"><h4>توسعه بازار هدفمند</h4><p>شناسایی و تسخیر تدریجی بازارهای شهری و روستایی از طریق شبکه پخش مویرگی و نمایندگان شهرستان — برای هر محصول.</p></div>
-        <div class="card"><h4>سئو و برندینگ محصول</h4><p>معرفی هر محصول به‌عنوان برند اقتصادی یا تخصصی برتر از طریق سئو، محتوا و کمپین‌های دیجیتال.</p></div>
-        <div class="card"><h4>توانمندسازی نمایندگان</h4><p>ارائه پنل اختصاصی، قیمت‌های ویژه و ابزارهای فروش به نمایندگان شهرستان برای تسریع پخش.</p></div>
-        <div class="card"><h4>پایش لحظه‌ای سهم بازار</h4><p>رصد فروش، سهم بازار و عملکرد کانال‌ها به‌صورت لحظه‌ای در داشبورد مدیریتی — برای هر محصول و هر منطقه.</p></div>
-    </div>
-
-    <div class="info-box"><strong>نکته کلیدی:</strong> این اکوسیستم دیجیتال، زیرساخت فنی، داده‌ای و بازاریابی لازم برای توسعه هر محصول در سبد آریان‌کهن را فراهم می‌کند.</div>
-</section>
-
-<section class="section" id="s5">
-    <div class="section-head">
-        <span class="section-icon">۵</span>
-        <div class="section-head-content">
-            <h2 class="section-title">موتور رشد دیجیتال (Search Growth Engine) و سایت تامین</h2>
-            <div class="section-subtitle">آریان‌کهن به‌عنوان شرکت پخش، برای هر محصول و هر کاربرد قابل کشف</div>
-        </div>
-    </div>
-    <p>
-        آریان‌کهن به‌عنوان <strong>شرکت پخش</strong> نیازمند یک <strong>سایت تامین</strong> است که هم معرف هویت پخش آن باشد و هم محصولات پخش‌شده را به‌صورت حرفه‌ای ارائه دهد.
-        ما این سایت را به یک <strong>موتور رشد دیجیتال</strong> تبدیل می‌کنیم.
-    </p>
-    <div class="cards">
-        <div class="card"><h4>Product SEO</h4><p>هر محصول یک صفحه تخصصی با مشخصات فنی، کاربردها، TDS، MSDS و نظرات مشتریان که برای موتورهای جستجو بهینه شده است.</p></div>
-        <div class="card"><h4>Application SEO</h4><p>صفحات اختصاصی برای کاربردهای مختلف (چسب کاشی، چسب خودرو، درزگیر ساختمان، چسب صنعتی) تا کاربران راهکار را پیدا کنند.</p></div>
-        <div class="card"><h4>Industry SEO</h4><p>صفحات تخصصی برای صنایع هدف (خودروسازی، ساختمان، نفت و گاز، لوازم خانگی) با محتوای متناسب و کیس‌استادی واقعی.</p></div>
-        <div class="card"><h4>Problem-Based SEO</h4><p>کاربر مشکل خود را جستجو می‌کند (مثلاً «چسب مقاوم در برابر رطوبت») و سیستم او را به راهکار دقیق هدایت می‌کند.</p></div>
-        <div class="card"><h4>Technical SEO</h4><p>بهینه‌سازی Core Web Vitals، ساختار URL، Schema Markup، Sitemap و Internal Linking هوشمند.</p></div>
-        <div class="card"><h4>AI + Content SEO</h4><p>استفاده از AI برای کشف فرصت‌های محتوایی، تحلیل Search Intent، تولید بریف و بهینه‌سازی محتوای قدیمی با نظارت انسانی.</p></div>
-    </div>
-    <div class="info-box info-green"><strong>شعار کلیدی:</strong> آریان‌کهن فقط در فضای وب حضور نخواهد داشت؛ برای هر محصول، کاربرد، صنعت و نیاز، یک مسیر قابل کشف در موتورهای جستجو ایجاد خواهد شد.</div>
-</section>
-
-<section class="section" id="s6">
-    <div class="section-head">
-        <span class="section-icon">۶</span>
-        <div class="section-head-content">
-            <h2 class="section-title">وب‌سایت شرکتی و فروشگاهی آریان‌کهن</h2>
-            <div class="section-subtitle">دو سایت کدنویسی‌شده اختصاصی، متصل به ERP مرکزی</div>
-        </div>
-    </div>
-    <p>
-        آریان‌کهن دارای دو وجه هویتی است: <strong>شرکت پخش معتبر</strong> و <strong>تأمین‌کننده محصولات مصرفی و صنعتی</strong>. بنابراین دو وب‌سایت اختصاصی برای آریان‌کهن طراحی می‌شود که <strong>هر دو از طریق ERP مرکزی کنترل می‌شوند</strong>.
-    </p>
-    <div class="cards">
-        <div class="card"><h4>وب‌سایت شرکتی + سئو اولیه</h4><p>کدنویسی ۱۰۰٪ اختصاصی، رابط کاربری فوق‌العاده روان و جذاب، سئو اولیه حرفه‌ای. معرفی شرکت پخش، شبکه توزیع، نمایندگان شهرستان و محصولات پخش‌شده.</p></div>
-        <div class="card"><h4>چت‌بات ۲۴ ساعته متصل به بله</h4><p>یک چت‌بات هوشمند که به‌صورت ۲۴ ساعته مثل یک کارشناس حرفه‌ای با کاربران گفتگو می‌کند و آن‌ها را راهنمایی می‌کند. کاملاً متصل به پیام‌رسان بله.</p></div>
-        <div class="card"><h4>وب‌سایت فروشگاهی + سئو اولیه</h4><p>فروشگاه اینترنتی با UI/UX بسیار روان و جذاب، سئو اولیه، نمایش محصولات با فیلترهای پیشرفته. مدیریت کامل ادمین از طریق ERP مرکزی.</p></div>
-        <div class="card"><h4>دستیار خرید هوش مصنوعی ایجنتیک</h4><p>یک دستیار هوشمند که کاربر را برای خرید راهنمایی می‌کند، محصول مورد نظر را نمایش می‌دهد، در سبد خرید اضافه می‌کند، اطلاعات آدرس و مشخصات را دریافت می‌کند و مستقیم به صفحه پرداخت هدایت می‌کند.</p></div>
-    </div>
-    <div class="highlight">
-        <strong>کنترل کامل از ERP مرکزی</strong><br>
-        تمام مدیریت وب‌سایت شرکتی و فروشگاهی — از محصولات، قیمت‌ها، محتوا و سفارش‌ها — <strong>فقط از طریق ERP مرکزی</strong> انجام می‌شود. دیگر نیازی به پنل‌های ادمین جداگانه نیست.
-    </div>
-    <div class="info-box"><strong>نتیجه:</strong> دو وب‌سایت که هم معرف هویت پخش آریان‌کهن هستند و هم موتور فروش؛ با تجربه کاربری عالی، نرخ تبدیل بالا و کنترل کامل از یک نقطه.</div>
-</section>
-
-<section class="section" id="s7">
-    <div class="section-head">
-        <span class="section-icon">۷</span>
-        <div class="section-head-content">
-            <h2 class="section-title">پنل اختصاصی نمایندگان شهرستان</h2>
-            <div class="section-subtitle">مدیریت مستقیم سوپرمارکت‌ها، قیمت‌ها و پرداخت‌ها</div>
-        </div>
-    </div>
-    <p>
-        نمایندگان شهرستان یکی از ارکان کلیدی پخش آریان‌کهن هستند. با <strong>پنل اختصاصی نمایندگان</strong> که به ERP مرکزی متصل است، هر نماینده می‌تواند به‌صورت مستقل و هوشمند فعالیت کند و سوپرمارکت‌های حوزه خود را مدیریت نماید.
-        <br><br>
-        این پنل دقیقاً مشابه <strong>پنل نمایندگانی که برای گروه صنعتی امکو اجرا شد</strong> طراحی می‌شود، اما با تمرکز بر نیازهای پخش مویرگی.
-    </p>
-    <div class="cards">
-        <div class="card"><h4>مشاهده قیمت‌های روز و اختصاصی</h4><p>نمایش قیمت‌های به‌روز شده برای هر محصول با اعمال تخفیف‌های ویژه نمایندگی که به‌صورت مجزا از سایر کانال‌ها تعریف شده است.</p></div>
-        <div class="card"><h4>مدیریت سوپرمارکت‌ها</h4><p>ثبت و مدیریت سوپرمارکت‌های هر شهر، مشاهده سابقه خرید، مانده‌حساب و درصد تخفیف هر سوپرمارکت به‌صورت مجزا.</p></div>
-        <div class="card"><h4>ثبت پرداختی سوپرمارکت‌ها</h4><p>ثبت پرداخت‌های دریافتی از هر سوپرمارکت و مشاهده وضعیت تسویه در پنل نماینده.</p></div>
-        <div class="card"><h4>ثبت سفارش هوشمند</h4><p>امکان ثبت سفارش مشتریان، مشاهده موجودی انبار و پیگیری وضعیت سفارش‌ها از داخل پنل.</p></div>
-        <div class="card"><h4>دریافت محتوا از تأمین‌کننده</h4><p>دریافت لحظه‌ای محتوای محصولات، تصاویر، TDS و MSDS از تأمین‌کننده مستقیماً در پنل.</p></div>
-        <div class="card"><h4>دستیار هوشمند نماینده (فاز دوم)</h4><p>یک چت‌بات اختصاصی که به سوالات نماینده پاسخ می‌دهد، پیشنهاد تخفیف می‌دهد و فرآیند ثبت سفارش را راهنمایی می‌کند.</p></div>
-    </div>
-    <div class="info-box"><strong>نتیجه:</strong> نمایندگان به‌عنوان بازوی پخش آریان‌کهن، با ابزارهای هوشمند توانمند می‌شوند و فرآیند فروش مویرگی شتاب می‌گیرد.</div>
-</section>
-
-<section class="section" id="s8">
-    <div class="section-head">
-        <span class="section-icon">۸</span>
-        <div class="section-head-content">
-            <h2 class="section-title">CRM یکپارچه با اتوماسیون هوشمند</h2>
-            <div class="section-subtitle">مدیریت ارتباط با مشتری و اتوماسیون فرآیندها با n8n</div>
-        </div>
-    </div>
-    <p>
-        <strong>CRM اختصاصی آریان‌کهن</strong> با معماری Kanban برای مدیریت کامل چرخه حیات مشتریان (فروشگاه‌های زنجیره‌ای، سوپرمارکت‌ها، نمایندگان) طراحی می‌شود و <strong>به‌صورت کاملاً یکپارچه و لینک‌شده با ERP مرکزی</strong> فعالیت می‌کند. تمام لیدها از وب‌سایت، چت‌بات، ایمیل، بله و تلگرام از طریق Webhook به‌صورت لحظه‌ای در این CRM جمع‌آوری، دسته‌بندی و پیگیری می‌شوند.
-    </p>
-    <div class="crm-flow">
-        <div class="crm-step"><span class="crm-step-num">۱</span><strong>ورود لید</strong><p>از سایت، ایمیل، چت‌بات، بله، تلگرام</p></div>
-        <div class="crm-step"><span class="crm-step-num">۲</span><strong>امتیازدهی هوشمند</strong><p>AI Lead Scoring بر اساس اطلاعات مشتری، صنعت و رفتار</p></div>
-        <div class="crm-step"><span class="crm-step-num">۳</span><strong>پیگیری خودکار</strong><p>اختصاص به فروشنده، تنظیم یادآوری و Follow-up خودکار</p></div>
-        <div class="crm-step"><span class="crm-step-num">۴</span><strong>گزارش مدیریت</strong><p>داشبورد فروش با نمایش نرخ تبدیل و عملکرد فروشنده‌ها</p></div>
-    </div>
-    <div class="info-box info-green"><strong>نتیجه:</strong> هیچ لیدی گم نمی‌شود، فرآیند فروش کاملاً شفاف و شتاب‌یافته است.</div>
-</section>
-
-<section class="section" id="s9">
-    <div class="section-head">
-        <span class="section-icon">۹</span>
-        <div class="section-head-content">
-            <h2 class="section-title">ربات‌های هوشمند بله و تلگرام</h2>
-            <div class="section-subtitle">سرویس اختصاصی با کدنویسی بومی</div>
-        </div>
-    </div>
     <div class="bot-service">
         <div class="bot-service-top">
             <div class="bot-service-title">
                 <span>سرویس اختصاصی — کدنویسی بومی</span>
-                <h3>ربات‌های Agentic برای بله و تلگرام</h3>
+                <h3>بات هوشمند آریان‌کهن در پیام‌رسان بله</h3>
             </div>
         </div>
         <p>
-            دو ربات اختصاصی و هوشمند در پیام‌رسان‌های <strong>بله</strong> و <strong>تلگرام</strong> که به تمام بسترها متصل هستند و هم برای ارتباط با مشتریان، هم اطلاع‌رسانی به تیم فروش و نمایندگان و هم انتقال خودکار لید به CRM استفاده می‌شوند — بدون وابستگی به سرویس‌های خارجی.
+            یک بات اختصاصی و هوشمند در پیام‌رسان <strong>بله</strong> که کاملاً بومی کدنویسی می‌شود و به وب‌سایت آریان‌کهن و دستیار رایا متصل است.
+            این بات هم برای <strong>ارتباط با مشتریان</strong> استفاده می‌شود، هم برای <strong>اطلاع‌رسانی به تیم داخلی</strong> و هم برای
+            <strong>انتقال سریع لیدها</strong> به تیم مربوطه.
         </p>
         <div class="bot-grid">
-            <div class="bot-item"><strong>ثبت درخواست و استعلام</strong><p>دریافت درخواست مشاوره، استعلام قیمت و سفارش با فرم‌های مرحله‌ای پویا</p></div>
-            <div class="bot-item"><strong>اعلان فوری لید</strong><p>ارسال لید جدید با تمام جزئیات به گروه فروش در لحظه</p></div>
+            <div class="bot-item"><strong>ثبت درخواست و استعلام</strong><p>دریافت درخواست مشاوره، استعلام قیمت و ثبت سفارش با فرم‌های مرحله‌ای پویا</p></div>
+            <div class="bot-item"><strong>اعلان فوری لید جدید</strong><p>ارسال هر لید جدید با تمام جزئیات به گروه فروش در لحظه</p></div>
             <div class="bot-item"><strong>اطلاع‌رسانی و گزارش</strong><p>ارسال قیمت‌های به‌روز، تخفیف‌ها و گزارش‌های روزانه به تیم فروش و نمایندگان</p></div>
         </div>
-        <div class="bot-goal"><strong>هدف:</strong> پاسخ‌گویی زیر ۲ ثانیه، انتقال سریع لیدها و ایجاد یک کانال ارتباطی مستقیم بین سیستم‌های دیجیتال و نیروی انسانی.</div>
+        <div class="bot-goal"><strong>هدف:</strong> پاسخ‌گویی زیر ۲ ثانیه، انتقال سریع لیدها و ایجاد یک کانال ارتباطی مستقیم بین سیستم‌های دیجیتال و نیروی انسانی آریان‌کهن.</div>
     </div>
-</section>
 
-<section class="section" id="s10">
-    <div class="section-head">
-        <span class="section-icon">۱۰</span>
-        <div class="section-head-content">
-            <h2 class="section-title">استقرار، آموزش و پشتیبانی</h2>
-            <div class="section-subtitle">Deployment, Training & Support</div>
-        </div>
+    <div class="info-box info-green">
+        <strong>نتیجه:</strong> کاربران در هر ساعت از شبانه‌روز پاسخ حرفه‌ای دریافت می‌کنند، نرخ تبدیل افزایش می‌یابد، لیدها بدون اتلاف وقت به تیم فروش می‌رسند و تیم آریان‌کهن تنها روی گفتگوهای مهم و انسانی تمرکز می‌کند.
     </div>
-    <div class="highlight">
-        <strong>هدف کدپکس ایجاد وابستگی فنی نیست.</strong>
-        پس از تکمیل پروژه و تسویه قرارداد، تمام دارایی‌های اختصاصی توسعه‌یافته برای آریان‌کهن تحویل داده می‌شود. در ادامه، تیم کدپکس در قالب فاز استقرار و آموزش، در کنار تیم آریان‌کهن خواهد بود.
-    </div>
-    <div class="cards">
-        <div class="card"><h4>سورس‌کد کامل</h4><p>تحویل سورس پروژه و ساختار توسعه‌یافته</p></div>
-        <div class="card"><h4>Repository</h4><p>تحویل دسترسی کامل Repository پروژه</p></div>
-        <div class="card"><h4>Database</h4><p>مالکیت کامل داده‌ها و اطلاعات سایت برای آریان‌کهن</p></div>
-        <div class="card"><h4>دسترسی‌ها</h4><p>تحویل تمام دسترسی‌های مدیریتی مرتبط با پروژه</p></div>
-        <div class="card"><h4>مستندات کامل</h4><p>راهنمای مدیریت سیستم، کدها و فرآیندها</p></div>
-        <div class="card"><h4>استقرار، آموزش و پشتیبانی</h4><p>۱ ماه استقرار و آموزش دپارتمان‌ها + ۶ ماه پشتیبانی رایگان (نیمه اول ۱۴۰۶)</p></div>
-    </div>
-    <div class="info-box info-green"><strong>برنامه استقرار و پشتیبانی:</strong> پس از تحویل کامل پروژه، تیم کدپکس به مدت <strong>۱ ماه</strong> در کنار تیم آریان‌کهن خواهد بود — شامل استقرار سیستم، آموزش دپارتمان‌های مختلف و پشتیبانی کامل در راه‌اندازی. پس از این دوره، <strong>۶ ماه پشتیبانی رایگان در نیمه اول سال ۱۴۰۶</strong> نیز برای تیم شما در نظر گرفته شده است.</div>
 </section>
 
 <!-- ============================================================
-     SECTION 11 — PHASE 2 DEVELOPMENT
+     SECTION 3 — TIMELINE + FINANCIAL
      ============================================================ -->
-<section class="section phase2-showcase" id="s11">
-    <div class="phase2-watermark">
-        COMING SOON
-        <span>PHASE II</span>
+<section class="section financial" id="s3">
+    <div class="section-head">
+        <span class="section-icon">۳</span>
+        <div class="section-head-content">
+            <h2 class="section-title">تایم‌لاین پروژه و برنامه پرداخت</h2>
+            <div class="section-subtitle">۴۵ روز زمان‌بندی مشخص — پرداخت مرحله‌ای هم‌زمان با تحویل فازها</div>
+        </div>
     </div>
 
-    <div class="phase2-content">
-
-        <div class="section-head">
-            <span class="section-icon">۱۱</span>
-            <div class="section-head-content">
-                <h2 class="section-title">فاز دوم توسعه — لایه هوشمند ایجنتیک (AI Agentic Layer)</h2>
-                <div class="section-subtitle">پیاده‌سازی سفارشی در نیمه اول سال ۱۴۰۶ — همزمان با دوره پشتیبانی</div>
+    <div class="fin-summary">
+        <div class="fin-summary-card">
+            <div class="icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
             </div>
+            <strong>۴۵ روز</strong>
+            <span>زمان کل تحویل پروژه</span>
         </div>
-
-        <div class="phase2-badge">
-            <span class="phase2-badge-dot"></span>
-            فاز دوم توسعه — نیمه اول سال ۱۴۰۶
-        </div>
-
-        <div class="highlight">
-            <strong>فاز دوم، پس از تثبیت اکوسیستم و در دوره پشتیبانی فعال می‌شود.</strong>
-            پس از تحویل فاز اول، استقرار کامل و ۱ ماه آموزش، تیم آریان‌کهن در بازه پشتیبانی <strong>۶ ماهه (نیمه اول سال ۱۴۰۶)</strong> با سیستم کار می‌کند. در همین بازه، تیم کدپکس ماژول‌های هوشمند ایجنتیک را بر اساس نیازهای واقعی هر دپارتمان به‌صورت سفارشی پیاده‌سازی می‌کند.
-        </div>
-
-        <div class="phase2-timeline">
-            <div class="phase2-timeline-card">
-                <strong>پایه‌گذاری</strong>
-                <span>پس از تحویل فاز اول و اتمام ۱ ماه آموزش و استقرار</span>
+        <div class="fin-summary-card">
+            <div class="icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 10h18"/></svg>
             </div>
-            <div class="phase2-timeline-card">
-                <strong>پیاده‌سازی</strong>
-                <span>در بازه ۶ ماه پشتیبانی — نیمه اول سال ۱۴۰۶</span>
-            </div>
-            <div class="phase2-timeline-card">
-                <strong>توسعه مستمر</strong>
-                <span>افزودن ایجنت‌های اختصاصی بر اساس نیاز هر دپارتمان</span>
-            </div>
+            <strong>۱۲۰,۰۰۰,۰۰۰</strong>
+            <span>مبلغ کل پروژه (تومان)</span>
         </div>
+        <div class="fin-summary-card">
+            <div class="icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            </div>
+            <strong>۶ مرحله</strong>
+            <span>پرداخت مرحله‌ای شفاف</span>
+        </div>
+    </div>
 
-        <h3>سه دسته ایجنت‌های قابل پیاده‌سازی</h3>
+    <div class="timeline-wrap">
+        <div class="timeline-title">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M2 12h20"/><circle cx="12" cy="12" r="10"/></svg>
+            تایم‌لاین اجرایی پروژه در ۴۵ روز
+        </div>
+        <div class="timeline">
 
-        <div class="cards">
-            <div class="card">
-                <h4>AI Sales & Revenue Agent</h4>
+            <div class="tl-item">
+                <div class="tl-head">
+                    <strong>فاز ۱ — کشف، تحلیل و طراحی</strong>
+                    <span class="tl-days">
+                        <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                        روز ۱ تا ۷
+                    </span>
+                </div>
                 <p>
-                    <strong>عامل هوشمند فروش و درآمد</strong><br>
-                    هدایت خودکار چرخه فروش — از شناسایی فرصت تا بستن معامله.<br>
-                    • تحلیل سودآوری هر کانال فروش به‌صورت تفکیکی<br>
-                    • پیشنهاد فروش متقاطع (Cross-sell و Up-sell) به مشتریان موجود<br>
-                    • قیمت‌گذاری پویا بر اساس تقاضا، رقبا و حاشیه سود<br>
-                    • امتیازدهی خودکار لیدها بر اساس احتمال تبدیل<br>
-                    • پیش‌بینی دقیق فروش برای هر محصول و هر منطقه
+                    جلسات کشف با تیم آریان‌کهن، تحلیل نیازمندی‌ها، معماری اطلاعات، طراحی UI/UX کامل وب‌سایت و
+                    تأیید نهایی طرح بصری توسط تیم آریان‌کهن.
                 </p>
             </div>
-            <div class="card">
-                <h4>AI Management Copilot</h4>
+
+            <div class="tl-item">
+                <div class="tl-head">
+                    <strong>فاز ۲ — توسعه فرانت‌اند وب‌سایت</strong>
+                    <span class="tl-days">
+                        <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                        روز ۸ تا ۱۸
+                    </span>
+                </div>
                 <p>
-                    <strong>دستیار تحلیلی سطح مدیریت</strong><br>
-                    پاسخ لحظه‌ای به سوالات کلیدی کسب‌وکار.<br>
-                    • پاسخ به سوالات مدیریتی به زبان طبیعی<br>
-                    • هشدارهای هوشمند پیش از وقوع مشکلات<br>
-                    • تحلیل رفتار مشتری و الگوهای خرید<br>
-                    • رصد لحظه‌ای رقبا و تغییرات بازار<br>
-                    • گزارش‌های اجرایی خودکار (روزانه، هفتگی، ماهانه)
+                    کدنویسی کامل رابط کاربری وب‌سایت، پیاده‌سازی صفحات اصلی (خانه، درباره، محصولات، خدمات، تماس،
+                    نمایندگان)، ریسپانسیو کامل و تست روی مرورگرهای مختلف.
                 </p>
             </div>
-            <div class="card">
-                <h4>AI Operations Agent</h4>
+
+            <div class="tl-item">
+                <div class="tl-head">
+                    <strong>فاز ۳ — توسعه بک‌اند و پنل مدیریت</strong>
+                    <span class="tl-days">
+                        <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                        روز ۱۹ تا ۲۸
+                    </span>
+                </div>
                 <p>
-                    <strong>عامل هوشمند عملیات و پخش</strong><br>
-                    پایش و بهینه‌سازی فرآیندهای عملیاتی، انبار، لجستیک و پخش.<br>
-                    • پیش‌بینی دقیق تقاضا برای هر محصول<br>
-                    • بهینه‌سازی مسیر پخش و توزیع<br>
-                    • مدیریت خودکار موجودی و نقطه سفارش<br>
-                    • هشدار سررسید مطالبات و پیگیری خودکار<br>
-                    • کاهش ضایعات و بهبود بهره‌وری انبار
+                    کدنویسی بک‌اند وب‌سایت، پیاده‌سازی پنل مدیریت محتوا، سیستم مدیریت محصولات، فرم‌های ارتباطی هوشمند
+                    و آماده‌سازی زیرساخت برای اتصال دستیار رایا.
                 </p>
             </div>
-        </div>
 
-        <div class="info-box info-green">
-            <strong>تعهد کدپکس:</strong> پیاده‌سازی هر ایجنتی که آریان‌کهن نیاز داشته باشد — با کدنویسی کاملاً اختصاصی، بدون هزینه توکن و بر پایه همان زیرساخت تحویل‌شده.
-        </div>
+            <div class="tl-item">
+                <div class="tl-head">
+                    <strong>فاز ۴ — توسعه دستیار رایا و بات بله</strong>
+                    <span class="tl-days">
+                        <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                        روز ۲۹ تا ۳۸
+                    </span>
+                </div>
+                <p>
+                    پیاده‌سازی دستیار هوشمند رایا، آموزش رایا روی هویت برند و اطلاعات اختصاصی آریان‌کهن،
+                    توسعه بات اختصاصی بله، اتصال هر دو به وب‌سایت و یکپارچه‌سازی با فرم‌های لید.
+                </p>
+            </div>
 
+            <div class="tl-item">
+                <div class="tl-head">
+                    <strong>فاز ۵ — تست، بهینه‌سازی و تحویل نهایی</strong>
+                    <span class="tl-days">
+                        <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                        روز ۳۹ تا ۴۵
+                    </span>
+                </div>
+                <p>
+                    تست جامع عملکرد و امنیت، رفع باگ، بهینه‌سازی سرعت و Core Web Vitals، تست نهایی روی تمام دستگاه‌ها،
+                    استقرار روی هاست اصلی و تحویل نهایی تمام دارایی‌های پروژه به آریان‌کهن.
+                </p>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="payment-wrap">
+        <div class="payment-title">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/><circle cx="7" cy="15" r="1.5"/></svg>
+            برنامه پرداخت مرحله‌ای
+        </div>
+        <div class="payment-table">
+
+            <div class="payment-row">
+                <div class="payment-label">
+                    <span class="payment-percent">۳۰٪</span>
+                    <span>پیش‌پرداخت — شروع پروژه</span>
+                </div>
+                <span class="payment-amount">۳۶,۰۰۰,۰۰۰ تومان</span>
+            </div>
+
+            <div class="payment-row">
+                <div class="payment-label">
+                    <span class="payment-percent">۱۰٪</span>
+                    <span>پایان فاز ۱ — تأیید طراحی</span>
+                </div>
+                <span class="payment-amount">۱۲,۰۰۰,۰۰۰ تومان</span>
+            </div>
+
+            <div class="payment-row">
+                <div class="payment-label">
+                    <span class="payment-percent">۱۰٪</span>
+                    <span>پایان فاز ۲ — تحویل فرانت‌اند</span>
+                </div>
+                <span class="payment-amount">۱۲,۰۰۰,۰۰۰ تومان</span>
+            </div>
+
+            <div class="payment-row">
+                <div class="payment-label">
+                    <span class="payment-percent">۱۰٪</span>
+                    <span>پایان فاز ۳ — تحویل بک‌اند و پنل</span>
+                </div>
+                <span class="payment-amount">۱۲,۰۰۰,۰۰۰ تومان</span>
+            </div>
+
+            <div class="payment-row">
+                <div class="payment-label">
+                    <span class="payment-percent">۱۰٪</span>
+                    <span>پایان فاز ۴ — تحویل رایا و بات بله</span>
+                </div>
+                <span class="payment-amount">۱۲,۰۰۰,۰۰۰ تومان</span>
+            </div>
+
+            <div class="payment-row total">
+                <div class="payment-label">
+                    <span class="payment-percent">۲۰٪</span>
+                    <span>تحویل نهایی — پایان فاز ۵</span>
+                </div>
+                <span class="payment-amount">۲۴,۰۰۰,۰۰۰ تومان</span>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="info-box info-green">
+        <strong>جمع کل پروژه:</strong> ۱۲۰,۰۰۰,۰۰۰ تومان — شامل وب‌سایت شرکتی (۷۰ میلیون تومان) و دستیار هوشمند رایا + بات بله (۵۰ میلیون تومان) — با زمان‌بندی ۴۵ روزه و پرداخت مرحله‌ای شفاف هم‌زمان با تحویل هر فاز.
     </div>
 </section>
 
@@ -2719,9 +2649,9 @@ footer p { margin: 3px 0; }
 </div>
 
 <!-- ============================================================
-     SECTION 12 — CODE PACKS SHOWCASE
+     SECTION 4 — CODE PACKS SHOWCASE
      ============================================================ -->
-<section class="section cp-showcase" id="s12">
+<section class="section cp-showcase" id="s4">
     <div class="cp-header">
         <div class="cp-badge">
             <span class="cp-badge-dot"></span>
@@ -2828,7 +2758,7 @@ footer p { margin: 3px 0; }
             <span class="cp-project-num">۰۱</span>
             <span class="cp-project-type">INDUSTRIAL + ERP</span>
             <h4>گروه صنعتی امکو</h4>
-            <p>طراحی وب‌سایت اختصاصی و پیاده‌سازی ERP هوشمند یکپارچه کدپکس برای مجموعه صنعتی، توسعه فروشگاه آنلاین، تولید محتوا، سئو و فعالیت‌های دیجیتال مارکتینگ. پنل نمایندگان امکو به‌عنوان مرجع اجرایی برای پنل نمایندگان آریان‌کهن.</p>
+            <p>طراحی وب‌سایت اختصاصی و پیاده‌سازی ERP هوشمند یکپارچه کدپکس برای مجموعه صنعتی، توسعه فروشگاه آنلاین، تولید محتوا، سئو و فعالیت‌های دیجیتال مارکتینگ.</p>
             <div class="cp-project-tags">
                 <span>Website</span><span>E-Commerce</span><span>ERP</span><span>Panel</span><span>SEO</span>
             </div>
@@ -2935,10 +2865,10 @@ footer p { margin: 3px 0; }
 
 <section class="final-cta">
     <div class="final-content">
-        <h2>یک هسته مرکزی، <span class="accent">تمام کانال‌های پخش، یکپارچه و هوشمند</span></h2>
+        <h2>وب‌سایت شرکتی آریان‌کهن، <span class="accent">با دستیار هوشمند رایا و بات بله</span></h2>
         <p>
-            آریان‌کهن با این اکوسیستم نه تنها پخش و فروش خود را سیستماتیک و مقیاس‌پذیر می‌کند، بلکه با بهره‌گیری از هوش مصنوعی ایجنتیک و سئوی پیشرفته،
-            به یک شرکت پخش پیشرو در بازار محصولات مصرفی و صنعتی تبدیل می‌شود.
+            در گام اول، یک وب‌سایت شرکتی سریع، زیبا و حرفه‌ای برای آریان‌کهن می‌سازیم — همراه با دستیار هوشمند رایا
+            که به‌صورت ۲۴ ساعته با کاربران گفتگو می‌کند و بات اختصاصی بله که کانال ارتباطی مستقیم با مشتریان و تیم داخلی را فراهم می‌سازد.
             ما در کدپکس آماده‌ایم تا این تحول را برای آریان‌کهن طراحی و پیاده‌سازی کنیم.
         </p>
         <button id="contactBtn" class="cta-button">
@@ -2946,11 +2876,11 @@ footer p { margin: 3px 0; }
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg>
         </button>
         <div class="cta-tags">
-            <span>Intelligent Distribution ERP</span>
-            <span>Chain Store Management</span>
-            <span>City Representative Panel</span>
-            <span>Search Growth Engine</span>
-            <span>AI Agentic Layer</span>
+            <span>Corporate Website</span>
+            <span>Raya AI Assistant</span>
+            <span>Bale Bot</span>
+            <span>45 Days Delivery</span>
+            <span>Custom Code</span>
             <span>Full Ownership</span>
         </div>
     </div>
@@ -2958,7 +2888,7 @@ footer p { margin: 3px 0; }
 
 <footer>
     <strong>Code Packs — Intelligent Digital Solutions</strong>
-    <p>پروپوزال اختصاصی تحول دیجیتال شرکت پخش آریان‌کهن</p>
+    <p>پروپوزال اختصاصی وب‌سایت شرکتی شرکت پخش آریان‌کهن</p>
     <p class="footer-slogan">Smart Solutions, Better Business</p>
 </footer>
 
@@ -3078,7 +3008,6 @@ footer p { margin: 3px 0; }
     }, { threshold: 0.06, rootMargin: "0px 0px -50px 0px" });
     sections.forEach(function(section) { revealObserver.observe(section); });
 
-    // Accordion for cards — includes phase2-showcase cards
     const cards = document.querySelectorAll(".section:not(.cp-showcase) .card");
     cards.forEach(function(card) {
         card.setAttribute("role", "button");
